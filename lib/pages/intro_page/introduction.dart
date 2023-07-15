@@ -6,6 +6,7 @@ import 'package:translate/home.dart';
 import 'package:lottie/lottie.dart';
 import 'package:translate/model/show_hide_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:translate/pages/intro_page/page_three.dart';
 
 import 'page_one.dart';
 //import 'page_three.dart';
@@ -59,7 +60,7 @@ class _IntroductionState extends State<Introduction> {
                 return PageView(
                   onPageChanged: (index) {
                     setState(() {
-                      isLastPage = (index == 1);
+                      isLastPage = (index == 2);
                     });
                   },
                   controller: controllerPage,
@@ -70,11 +71,27 @@ class _IntroductionState extends State<Introduction> {
                     // pages
                     PageOne(),
                     PageTwo(),
-                    //PageThree(),
+                    PageThree(),
                   ],
                 );
               },
             ),
+            !isLastPage ? Align(
+              alignment: Alignment.topRight,
+              child: TextButton(
+                onPressed: () {
+                  controllerPage.jumpToPage(2);
+                },
+                child: Text(
+                  "Skip",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'gothic',
+                    fontSize: 14.sp,
+                  ),
+                ),
+              ),
+            ) : SizedBox(),
             isLastPage ? const GetStartedBtn() : const NextBtn(),
             isLastPage
                 ? SizedBox(
@@ -118,16 +135,17 @@ class _PageIndicatorState extends State<PageIndicator> {
   Widget build(BuildContext context) {
     return SmoothPageIndicator(
       controller: controllerPage,
-      count: 2,
+      count: 3,
       effect: const SlideEffect(
-          spacing: 10.0,
-          radius: 8.0,
-          dotWidth: 24.0,
-          dotHeight: 12.0,
-          paintStyle: PaintingStyle.stroke,
-          strokeWidth: 2.0,
-          dotColor: Colors.grey,
-          activeDotColor: Colors.indigoAccent),
+        spacing: 8.0,
+        radius: 8.0,
+        dotWidth: 20.0,
+        dotHeight: 8.0,
+        paintStyle: PaintingStyle.stroke,
+        strokeWidth: 1.0,
+        dotColor: Colors.grey,
+        activeDotColor: Color(0xff35bbca),
+      ),
     );
   }
 }
