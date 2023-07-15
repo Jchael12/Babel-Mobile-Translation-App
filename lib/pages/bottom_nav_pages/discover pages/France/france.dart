@@ -55,7 +55,7 @@ class France extends StatelessWidget {
                           ),
                         ),
                         Clickable(
-                          destination: '/cultures',
+                          destination: '/f-cultures',
                           child: Container(
                             width: 150.w,
                             height: 150.h,
@@ -87,7 +87,7 @@ class France extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Clickable(
-                            destination: '/foods',
+                            destination: '/f-foods',
                             child: Container(
                               width: 150.w,
                               height: 150.h,
@@ -112,7 +112,7 @@ class France extends StatelessWidget {
                             ),
                           ),
                           Clickable(
-                            destination: '/festivals',
+                            destination: '/f-festivals',
                             child: Container(
                               width: 150.w,
                               height: 150.h,
@@ -146,7 +146,7 @@ class France extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Clickable(
-                            destination: '/landscape',
+                            destination: '/f-landscape',
                             child: Container(
                               width: 150.w,
                               height: 150.h,
