@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:translate/model/stt.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Beach/F-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Festivals/F-Festivals.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Foods/F-Foods.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/france.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/germany.dart';
@@ -115,6 +116,7 @@ class MyApp extends StatelessWidget {
               '/france': (context) => const France(),
               '/f-beaches': (context) => const FBeaches(),
               '/f-foods': (context) => const FRFoods(),
+              '/f-festivals': (context) => const FRFestivals(),
               '/germany': (context) => const Germany(),
               '/russia': (context) => const Russia(),
               '/spain': (context) => const Spain(),
