@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:translate/model/stt.dart';
+import 'package:translate/states/stt.dart';
 import 'package:translate/utils/colors.dart';
 
 class History extends StatelessWidget {

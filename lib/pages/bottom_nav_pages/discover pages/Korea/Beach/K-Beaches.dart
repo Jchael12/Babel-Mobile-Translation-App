@@ -2,7 +2,7 @@
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:translate/model/custom_leading.dart';
+import 'package:translate/states/custom_leading.dart';
 import 'package:translate/utils/colors.dart';
 
 bool isSpeakingCompleted = false;

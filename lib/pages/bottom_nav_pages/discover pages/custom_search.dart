@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:translate/model/model.dart';
+import 'package:translate/states/model.dart';
 import 'package:translate/utils/colors.dart';
 
 class CustomSearchContents extends SearchDelegate {

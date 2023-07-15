@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:translate/model/list_supported_lang.dart';
+import 'package:translate/states/list_supported_lang.dart';
 import 'package:translate/utils/colors.dart';
 import 'package:provider/provider.dart';
-import 'package:translate/model/stt.dart';
+import 'package:translate/states/stt.dart';
 
 class SourceLanguageStt extends StatefulWidget {
   const SourceLanguageStt({super.key});

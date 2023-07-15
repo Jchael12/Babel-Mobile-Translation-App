@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:translate/home.dart';
 import 'package:lottie/lottie.dart';
-import 'package:translate/model/show_hide_model.dart';
+import 'package:translate/states/show_hide_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/pages/intro_page/page_three.dart';
 
