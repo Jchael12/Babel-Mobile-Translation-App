@@ -223,11 +223,38 @@ class HomePageState extends State<HomePage> {
                   updateIndex(3);
                 },
               ),
-              SizedBox(height: 20.h,),
+              SizedBox(
+                height: 20.h,
+              ),
               Divider(
                 color: Colors.grey,
                 indent: 10,
                 endIndent: 10,
+              ),
+              ListTile(
+                selectedColor: Colors.grey,
+                leading: const Icon(
+                  Icons.book_rounded,
+                  color: darkColor,
+                ),
+                title: Text(
+                  'Phrasebook',
+                  style: TextStyle(
+                    fontFamily: 'GothicA1',
+                    fontSize: 15.sp,
+                    color: darkColor,
+                  ),
+                ),
+                selectedTileColor: Colors.grey[300],
+                onTap: () {},
+              ),
+              Divider(
+                color: Colors.grey,
+                indent: 10,
+                endIndent: 10,
+              ),
+              SizedBox(
+                height: 20.h,
               ),
               ListTile(
                 selectedColor: Colors.grey,
@@ -248,6 +275,23 @@ class HomePageState extends State<HomePage> {
                   Navigator.pop(context);
                   Navigator.pushNamed(context, '/about');
                 },
+              ),
+              ListTile(
+                selectedColor: Colors.grey,
+                leading: const Icon(
+                  Icons.feedback_rounded,
+                  color: darkColor,
+                ),
+                title: Text(
+                  'Feedback',
+                  style: TextStyle(
+                    fontFamily: 'GothicA1',
+                    fontSize: 15.sp,
+                    color: darkColor,
+                  ),
+                ),
+                selectedTileColor: Colors.grey[300],
+                onTap: () {},
               ),
               ListTile(
                 leading: const Icon(
