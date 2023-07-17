@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -10,18 +8,19 @@ import 'package:translate/utils/colors.dart';
 bool isSpeakingCompleted = false;
 bool iconChange = false;
 
-Map<String, bool> iconStateLandscape = {
-  'alsace': false,
-  'brittany': false,
-  'camargue': false,
-  'dordogne': false,
-  'alps': false,
-  'riviera': false,
-  'verdon': false,
-  'loire': false,
-  'blanc': false,
-  'lavender': false,
+Map<String, bool> iconStateFood = {
+  'baguette': false,
+  'bouillabaisse': false,
+  'coq': false,
+  'cremebrulee': false,
+  'croissant': false,
+  'escargots': false,
+  'foiegras': false,
+  'quiche': false,
+  'ratatouille': false,
+  'tatin': false,
 };
+
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
@@ -33,27 +32,27 @@ final key8 = GlobalKey();
 final key9 = GlobalKey();
 final key10 = GlobalKey();
 
-Map<String, GlobalKey> searchMapLandscapes = {
-  'Alsace': key1,
-  'Brittany': key2,
-  'Camargue': key3,
-  'Dordogne': key4,
-  'Alps': key5,
-  'Riviera': key6,
-  'Verdon': key7,
-  'Loire': key8,
-  'Blanc': key9,
-  'Lavender': key10
+Map<String, GlobalKey> searchMapFoods = {
+  'Baguette': key1,
+  'Bouillabaisse': key2,
+  'Coq': key3,
+  'Cremebrulee': key4,
+  'Croissant': key5,
+  'Escargots': key6,
+  'Foiegras': key7,
+  'Quiche': key8,
+  'Ratatouille': key9,
+  'Tatin': key10,
 };
 
-class FRLandscapes extends StatefulWidget {
-  const FRLandscapes({super.key});
+class USFoods extends StatefulWidget {
+  const USFoods({super.key});
 
   @override
-  State<FRLandscapes> createState() => _FRLandscapesState();
+  State<USFoods> createState() => _USFoodsState();
 }
 
-class _FRLandscapesState extends State<FRLandscapes> {
+class _USFoodsState extends State<USFoods> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -62,16 +61,16 @@ class _FRLandscapesState extends State<FRLandscapes> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateLandscape['alsace'] = false;
-        iconStateLandscape['brittany'] = false;
-        iconStateLandscape['camargue'] = false;
-        iconStateLandscape['dordogne'] = false;
-        iconStateLandscape['alps'] = false;
-        iconStateLandscape['riviera'] = false;
-        iconStateLandscape['verdon'] = false;
-        iconStateLandscape['loire'] = false;
-        iconStateLandscape['blanc'] = false;
-        iconStateLandscape['lavender'] = false;
+        iconStateFood['baguette'] = false;
+        iconStateFood['bouillabaisse'] = false;
+        iconStateFood['coq'] = false;
+        iconStateFood['cremebrulee'] = false;
+        iconStateFood['croissant'] = false;
+        iconStateFood['escargots'] = false;
+        iconStateFood['foiegras'] = false;
+        iconStateFood['quiche'] = false;
+        iconStateFood['ratatouille'] = false;
+        iconStateFood['tatin'] = false;
       });
     });
 
@@ -102,8 +101,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            ItemsSearch(map: searchMapLandscapes)),
+                        builder: (context) => ItemsSearch(map: searchMapFoods)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -116,12 +114,12 @@ class _FRLandscapesState extends State<FRLandscapes> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/Landscape/landscape_bg.jpg',
+                'assets/Foods/FDC.png',
                 fit: BoxFit.cover,
               ),
               titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),
               title: Text(
-                "L A N D S C A P E S",
+                "F O O D S",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontFamily: 'gothic',
@@ -131,14 +129,12 @@ class _FRLandscapesState extends State<FRLandscapes> {
               centerTitle: true,
             ),
           ),
-          //sliver items
-
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alsace'],
+            key: searchMapFoods['Baguette'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -152,7 +148,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/ALSACE.jpg',
+                            'assets/Foods/BAGUETTE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -165,7 +161,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Alsace Wine Route',
+                              'Baguette',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -175,11 +171,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape[''] = true;
+                                  iconStateFood['baguette'] = true;
                                 });
-                                speak('Alsace Wine Route');
+                                speak('Baguette');
                               },
-                              icon: !iconStateLandscape['alsace']!
+                              icon: !iconStateFood['baguette']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -199,7 +195,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "lsace is the old name for a French region located in the west of France. It borders Germany, with the Rhine forming a natural border all the way from the south to the north. The region consists of 2 smaller departments, the Bas-Rhin in the north and the Haut-Rhin in the south. The region, together with the neighboring Lorraine region, has a long and complicated history with Germany. Both were invaded and annexed many times by Germany and France.",
+                          "A baguette (/bæˈɡɛt/; French: [baɡɛt] (listen)) is a long, thin type of bread of French origin[3] that is commonly made from basic lean dough (the dough, though not the shape, is defined by French law).[4] It is distinguishable by its length and crisp crust.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -215,11 +211,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Brittany'],
+            key: searchMapFoods['Bouillabaisse'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -233,7 +229,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BRITTANY.jpg',
+                            'assets/Foods/BOUILLABAISSE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -246,7 +242,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Brittany Coast',
+                              'Bouillabaisse',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -256,11 +252,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['brittany'] = true;
+                                  iconStateFood['bouillabaisse'] = true;
                                 });
-                                speak('Brittany Coast');
+                                speak('Bouillabaisse');
                               },
-                              icon: !iconStateLandscape['brittany']!
+                              icon: !iconStateFood['bouillabaisse']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -280,7 +276,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Brittany (/ˈbrɪtəni/; French: Bretagne [bʁətaɲ] (listen); Breton: Breizh, pronounced [bʁɛjs] or [bʁɛx]; Gallo: Bertaèyn [bəʁtaɛɲ]) is a peninsula, historical country and cultural area in the north-west of modern France, covering the western part of what was known as Armorica during the period of Roman occupation.",
+                          "Bouillabaisse is a classic French dish from southern France, in particular, of the port town Marseille. It requires many different varieties of fish, and traditionally was made with whatever the fishermen hadn't sold that morning.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -296,11 +292,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Camargue'],
+            key: searchMapFoods['Coq'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -314,7 +310,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/CAMARGUE.jpg',
+                            'assets/Foods/COQ.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -327,7 +323,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Camargue',
+                              'Coq Au Vin',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -337,11 +333,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['camargue'] = true;
+                                  iconStateFood['coq'] = true;
                                 });
-                                speak('Camargue');
+                                speak('Coq');
                               },
-                              icon: !iconStateLandscape['camargue']!
+                              icon: !iconStateFood['coq']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -361,7 +357,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "he Camargue (/kæˈmɑːrɡ/, also UK: /kəˈ-/, US: /kɑːˈ-/, French: [kamaʁɡ]; Provençal: Camarga) is a coastal region in southern France located south of the city of Arles, between the Mediterranean Sea and the two arms of the Rhône river delta. The eastern arm is called the Grand Rhône; the western is the Petit Rhône. It constitutes western Europe's largest river delta.",
+                          "Coq au Vin is the well-known French chicken stew where pieces of meat are braised in a luscious, glossy red wine sauce with bacon, mushroom and onions. Like Beef Bourguignon, the beauty of this dish lies in its simplicity. There are remarkably few ingredients and it’s a simple process, but the results are fit for a king – or queen!",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -377,11 +373,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Dordogne'],
+            key: searchMapFoods['Cremebrulee'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -395,7 +391,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/DORDOGNE.jpg',
+                            'assets/Foods/CREMEBRULEE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -408,7 +404,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Dordogne Valley',
+                              'Cremebrulee',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -418,11 +414,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['dordogne'] = true;
+                                  iconStateFood['cremebrulee'] = true;
                                 });
-                                speak('Dordogne Valley');
+                                speak('Cremebrulee');
                               },
-                              icon: !iconStateLandscape['dordogne']!
+                              icon: !iconStateFood['cremebrulee']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -442,7 +438,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          '  The heart of the "Dordogne" area is, naturally, the department of the Dordogne, centered on its capital Perigueux: the French tend to refer to this area not as "la Dordogne" but as "le Périgord", and in France the area is most famous for its gourmet delights, notably paté de foie gras, walnuts and truffles.',
+                          "Crème brûlée is a decadent French dessert consisting of a custard base and a caramelized sugar crust. The treat is traditionally served in individual ramekins. You can use a butane torch to achieve the perfect caramelization if you'd like, but this crème brûlée recipe is easily finished under your oven's broiler.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -458,11 +454,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alps'],
+            key: searchMapFoods['Croissant'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -476,7 +472,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/ALPS.jpg',
+                            'assets/Foods/CROISSANT.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -489,7 +485,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'French Alps',
+                              'Croissant',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -499,11 +495,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['alps'] = true;
+                                  iconStateFood['croissant'] = true;
                                 });
-                                speak('French Alps');
+                                speak('Croissant');
                               },
-                              icon: !iconStateLandscape['alps']!
+                              icon: !iconStateFood['croissant']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -523,7 +519,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The French Alps are the portions of the Alps mountain range that stand within France, located in the Auvergne-Rhône-Alpes and Provence-Alpes-Côte d'Azur regions. While some of the ranges of the French Alps are entirely in France, others, such as the Mont Blanc massif, are shared with Switzerland and Italy.",
+                          "A croissant (French pronunciation: [kʁwasɑ̃] (listen)) is a buttery, flaky, viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough.[1][better source needed] Croissants are named for their historical crescent shape.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -539,11 +535,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Riviera'],
+            key: searchMapFoods['Escargots'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -557,7 +553,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/RIVIERA.jpg',
+                            'assets/Foods/ESCARGOTS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -570,7 +566,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'French Riviera',
+                              'Escargots de Bourgogne',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -580,11 +576,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['riviera'] = true;
+                                  iconStateFood['escargots'] = true;
                                 });
-                                speak('French Riviera');
+                                speak('Escargots');
                               },
-                              icon: !iconStateLandscape['riviera']!
+                              icon: !iconStateFood['escargots']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -604,7 +600,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The French Riviera, known in French as the Côte d'Azur (IPA: [kot dazyʁ]; Occitan: Còsta d'Azur [ˈkɔstɔ daˈzyʀ]; lit. 'Azure Coast'), is the Mediterranean coastline of the southeast corner of France. There is no official boundary, but it is usually considered to extend from Toulon, Le Lavandou or Saint-Tropez in the west to Menton at the France–Italy border in the east.[1][2] The coast is entirely within the Provence-Alpes-Côte d'Azur region of France.",
+                          "Escargots de Bourgogne is the most common worldwide recipe of preparing escargots originating from French region of Burgundy. Snails used in this recipe are also known as ‘Burgundy snails’. This is Helix pomatia species of snail, or so called Roman snail, Apple snail.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -620,11 +616,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Verdon'],
+            key: searchMapFoods['Foiegras'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -638,7 +634,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/VERDON.jpg',
+                            'assets/Foods/FOIE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -651,7 +647,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Gorges du Verdon',
+                              'Foie Gras',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -661,11 +657,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['verdonj'] = true;
+                                  iconStateFood['foiegras'] = true;
                                 });
-                                speak('Gorges du Verdon');
+                                speak('Foiegras');
                               },
-                              icon: !iconStateLandscape['verdon']!
+                              icon: !iconStateFood['foiegras']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -685,7 +681,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Verdon Gorge (French: Gorges du Verdon) is a river canyon located in the Provence-Alpes-Côte d'Azur region of Southeastern France. It is about 25 km (15.5 mi) long and up to 700 metres (0.4 mi) deep. It was formed by the Verdon River, which is named for its turquoise-green colour, one of the location's distinguishing characteristics.",
+                          "Foie gras (French for 'fat liver'); French: [fwa ɡʁɑ], English: /ˌfwɑːˈɡrɑː/ (listen)) is a specialty food product made of the liver of a duck or goose. According to French law,[1] foie gras is defined as the liver of a duck or goose fattened by gavage (force feeding).",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -701,11 +697,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Loire'],
+            key: searchMapFoods['Quiche'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -719,7 +715,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/LOIRE.jpg',
+                            'assets/Foods/QUICHE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -732,7 +728,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Loire Valley',
+                              'Quiche Lorraine',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -742,11 +738,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['loire'] = true;
+                                  iconStateFood['quiche'] = true;
                                 });
-                                speak('Loire Valley');
+                                speak('Quiche');
                               },
-                              icon: !iconStateLandscape['loire']!
+                              icon: !iconStateFood['quiche']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -766,7 +762,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Loire Valley (French: Val de Loire, pronounced [val də lwaʁ]; Breton: Traoñ al Liger), spanning 280 kilometres (170 mi),[1] is a valley located in the middle stretch of the Loire river in central France, in both the administrative regions Pays de la Loire and Centre-Val de Loire",
+                          "Quiche Lorraine is a French tart with a filling made of cream, eggs, and bacon or ham, in an open pastry case. It was little known outside the French region of Lorraine until the mid-20th century. As its popularity spread, nationally and internationally, the addition of cheese became commonplace, although it was criticised as inauthentic. The dish may be served hot, warm or cold.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -782,11 +778,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Blanc'],
+            key: searchMapFoods['Ratatouille'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -800,7 +796,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BLANC.jpg',
+                            'assets/Foods/RATATOUILLE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -813,7 +809,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Mont Blanc',
+                              'Ratatouille',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -823,11 +819,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['blanc'] = true;
+                                  iconStateFood['ratatouille'] = true;
                                 });
-                                speak('Mont Blanc');
+                                speak('Ratatouille');
                               },
-                              icon: !iconStateLandscape['blanc']!
+                              icon: !iconStateFood['ratatouille']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -847,7 +843,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Mont Blanc (French: Mont Blanc [mɔ̃ blɑ̃]; Italian: Monte Bianco [ˈmonte ˈbjaŋko], both meaning 'white mountain') is the highest mountain in the Alps and Western Europe, and the highest mountain in Europe outside the Caucasus mountains, rising 4,807.81 m (15,774 ft) above sea level, located on the French-Italian border.",
+                          "Ratatouille is a bright and chunky summer vegetable stew, rich with olive oil and fragrant with garlic and herbs.Hailing from Provence, a region in the south of France near the Mediterranean Sea, ratatouille is a bright and chunky summer vegetable stew made with eggplant, zucchini, bell peppers, and tomatoes.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -863,11 +859,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Lavender'],
+            key: searchMapFoods['Tatin'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -881,7 +877,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/LAVENDER.jpeg',
+                            'assets/Foods/TATIN.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -894,7 +890,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Provence Lavender Fields',
+                              'Tarte Tatin',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -904,11 +900,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['lavender'] = true;
+                                  iconStateFood['tatin'] = true;
                                 });
-                                speak('Provence Lavender Fields');
+                                speak('Tatin');
                               },
-                              icon: !iconStateLandscape['lavender']!
+                              icon: !iconStateFood['tatin']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -928,7 +924,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Valensole Plateau's lavender fields are perhaps the most famous and photographed in not only Provence but in the world. The area is filled with fields, deep blue lakes and picturesque villages. Most famous is Valensole itself, situated above the plateau with the 11th century St Blaise church as a focal point. Here and in the pretty village of Sainte-Croix-du-Verdon, there's plenty to explore.",
+                          "The tarte Tatin (French pronunciation: ​[taʁt tatɛ̃]), named after the Tatin sisters who invented it and served it in their hotel as its signature dish, is a pastry in which fruit(usually apples) is caramelized in butter and sugar before the tart is baked. It originated in France but has spread to other countries over the year.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

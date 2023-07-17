@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
-
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:translate/model/custom_leading.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/custom_search.dart';
@@ -10,18 +9,19 @@ import 'package:translate/utils/colors.dart';
 bool isSpeakingCompleted = false;
 bool iconChange = false;
 
-Map<String, bool> iconStateLandscape = {
-  'alsace': false,
-  'brittany': false,
-  'camargue': false,
-  'dordogne': false,
-  'alps': false,
-  'riviera': false,
-  'verdon': false,
-  'loire': false,
-  'blanc': false,
-  'lavender': false,
+Map<String, bool> iconStateCulture = {
+  'gyeongbokgung': false,
+  'lotte-world': false,
+  'gyeongju': false,
+  'bukcheon': false,
+  'n-seoul': false,
+  'changdeokgung': false,
+  'korea-national-museum': false,
+  'korean-demilitarized-zone': false,
+  'korea-war-memorial': false,
+  'myeongdong': false,
 };
+
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
@@ -33,27 +33,27 @@ final key8 = GlobalKey();
 final key9 = GlobalKey();
 final key10 = GlobalKey();
 
-Map<String, GlobalKey> searchMapLandscapes = {
-  'Alsace': key1,
-  'Brittany': key2,
-  'Camargue': key3,
-  'Dordogne': key4,
-  'Alps': key5,
-  'Riviera': key6,
-  'Verdon': key7,
-  'Loire': key8,
-  'Blanc': key9,
-  'Lavender': key10
+Map<String, GlobalKey> searchMapCultures = {
+  'Gyeongbokgung': key1,
+  'Lotte-World': key2,
+  'Gyeongju': key3,
+  'Bukcheon': key4,
+  'N-Seoul': key5,
+  'Changdeokgung': key6,
+  'Korea-National-Museum': key7,
+  'Korean-Demilitarized-Zone': key8,
+  'Korea-War-Memorial': key9,
+  'Myeongdong': key10,
 };
 
-class FRLandscapes extends StatefulWidget {
-  const FRLandscapes({super.key});
+class USCultures extends StatefulWidget {
+  const USCultures({super.key});
 
   @override
-  State<FRLandscapes> createState() => _FRLandscapesState();
+  State<USCultures> createState() => _USCulturesState();
 }
 
-class _FRLandscapesState extends State<FRLandscapes> {
+class _USCulturesState extends State<USCultures> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -62,16 +62,16 @@ class _FRLandscapesState extends State<FRLandscapes> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateLandscape['alsace'] = false;
-        iconStateLandscape['brittany'] = false;
-        iconStateLandscape['camargue'] = false;
-        iconStateLandscape['dordogne'] = false;
-        iconStateLandscape['alps'] = false;
-        iconStateLandscape['riviera'] = false;
-        iconStateLandscape['verdon'] = false;
-        iconStateLandscape['loire'] = false;
-        iconStateLandscape['blanc'] = false;
-        iconStateLandscape['lavender'] = false;
+        iconStateCulture['gyeongbokgung'] = false;
+        iconStateCulture['lotte-world'] = false;
+        iconStateCulture['gyeongju'] = false;
+        iconStateCulture['bukcheon'] = false;
+        iconStateCulture['n-seoul'] = false;
+        iconStateCulture['changdeokgung'] = false;
+        iconStateCulture['korea-national-museum'] = false;
+        iconStateCulture['korean-demilitarized-zone'] = false;
+        iconStateCulture['korea-war-memorial'] = false;
+        iconStateCulture['myeongdong'] = false;
       });
     });
 
@@ -103,7 +103,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            ItemsSearch(map: searchMapLandscapes)),
+                            ItemsSearch(map: searchMapCultures)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -116,12 +116,12 @@ class _FRLandscapesState extends State<FRLandscapes> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/Landscape/landscape_bg.jpg',
+                'assets/Cultural/CAC.png',
                 fit: BoxFit.cover,
               ),
               titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),
               title: Text(
-                "L A N D S C A P E S",
+                "C U L T U R A L",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontFamily: 'gothic',
@@ -131,14 +131,12 @@ class _FRLandscapesState extends State<FRLandscapes> {
               centerTitle: true,
             ),
           ),
-          //sliver items
-
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alsace'],
+            key: searchMapCultures['Gyeongbokgung'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -152,7 +150,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/ALSACE.jpg',
+                            'assets/Cultural/GYEONGBOKGUNG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -165,7 +163,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Alsace Wine Route',
+                              'Gyeongbokgung',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -175,11 +173,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape[''] = true;
+                                  iconStateCulture['gyeongbokgung'] = true;
                                 });
-                                speak('Alsace Wine Route');
+                                speak('Gyeongbokgung');
                               },
-                              icon: !iconStateLandscape['alsace']!
+                              icon: !iconStateCulture['gyeongbokgung']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -199,7 +197,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "lsace is the old name for a French region located in the west of France. It borders Germany, with the Rhine forming a natural border all the way from the south to the north. The region consists of 2 smaller departments, the Bas-Rhin in the north and the Haut-Rhin in the south. The region, together with the neighboring Lorraine region, has a long and complicated history with Germany. Both were invaded and annexed many times by Germany and France.",
+                          "Gyeongbokgung, also known as Gyeongbokgung Palace or Gyeongbok Palace, was the main royal palace of the Joseon Dynasty. Built in 1395, it is located in northern Seoul, South Korea.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -215,11 +213,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Brittany'],
+            key: searchMapCultures['Lotte-world'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -233,7 +231,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BRITTANY.jpg',
+                            'assets/Cultural/LOTTEWORLD.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -246,7 +244,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Brittany Coast',
+                              'Lotte-world',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -256,11 +254,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['brittany'] = true;
+                                  iconStateCulture['lotte-world'] = true;
                                 });
-                                speak('Brittany Coast');
+                                speak('Lotte-world');
                               },
-                              icon: !iconStateLandscape['brittany']!
+                              icon: !iconStateCulture['lotte-world']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -280,7 +278,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Brittany (/ˈbrɪtəni/; French: Bretagne [bʁətaɲ] (listen); Breton: Breizh, pronounced [bʁɛjs] or [bʁɛx]; Gallo: Bertaèyn [bəʁtaɛɲ]) is a peninsula, historical country and cultural area in the north-west of modern France, covering the western part of what was known as Armorica during the period of Roman occupation.",
+                          "Lotte World is a major recreation complex in Seoul, South Korea. It consists of large indoor theme park, an outdoor amusement park called 'Magic Island', an artificial island linked by monorail, shopping malls, luxury hotel, observation tower, korean folk museum, sports facilities and movie theaters.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -296,11 +294,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Camargue'],
+            key: searchMapCultures['Gyeongju'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -314,7 +312,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/CAMARGUE.jpg',
+                            'assets/Cultural/GYEONGJU.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -327,7 +325,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Camargue',
+                              'Gyeongju',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -337,11 +335,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['camargue'] = true;
+                                  iconStateCulture['gyeongju'] = true;
                                 });
-                                speak('Camargue');
+                                speak('Gyeongju');
                               },
-                              icon: !iconStateLandscape['camargue']!
+                              icon: !iconStateCulture['gyeongju']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -361,7 +359,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "he Camargue (/kæˈmɑːrɡ/, also UK: /kəˈ-/, US: /kɑːˈ-/, French: [kamaʁɡ]; Provençal: Camarga) is a coastal region in southern France located south of the city of Arles, between the Mediterranean Sea and the two arms of the Rhône river delta. The eastern arm is called the Grand Rhône; the western is the Petit Rhône. It constitutes western Europe's largest river delta.",
+                          "Gyeongju, historically known as Seorabeol, is a coastal city in the far southeastern corner of North Gyeongsang Province in South Korea. It is the second largest city by area in the province after Andong, covering 1,324km southeast of Seoul and 55km east of Daegu.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -377,11 +375,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Dordogne'],
+            key: searchMapCultures['Bukcheon'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -395,7 +393,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/DORDOGNE.jpg',
+                            'assets/Cultural/BUKCHEON.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -408,7 +406,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Dordogne Valley',
+                              'Bukcheon',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -418,11 +416,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['dordogne'] = true;
+                                  iconStateCulture['bukcheon'] = true;
                                 });
-                                speak('Dordogne Valley');
+                                speak('Bukcheon');
                               },
-                              icon: !iconStateLandscape['dordogne']!
+                              icon: !iconStateCulture['bukcheon']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -442,7 +440,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          '  The heart of the "Dordogne" area is, naturally, the department of the Dordogne, centered on its capital Perigueux: the French tend to refer to this area not as "la Dordogne" but as "le Périgord", and in France the area is most famous for its gourmet delights, notably paté de foie gras, walnuts and truffles.',
+                          "Bukcheon Hanok Village is a Korean traditional village in Seoul with a long history located on the top of hill between Gyeongbok Palace, Changdeok Palace and Jongmyo Royal Shrine. The traditional village is composed of many alleys, and is preserved to show a 600 year-old urban environment.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -458,11 +456,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alps'],
+            key: searchMapCultures['N-Seoul'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -476,7 +474,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/ALPS.jpg',
+                            'assets/Cultural/NTOWER.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -489,7 +487,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'French Alps',
+                              'N-Seoul Tower',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -499,11 +497,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['alps'] = true;
+                                  iconStateCulture['n-seoul'] = true;
                                 });
-                                speak('French Alps');
+                                speak('N-Seoul');
                               },
-                              icon: !iconStateLandscape['alps']!
+                              icon: !iconStateCulture['n-seoul']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -523,7 +521,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The French Alps are the portions of the Alps mountain range that stand within France, located in the Auvergne-Rhône-Alpes and Provence-Alpes-Côte d'Azur regions. While some of the ranges of the French Alps are entirely in France, others, such as the Mont Blanc massif, are shared with Switzerland and Italy.",
+                          "N-Seoul Tower, officially the YTN Seoul Tower and commonly known as Namsan Tower or Seoul Tower, is a communication and observation tower located on highest point in Seoul and is considered a local landmark.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -539,11 +537,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Riviera'],
+            key: searchMapCultures['Changdeokgung'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -557,7 +555,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/RIVIERA.jpg',
+                            'assets/Cultural/CHANGDEOKGUNG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -570,7 +568,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'French Riviera',
+                              'Changdeokgung Palace',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -580,11 +578,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['riviera'] = true;
+                                  iconStateCulture['changdeokgung'] = true;
                                 });
-                                speak('French Riviera');
+                                speak('Changedeokgung');
                               },
-                              icon: !iconStateLandscape['riviera']!
+                              icon: !iconStateCulture['changdeokgung']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -604,7 +602,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The French Riviera, known in French as the Côte d'Azur (IPA: [kot dazyʁ]; Occitan: Còsta d'Azur [ˈkɔstɔ daˈzyʀ]; lit. 'Azure Coast'), is the Mediterranean coastline of the southeast corner of France. There is no official boundary, but it is usually considered to extend from Toulon, Le Lavandou or Saint-Tropez in the west to Menton at the France–Italy border in the east.[1][2] The coast is entirely within the Provence-Alpes-Côte d'Azur region of France.",
+                          "Changdeokgung also known as Changdeokgung Palace or Changdeok Palace, is set within a large park in Jongno District, Seoul, South Korea. It is one of the Five Grand Palaces built by the kings of the Joseon Dynasty. As it is located east Gyeongbok Palace, Changdeokgung along with Changgyeonggung is also referred to as the 'East Palace'.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -620,11 +618,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Verdon'],
+            key: searchMapCultures['Korea-National-Museum'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -638,7 +636,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/VERDON.jpg',
+                            'assets/Cultural/KMUSEUM.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -651,7 +649,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Gorges du Verdon',
+                              'National Museum of Korea',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -661,11 +659,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['verdonj'] = true;
+                                  iconStateCulture['korea-national-museum'] = true;
                                 });
-                                speak('Gorges du Verdon');
+                                speak('Korea-National-Museum');
                               },
-                              icon: !iconStateLandscape['verdon']!
+                              icon: !iconStateCulture['korea-national-museum']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -685,7 +683,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Verdon Gorge (French: Gorges du Verdon) is a river canyon located in the Provence-Alpes-Côte d'Azur region of Southeastern France. It is about 25 km (15.5 mi) long and up to 700 metres (0.4 mi) deep. It was formed by the Verdon River, which is named for its turquoise-green colour, one of the location's distinguishing characteristics.",
+                          "The Nation Museum of Korea is the flagship museum of Korea history and art in South Korea and is the cultural organization that represents Korea. Since its estblishment in 1945, the museum has been committed to various studies and research in the fields of archaeology, history and art, continously developing a variety of exhibitions and education programs.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -701,11 +699,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Loire'],
+            key: searchMapCultures['Korean-Demilitarized-Zone'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -719,7 +717,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/LOIRE.jpg',
+                            'assets/Cultural/KDZ.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -732,7 +730,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Loire Valley',
+                              'Korean Demilitarized Zone',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -742,11 +740,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['loire'] = true;
+                                  iconStateCulture['korean-demilitarized-zone'] = true;
                                 });
-                                speak('Loire Valley');
+                                speak('Korean-Demilitarized-Zone');
                               },
-                              icon: !iconStateLandscape['loire']!
+                              icon: !iconStateCulture['korean-demilitarized-zone']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -766,7 +764,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Loire Valley (French: Val de Loire, pronounced [val də lwaʁ]; Breton: Traoñ al Liger), spanning 280 kilometres (170 mi),[1] is a valley located in the middle stretch of the Loire river in central France, in both the administrative regions Pays de la Loire and Centre-Val de Loire",
+                          "The Korean Demilitarized Zone is a strip of land running across the Korean Peninsula near the 38th parallel north. The demilitarized zone(DMZ) is a border barrier that dividess the Peninsula roughly in half. It was established to serve as a buffer zone between the coutries of North Korea and South Korea under the provisions of the Korean Armistice Agreement in 1953, an agreement between North Korea, China and the United Nations Command.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -782,11 +780,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Blanc'],
+            key: searchMapCultures['Korea-War-Memorial'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -800,7 +798,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BLANC.jpg',
+                            'assets/Cultural/WMK.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -813,7 +811,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Mont Blanc',
+                              'War Memorial of Korea',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -823,11 +821,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['blanc'] = true;
+                                  iconStateCulture['korea-war-memorial'] = true;
                                 });
-                                speak('Mont Blanc');
+                                speak('war-memorial-of-korea');
                               },
-                              icon: !iconStateLandscape['blanc']!
+                              icon: !iconStateCulture['korea-war-memorial']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -847,7 +845,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Mont Blanc (French: Mont Blanc [mɔ̃ blɑ̃]; Italian: Monte Bianco [ˈmonte ˈbjaŋko], both meaning 'white mountain') is the highest mountain in the Alps and Western Europe, and the highest mountain in Europe outside the Caucasus mountains, rising 4,807.81 m (15,774 ft) above sea level, located on the French-Italian border.",
+                          "The War Memorial of Korea is a museum lcoated in Yongsan-dong, Seoul, South Korea. It opened in 1994 on the former site of the army headquarters to exhibit and memorialize the military history of Korea. It was built for the purpose of preventing through lessons from the Korean War and for the hoped for peaceful reunification of North and South Korea.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -863,11 +861,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Lavender'],
+            key: searchMapCultures['Myeongdong'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -881,7 +879,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/LAVENDER.jpeg',
+                            'assets/Cultural/MYEONGDONG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -894,7 +892,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Provence Lavender Fields',
+                              'Myeongdong',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -904,11 +902,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['lavender'] = true;
+                                  iconStateCulture['myeongdong'] = true;
                                 });
-                                speak('Provence Lavender Fields');
+                                speak('myeongdong');
                               },
-                              icon: !iconStateLandscape['lavender']!
+                              icon: !iconStateCulture['myeongdong']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -928,7 +926,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Valensole Plateau's lavender fields are perhaps the most famous and photographed in not only Provence but in the world. The area is filled with fields, deep blue lakes and picturesque villages. Most famous is Valensole itself, situated above the plateau with the 11th century St Blaise church as a focal point. Here and in the pretty village of Sainte-Croix-du-Verdon, there's plenty to explore.",
+                          "Myeongdong is a dong in Jung-gu, Seoul, South Korea between Chungmu-ro, Eulji-ro and Namdaemun-ro. It covers 0.99km with a population of 3,409 and is mostly a commercial area, being one of Seoul's main shopping, parade route and tourism districts. In 2011, 2012 and 2013, Myeong-dong was listed as the ninth most expensive shopping street in the world. The area is known for its two historically significant sites, namely the Myeongdong Cathedral and the Myeongdong Nanta Theatre.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
