@@ -139,98 +139,98 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(height: 20.h),
-              ListTile(
-                leading: Icon(
-                  Icons.home_filled,
-                  color: currentIndex == 0 ? Colors.grey : darkColor,
-                ),
-                title: Text(
-                  "Home",
-                  style: TextStyle(
-                    fontFamily: 'GothicA1',
-                    fontSize: 15.sp,
-                    color: darkColor,
-                  ),
-                ),
-                selected: currentIndex == 0,
-                selectedColor: Colors.grey,
-                selectedTileColor: Colors.grey[300],
-                onTap: () {
-                  Navigator.pop(context);
-                  updateIndex(0);
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.mic_external_on_rounded,
-                  color: currentIndex == 1 ? Colors.grey : darkColor,
-                ),
-                title: Text(
-                  "Speech",
-                  style: TextStyle(
-                    fontFamily: 'GothicA1',
-                    fontSize: 15.sp,
-                    color: darkColor,
-                  ),
-                ),
-                selected: currentIndex == 1,
-                selectedColor: Colors.grey,
-                selectedTileColor: Colors.grey[300],
-                onTap: () {
-                  Navigator.pop(context);
-                  updateIndex(1);
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.history,
-                  color: currentIndex == 2 ? Colors.grey : darkColor,
-                ),
-                title: Text(
-                  "Recent",
-                  style: TextStyle(
-                    fontFamily: 'GothicA1',
-                    fontSize: 15.sp,
-                    color: darkColor,
-                  ),
-                ),
-                selected: currentIndex == 2,
-                selectedColor: Colors.grey,
-                selectedTileColor: Colors.grey[300],
-                onTap: () {
-                  Navigator.pop(context);
-                  updateIndex(2);
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.travel_explore_rounded,
-                  color: currentIndex == 3 ? Colors.grey : darkColor,
-                ),
-                title: Text(
-                  "Discover",
-                  style: TextStyle(
-                    fontFamily: 'GothicA1',
-                    fontSize: 15.sp,
-                    color: currentIndex == 3 ? Colors.grey : darkColor,
-                  ),
-                ),
-                selected: currentIndex == 3,
-                selectedColor: Colors.grey,
-                selectedTileColor: Colors.grey[300],
-                onTap: () {
-                  Navigator.pop(context);
-                  updateIndex(3);
-                },
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Divider(
-                color: Colors.grey,
-                indent: 10,
-                endIndent: 10,
-              ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.home_filled,
+              //     color: currentIndex == 0 ? Colors.grey : darkColor,
+              //   ),
+              //   title: Text(
+              //     "Home",
+              //     style: TextStyle(
+              //       fontFamily: 'GothicA1',
+              //       fontSize: 15.sp,
+              //       color: darkColor,
+              //     ),
+              //   ),
+              //   selected: currentIndex == 0,
+              //   selectedColor: Colors.grey,
+              //   selectedTileColor: Colors.grey[300],
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //     updateIndex(0);
+              //   },
+              // ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.mic_external_on_rounded,
+              //     color: currentIndex == 1 ? Colors.grey : darkColor,
+              //   ),
+              //   title: Text(
+              //     "Speech",
+              //     style: TextStyle(
+              //       fontFamily: 'GothicA1',
+              //       fontSize: 15.sp,
+              //       color: darkColor,
+              //     ),
+              //   ),
+              //   selected: currentIndex == 1,
+              //   selectedColor: Colors.grey,
+              //   selectedTileColor: Colors.grey[300],
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //     updateIndex(1);
+              //   },
+              // ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.history,
+              //     color: currentIndex == 2 ? Colors.grey : darkColor,
+              //   ),
+              //   title: Text(
+              //     "Recent",
+              //     style: TextStyle(
+              //       fontFamily: 'GothicA1',
+              //       fontSize: 15.sp,
+              //       color: darkColor,
+              //     ),
+              //   ),
+              //   selected: currentIndex == 2,
+              //   selectedColor: Colors.grey,
+              //   selectedTileColor: Colors.grey[300],
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //     updateIndex(2);
+              //   },
+              // ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.travel_explore_rounded,
+              //     color: currentIndex == 3 ? Colors.grey : darkColor,
+              //   ),
+              //   title: Text(
+              //     "Discover",
+              //     style: TextStyle(
+              //       fontFamily: 'GothicA1',
+              //       fontSize: 15.sp,
+              //       color: currentIndex == 3 ? Colors.grey : darkColor,
+              //     ),
+              //   ),
+              //   selected: currentIndex == 3,
+              //   selectedColor: Colors.grey,
+              //   selectedTileColor: Colors.grey[300],
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //     updateIndex(3);
+              //   },
+              // ),
+              // SizedBox(
+              //   height: 20.h,
+              // ),
+              // Divider(
+              //   color: Colors.grey,
+              //   indent: 10,
+              //   endIndent: 10,
+              // ),
               ListTile(
                 selectedColor: Colors.grey,
                 leading: const Icon(
