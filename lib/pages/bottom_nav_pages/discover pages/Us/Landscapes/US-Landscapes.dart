@@ -11,16 +11,16 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateLandscape = {
-  'alsace': false,
-  'brittany': false,
-  'camargue': false,
-  'dordogne': false,
-  'alps': false,
-  'riviera': false,
-  'verdon': false,
-  'loire': false,
-  'blanc': false,
-  'lavender': false,
+  'gangneung': false,
+  'jeju-island': false,
+  'yeosu': false,
+  'nami-island': false,
+  'damyang': false,
+  'seoraksan-national-park': false,
+  'andong-hahoe-folk-village': false,
+  'hallyeohaesang': false,
+  'boseong-green-tea-fields': false,
+  'daedunsan': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
@@ -34,26 +34,26 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapLandscapes = {
-  'Alsace': key1,
-  'Brittany': key2,
-  'Camargue': key3,
-  'Dordogne': key4,
-  'Alps': key5,
-  'Riviera': key6,
-  'Verdon': key7,
-  'Loire': key8,
-  'Blanc': key9,
-  'Lavender': key10
+  'Gangneung': key1,
+  'Jeju-Island': key2,
+  'Yeosu': key3,
+  'Nami-Island': key4,
+  'Damyang': key5,
+  'Seoraksan-National-Park': key6,
+  'Andong-Hahoe-Folk-Village': key7,
+  'Hallyeohaesang': key8,
+  'Boseong-Green-Tea-Fields': key9,
+  'Daedunsan': key10
 };
 
-class FRLandscapes extends StatefulWidget {
-  const FRLandscapes({super.key});
+class USLandscapes extends StatefulWidget {
+  const USLandscapes({super.key});
 
   @override
-  State<FRLandscapes> createState() => _FRLandscapesState();
+  State<USLandscapes> createState() => _USLandscapesState();
 }
 
-class _FRLandscapesState extends State<FRLandscapes> {
+class _USLandscapesState extends State<USLandscapes> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -62,16 +62,16 @@ class _FRLandscapesState extends State<FRLandscapes> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateLandscape['alsace'] = false;
-        iconStateLandscape['brittany'] = false;
-        iconStateLandscape['camargue'] = false;
-        iconStateLandscape['dordogne'] = false;
-        iconStateLandscape['alps'] = false;
-        iconStateLandscape['riviera'] = false;
-        iconStateLandscape['verdon'] = false;
-        iconStateLandscape['loire'] = false;
-        iconStateLandscape['blanc'] = false;
-        iconStateLandscape['lavender'] = false;
+        iconStateLandscape['gangneung'] = false;
+        iconStateLandscape['jeju-island'] = false;
+        iconStateLandscape['yeosu'] = false;
+        iconStateLandscape['nami-island'] = false;
+        iconStateLandscape['damyang'] = false;
+        iconStateLandscape['Seoraksan-National-Park'] = false;
+        iconStateLandscape['Andong-Hahoe-Folk-Village'] = false;
+        iconStateLandscape['Hallyeohaesang'] = false;
+        iconStateLandscape['Boseong-Green-Tea-Fields'] = false;
+        iconStateLandscape['Daedunsan'] = false;
       });
     });
 
@@ -134,7 +134,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alsace'],
+            key: searchMapLandscapes['Gangneung'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -152,7 +152,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/ALSACE.jpg',
+                            'assets/Landscape/gangneung.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -165,7 +165,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Alsace Wine Route',
+                              'Gangneung',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -175,11 +175,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape[''] = true;
+                                  iconStateLandscape['gangneung'] = true;
                                 });
-                                speak('Alsace Wine Route');
+                                speak('Gangneung');
                               },
-                              icon: !iconStateLandscape['alsace']!
+                              icon: !iconStateLandscape['gangneung']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -199,7 +199,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "lsace is the old name for a French region located in the west of France. It borders Germany, with the Rhine forming a natural border all the way from the south to the north. The region consists of 2 smaller departments, the Bas-Rhin in the north and the Haut-Rhin in the south. The region, together with the neighboring Lorraine region, has a long and complicated history with Germany. Both were invaded and annexed many times by Germany and France.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -215,7 +215,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Brittany'],
+            key: searchMapLandscapes['Jeju-Island'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -233,7 +233,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BRITTANY.jpg',
+                            'assets/Landscape/JEJU.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -246,7 +246,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Brittany Coast',
+                              'Jeju-Island',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -256,11 +256,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['brittany'] = true;
+                                  iconStateLandscape['jeju-island'] = true;
                                 });
-                                speak('Brittany Coast');
+                                speak('Jeju-Island');
                               },
-                              icon: !iconStateLandscape['brittany']!
+                              icon: !iconStateLandscape['jeju-island']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -280,7 +280,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Brittany (/ˈbrɪtəni/; French: Bretagne [bʁətaɲ] (listen); Breton: Breizh, pronounced [bʁɛjs] or [bʁɛx]; Gallo: Bertaèyn [bəʁtaɛɲ]) is a peninsula, historical country and cultural area in the north-west of modern France, covering the western part of what was known as Armorica during the period of Roman occupation.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -296,7 +296,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Camargue'],
+            key: searchMapLandscapes['Yeosu'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -314,7 +314,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/CAMARGUE.jpg',
+                            'assets/Landscape/YEOSU.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -327,7 +327,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Camargue',
+                              'Yeosu',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -337,11 +337,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['camargue'] = true;
+                                  iconStateLandscape['yeosu'] = true;
                                 });
-                                speak('Camargue');
+                                speak('Yeosu');
                               },
-                              icon: !iconStateLandscape['camargue']!
+                              icon: !iconStateLandscape['yeosu']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -361,7 +361,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "he Camargue (/kæˈmɑːrɡ/, also UK: /kəˈ-/, US: /kɑːˈ-/, French: [kamaʁɡ]; Provençal: Camarga) is a coastal region in southern France located south of the city of Arles, between the Mediterranean Sea and the two arms of the Rhône river delta. The eastern arm is called the Grand Rhône; the western is the Petit Rhône. It constitutes western Europe's largest river delta.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -377,7 +377,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Dordogne'],
+            key: searchMapLandscapes['Nami-Island'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -395,7 +395,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/DORDOGNE.jpg',
+                            'assets/Landscape/NAMI.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -408,7 +408,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Dordogne Valley',
+                              'Nami-Island',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -418,11 +418,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['dordogne'] = true;
+                                  iconStateLandscape['nami-island'] = true;
                                 });
-                                speak('Dordogne Valley');
+                                speak('Nami-Island');
                               },
-                              icon: !iconStateLandscape['dordogne']!
+                              icon: !iconStateLandscape['nami-island']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -442,7 +442,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          '  The heart of the "Dordogne" area is, naturally, the department of the Dordogne, centered on its capital Perigueux: the French tend to refer to this area not as "la Dordogne" but as "le Périgord", and in France the area is most famous for its gourmet delights, notably paté de foie gras, walnuts and truffles.',
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -458,7 +458,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alps'],
+            key: searchMapLandscapes['Damyang'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -476,7 +476,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/ALPS.jpg',
+                            'assets/Landscape/DAMYANG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -489,7 +489,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'French Alps',
+                              'Damyang',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -499,11 +499,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['alps'] = true;
+                                  iconStateLandscape['damyang'] = true;
                                 });
-                                speak('French Alps');
+                                speak('Damyang');
                               },
-                              icon: !iconStateLandscape['alps']!
+                              icon: !iconStateLandscape['damyang']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -523,7 +523,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The French Alps are the portions of the Alps mountain range that stand within France, located in the Auvergne-Rhône-Alpes and Provence-Alpes-Côte d'Azur regions. While some of the ranges of the French Alps are entirely in France, others, such as the Mont Blanc massif, are shared with Switzerland and Italy.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -539,7 +539,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Riviera'],
+            key: searchMapLandscapes['Seoraksan-National-Park'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -557,7 +557,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/RIVIERA.jpg',
+                            'assets/Landscape/SEORAKSAN.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -570,7 +570,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'French Riviera',
+                              'Seoraksan-National-Park',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -580,11 +580,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['riviera'] = true;
+                                  iconStateLandscape['seoraksan-national-park'] = true;
                                 });
-                                speak('French Riviera');
+                                speak('Seoraksan-National-Park');
                               },
-                              icon: !iconStateLandscape['riviera']!
+                              icon: !iconStateLandscape['seoraksan-national-park']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -604,7 +604,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The French Riviera, known in French as the Côte d'Azur (IPA: [kot dazyʁ]; Occitan: Còsta d'Azur [ˈkɔstɔ daˈzyʀ]; lit. 'Azure Coast'), is the Mediterranean coastline of the southeast corner of France. There is no official boundary, but it is usually considered to extend from Toulon, Le Lavandou or Saint-Tropez in the west to Menton at the France–Italy border in the east.[1][2] The coast is entirely within the Provence-Alpes-Côte d'Azur region of France.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -620,7 +620,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Verdon'],
+            key: searchMapLandscapes['Andong-Hahoe-Folk-Village'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -638,7 +638,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/VERDON.jpg',
+                            'assets/Landscape/ANDONG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -651,7 +651,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Gorges du Verdon',
+                              'Andong-Hahoe-Folk-Village',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -661,11 +661,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['verdonj'] = true;
+                                  iconStateLandscape['andong-hahoe-folk-village'] = true;
                                 });
-                                speak('Gorges du Verdon');
+                                speak('Andong-Hahoe-Folk-Village');
                               },
-                              icon: !iconStateLandscape['verdon']!
+                              icon: !iconStateLandscape['andong-hahoe-folk-village']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -685,7 +685,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Verdon Gorge (French: Gorges du Verdon) is a river canyon located in the Provence-Alpes-Côte d'Azur region of Southeastern France. It is about 25 km (15.5 mi) long and up to 700 metres (0.4 mi) deep. It was formed by the Verdon River, which is named for its turquoise-green colour, one of the location's distinguishing characteristics.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -701,7 +701,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Loire'],
+            key: searchMapLandscapes['Hallyeohaesang'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -719,7 +719,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/LOIRE.jpg',
+                            'assets/Landscape/HALLYEO.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -732,7 +732,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Loire Valley',
+                              'Hallyeohaesang National Park',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -742,11 +742,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['loire'] = true;
+                                  iconStateLandscape['hallyeohaesang'] = true;
                                 });
-                                speak('Loire Valley');
+                                speak('Hallyeohaesang-National-Park');
                               },
-                              icon: !iconStateLandscape['loire']!
+                              icon: !iconStateLandscape['hallyeohaesang']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -766,7 +766,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Loire Valley (French: Val de Loire, pronounced [val də lwaʁ]; Breton: Traoñ al Liger), spanning 280 kilometres (170 mi),[1] is a valley located in the middle stretch of the Loire river in central France, in both the administrative regions Pays de la Loire and Centre-Val de Loire",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -782,7 +782,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Blanc'],
+            key: searchMapLandscapes['Boseong-Green-Tea-Fields'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -800,7 +800,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BLANC.jpg',
+                            'assets/Landscape/BOSEONG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -813,7 +813,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Mont Blanc',
+                              'Boseong-Green-Tea-Fields',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -823,11 +823,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['blanc'] = true;
+                                  iconStateLandscape['boseong-green-tea-fields'] = true;
                                 });
-                                speak('Mont Blanc');
+                                speak('Boseong-Green-Tea-Fields');
                               },
-                              icon: !iconStateLandscape['blanc']!
+                              icon: !iconStateLandscape['boseong-green-tea-fields']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -847,7 +847,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Mont Blanc (French: Mont Blanc [mɔ̃ blɑ̃]; Italian: Monte Bianco [ˈmonte ˈbjaŋko], both meaning 'white mountain') is the highest mountain in the Alps and Western Europe, and the highest mountain in Europe outside the Caucasus mountains, rising 4,807.81 m (15,774 ft) above sea level, located on the French-Italian border.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -863,7 +863,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Lavender'],
+            key: searchMapLandscapes['Daedunsan'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -881,7 +881,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/LAVENDER.jpeg',
+                            'assets/Landscape/DAEDUNSAN.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -894,7 +894,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Provence Lavender Fields',
+                              'Daedunsan',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -904,11 +904,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['lavender'] = true;
+                                  iconStateLandscape['daedunsan'] = true;
                                 });
-                                speak('Provence Lavender Fields');
+                                speak('Daedunsan');
                               },
-                              icon: !iconStateLandscape['lavender']!
+                              icon: !iconStateLandscape['daedunsan']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -928,7 +928,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Valensole Plateau's lavender fields are perhaps the most famous and photographed in not only Provence but in the world. The area is filled with fields, deep blue lakes and picturesque villages. Most famous is Valensole itself, situated above the plateau with the 11th century St Blaise church as a focal point. Here and in the pretty village of Sainte-Croix-du-Verdon, there's plenty to explore.",
+                          "",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

@@ -7,6 +7,7 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Beach/F
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Cultural/F-Cultures.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Festivals/F-Festivals.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Foods/F-Foods.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Landscapes/F-Landscapes.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/france.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/germany.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Japan/Beach/J-Beaches.dart';
@@ -26,6 +27,11 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/Philippines/fe
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Russia/russia.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/spain.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/uae.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Beach/US-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Cultural/US-Cultures.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Festivals/US-Festivals.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Foods/US-Foods.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Landscapes/US-Landscapes.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/us.dart';
 import 'package:translate/utils/colors.dart';
 import 'states/model.dart';
@@ -119,11 +125,17 @@ class MyApp extends StatelessWidget {
               '/f-foods': (context) => const FRFoods(),
               '/f-festivals': (context) => const FRFestivals(),
               '/f-cultures': (context) => const FRCultures(),
+              '/f-landscape': (context) => const FRLandscapes(),
               '/germany': (context) => const Germany(),
               '/russia': (context) => const Russia(),
               '/spain': (context) => const Spain(),
               '/uae': (context) => const Uae(),
               '/us': (context) => const Us(),
+              '/us-beaches': (context) => const USBeaches(),
+              '/us-foods': (context) => const USFoods(),
+              '/us-landscape': (context) => const USLandscapes(),
+              '/us-festival': (context) => const USFestivals(),
+              '/us-cultures': (context) => const USCultures(),
               '/korea': (context) => const Korea(),
               '/k-beaches': (context) => const KBeaches(),
               '/k-cultures': (context) => const KCultures(),
