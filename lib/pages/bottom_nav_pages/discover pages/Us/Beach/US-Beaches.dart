@@ -10,16 +10,16 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconState = {
-  'baule': false,
-  'basques': false,
-  'biarritz': false,
-  'calvi': false,
-  'deauville': false,
-  'deluz': false,
-  'grandeconche': false,
-  'palombaggia': false,
-  'pampelonne': false,
-  'prado': false,
+  'clear': false,
+  'coronado': false,
+  'daytona': false,
+  'gulf': false,
+  'hanalei': false,
+  'miami': false,
+  'myrtle': false,
+  'outerbanks': false,
+  'santamonica': false,
+  'south': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
@@ -33,16 +33,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMap = {
-  'Baule': key1,
-  'Basques': key2,
-  'Biarritz': key3,
-  'Calvi': key4,
-  'Deauville': key5,
-  'Deluz': key6,
-  'GrandeConche': key7,
-  'Palombaggia': key8,
-  'Pampelonne': key9,
-  'Prado': key10,
+  'Clear': key1,
+  'Coronado': key2,
+  'Daytona': key3,
+  'Gulf': key4,
+  'Hanalei': key5,
+  'Miami': key6,
+  'Myrtle': key7,
+  'Outerbanks': key8,
+  'Santamonica': key9,
+  'South': key10,
 };
 
 final ScrollController scrollController = ScrollController();
@@ -63,16 +63,16 @@ class _USBeachesState extends State<USBeaches> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconState['palombaggia'] = false;
-        iconState['pampelonne'] = false;
-        iconState['biarritz'] = false;
-        iconState['basques'] = false;
-        iconState['baule'] = false;
-        iconState['calvi'] = false;
-        iconState['grandeconche'] = false;
-        iconState['deauville'] = false;
-        iconState['prado'] = false;
-        iconState['deluz'] = false;
+        iconState['clear'] = false;
+        iconState['coronado'] = false;
+        iconState['daytona'] = false;
+        iconState['gulf'] = false;
+        iconState['hanalei'] = false;
+        iconState['miami'] = false;
+        iconState['myrtle'] = false;
+        iconState['outerbanks'] = false;
+        iconState['santamonica'] = false;
+        iconState['south'] = false;
       });
     });
 
@@ -136,7 +136,7 @@ class _USBeachesState extends State<USBeaches> {
             ),
             //sliver items
             SliverToBoxAdapter(
-              key: searchMap['Baule'],
+              key: searchMap['Clear'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -154,7 +154,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BAULE.jpg',
+                              'assets/Beaches/CLEARWATER.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -167,7 +167,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de la Baule',
+                                'Clearwater Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -177,11 +177,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['baule'] = true;
+                                    iconState['clear'] = true;
                                   });
-                                  speak('Baule');
+                                  speak('Clear');
                                 },
-                                icon: !iconState['baule']!
+                                icon: !iconState['clear']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -201,7 +201,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "True heart of the resort, the beach of La Baule punctuates life in Baule in all seasons! In the center of a bay of 5.4km of fine sand, it offers a playground of exceptional dimensions! Sand castles, swimming, idleness: everyone has their own specialty.",
+                            "The main draw of this sun-soaked beach is its wide shoreline, small-town atmosphere, plus its inviting turquoise waters. The beach has excellent conditions for parasailing, jet skiing, and snorkeling. And after sunset, watch the street performers put up awe-inspiring acts. If you’re visiting as a family, don’t miss the Clearwater Marine Aquarium and Pier 60—a brilliant sunset-watching spot.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -217,7 +217,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Basques'],
+              key: searchMap['Coronado'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -235,7 +235,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BASQUES.jpg',
+                              'assets/Beaches/CORONADO.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -248,7 +248,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de la Cote des Basques',
+                                'Coronado Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -258,11 +258,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['basques'] = true;
+                                    iconState['clear'] = true;
                                   });
-                                  speak('Basques');
+                                  speak('Clear');
                                 },
-                                icon: !iconState['basques']!
+                                icon: !iconState['clear']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -282,7 +282,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "This is the beach in the Basque Country, the one you see on postcards, where you just want to go surfing. There are also many schools that offer their services along the beach. It is said that this is where surfing was born, in the 1950s, when the first courageous pioneers set out to attack the waves with their boards.",
+                            "This beautiful beach in San Diego is the perfect beach getaway spot, located next to the iconic Hotel del Coronado. Take a stroll along the expansive shoreline and spot kids building sandcastles, couples enjoying a romantic dip, and even dogs running around on the dog-friendly beach. Make sure you stick around for sunset—it's absolutely breathtaking.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -298,7 +298,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Biarritz'],
+              key: searchMap['Daytona'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -316,7 +316,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BIARRITZ.jpg',
+                              'assets/Beaches/DAYTONA.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -329,7 +329,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Biarritz',
+                                'Daytona Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -339,11 +339,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['biarritz'] = true;
+                                    iconState['daytona'] = true;
                                   });
-                                  speak('Biarritz');
+                                  speak('Daytona');
                                 },
-                                icon: !iconState['biarritz']!
+                                icon: !iconState['clear']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -363,7 +363,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Biarritz is a city located on the French Basque coast, in the south-west of France. It is known for its beautiful beaches, which attracts surfers from all over the world. The town has a long history as a seaside resort, dating back to the 19th century. From April to November, you can enjoy the 7 different beaches of Biarritz.",
+                            "Daytona Beach, or simply Daytona, is a coastal resort city in east-central Florida. Located on the eastern edge of Volusia County near the Atlantic coastline, its population was 72,647 at the 2020 census. Daytona Beach is approximately 42 miles (67.6 km) northeast of Orlando, 90 miles (144.8 km) southeast of Jacksonville, and 231 miles (371.8 km) northwest of Miami.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -379,7 +379,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Calvi'],
+              key: searchMap['Gulf Shores'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -397,7 +397,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CALVI.jpg',
+                              'assets/Beaches/GULF.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -410,7 +410,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Calvi',
+                                'Gulf Shores',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -420,11 +420,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['calvi'] = true;
+                                    iconState['gulf'] = true;
                                   });
-                                  speak('Calvi');
+                                  speak('Gulf Shores');
                                 },
-                                icon: !iconState['calvi']!
+                                icon: !iconState['gulf']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -444,7 +444,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Fine sandy beach, over 2km long, bordered by a pine forest; Whether you are a fan of idleness or a lover of sensations, Calvi beach and its pine forest offer a range of activities for young and old. On the horizon, the famous citadel on one side, and the mountains on the other.",
+                            "Gulf Shores is located on the Gulf of Mexico, and is the southernmost settlement in the state of Alabama.[3] It is served by Alabama State Route 59 (Gulf Shores Parkway), which leads north to Foley. Route 182 (Beach Boulevard) runs east-west along the shore front, while Route 180 (Fort Morgan Road) runs parallel to it, north of Little Lagoon. Gulf State Park occupies a large eastern part of the city.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -460,7 +460,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Deauville'],
+              key: searchMap['Hanalei'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -478,7 +478,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/DEAUVILLE.jpg',
+                              'assets/Beaches/HANALEI.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -491,7 +491,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Deauville',
+                                'Hanalei Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -501,11 +501,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['deauville'] = true;
+                                    iconState['hanalei'] = true;
                                   });
-                                  speak('Deauville');
+                                  speak('Hanalei');
                                 },
-                                icon: !iconState['deauville']!
+                                icon: !iconState['hanalei']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -525,7 +525,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Deauville beach is a vast space located between the sea and Boulevard Cornuché. A space that is also called the lays of the sea. History has meant that they will forever remain the playground of swimmers, holidaymakers and sports enthusiasts.",
+                            "The beautiful Hanalei Bay has long been one of Hawaii's most popular places to visit and one of the most photographed beaches in the world. It has all the right ingredients - an expansive white sand beach, clear blue water, tropical palm trees, and lush green mountains as a backdrop. The narrow Hanalei River flows into the ocean at one end of the crescent-shaped bay.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -541,7 +541,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Deluz'],
+              key: searchMap['Miami'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -559,7 +559,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/DELUZ.jpg',
+                              'assets/Beaches/MIAMI.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -572,7 +572,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Saint-Jean-de-Luz',
+                                'Miami Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -582,11 +582,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['deluz'] = true;
+                                    iconState['miami'] = true;
                                   });
-                                  speak('Deluz');
+                                  speak('Miami');
                                 },
-                                icon: !iconState['deluz']!
+                                icon: !iconState['miami']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -606,7 +606,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Saint-Jean-de-Luz is a fishing port on the Basque coast and now a famous resort, known for its architecture, sandy bay, the quality of the light and the cuisine. The town is located south of Biarritz, on the right bank of the river Nivelle (French for Urdazuri) opposite to Ciboure. The port lies on the estuary just before the river joins the ocean.",
+                            "Miami Beach is a coastal resort city in Miami-Dade County, Florida, United States. The municipality is located on natural and human-made barrier islands between the Atlantic Ocean and Biscayne Bay, the latter of which separates the Beach from the mainland city of Miami.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -622,7 +622,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['GrandeConche'],
+              key: searchMap['Myrtle'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -640,7 +640,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/GRANDENOCHE.jpg',
+                              'assets/Beaches/MYRTLE.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -653,7 +653,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Grande Conche',
+                                'Myrtle Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -663,11 +663,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['grandeconche'] = true;
+                                    iconState['myrtle'] = true;
                                   });
-                                  speak('GrandeConche');
+                                  speak('Myrtle');
                                 },
-                                icon: !iconState['grandeconche']!
+                                icon: !iconState['myrtle']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -687,89 +687,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Grande-Conche beach is fine sandy beach located in the towns of Royan and Saint-Georges-de-Didonne, in Charente-Maritime, on the right bank of the mouth of the Gironde Estuary, at immediate proximity to the Atlantic Ocean. About 2,600 meters long, it is lined with extremely find sand, around 180um. Its formationi seems to have taken place around 8,000 years ago.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
-            SliverToBoxAdapter(
-              key: searchMap['Palombaggia'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 550.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Image.asset(
-                              'assets/Beaches/PALOMBAGGIA.jpg',
-                              fit: BoxFit.cover,
-                              width: 400.w,
-                              height: 250.h,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Plage de Palombaggia',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['pallombagia'] = true;
-                                  });
-                                  speak('Palombaggia');
-                                },
-                                icon: !iconState['palombaggia']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "Plage de Palombaggia is a perfectly serene and secluded white sandy beach in Corsica that hugs an inlet along the clear, aquamarine Mediterranean waters. This spots is a delightful mixture of unspoiled nature and convenient and accomodating facilities.",
+                            "Myrtle Beach is a resort city on the east coast of the United States in Horry County, South Carolina. It is located in the center of a long and continuous 60-mile (97 km) stretch of beach known as the 'Grand Strand in the northeastern part of the state. Its year-round population was 35,682 as of the 2020 census.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -785,7 +703,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Pampelonne'],
+              key: searchMap['Outerbanks'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -803,7 +721,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/PAMPELONNE.jpg',
+                              'assets/Beaches/OUTERBANKS.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -816,7 +734,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Pampelonne',
+                                'Outer Banks',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -826,11 +744,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['pampelonne'] = true;
+                                    iconState['outerbanks'] = true;
                                   });
-                                  speak('Pampelonne');
+                                  speak('Outerbanks');
                                 },
-                                icon: !iconState['pampelonne']!
+                                icon: !iconState['outerbanks']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -850,7 +768,7 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Pampelonne is a locality on the peninsula of Saint-Tropez, which gave its name to a 4.5km sandy beach on the French coast, in the French maritime public domain, located in the municipality of Ramatuelle, in the Territory Gulf of Saint-Tropez, in the Var department in Provence-Alpes- Cote d'Azur.",
+                            "If you want to go a little more rustic or get even closer to nature, then you may want to try one of the Hatteras Island villages, which are Rodanthe, Waves, Salvo (sometimes called the Tri-Villages because of their proximity to one another), Avon, Buxton, Frisco and Hatteras. You have oceanfront accommodations like the Northern Beach towns, but the setting is a bit more spread out, and a single coastal two-lane highway links them all.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -866,7 +784,7 @@ class _USBeachesState extends State<USBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Prado'],
+              key: searchMap['Santamonica'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -884,7 +802,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/PRADO.jpg',
+                              'assets/Beaches/SANTAMONICA.jpeg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -897,7 +815,7 @@ class _USBeachesState extends State<USBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Plage de Prado',
+                                'Santamonica Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -907,11 +825,11 @@ class _USBeachesState extends State<USBeaches> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    iconState['prado'] = true;
+                                    iconState['santamonica'] = true;
                                   });
-                                  speak('Prado');
+                                  speak('Santamonica');
                                 },
-                                icon: !iconState['prado']!
+                                icon: !iconState['outerbanks']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -931,7 +849,88 @@ class _USBeachesState extends State<USBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Created in the 1970s to develop the untapped kilometers of coastline, the Prado Beaches are now a must-see for many people from Marseille and tourists. The subway construction at the time produced the necessary embankment for the 22 hectares of land taken from the sea.",
+                            "The beach is located along Pacific Coast Highway in Santa Monica. It is 3.5 miles (5.6 km) long and has parks, picnic areas, playgrounds, restrooms, as well as staffed lifeguard stations, the Muscle Beach, bike rentals, concessions, a few hotels, a bike path, and wooden pathways for beachgoers with disabilities. Visitor activities include volleyball, surfing, stand up paddleboarding, and swimming.",
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              key: searchMap['South'],
+              child: Padding(
+                padding: EdgeInsets.all(20.0.w),
+                child: Container(
+                  height: 550.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff393E46),
+                    borderRadius: BorderRadius.circular(20.w),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0.w),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.w),
+                          child: Align(
+                            alignment: Alignment.topCenter,
+                            child: Image.asset(
+                              'assets/Beaches/SOUTHBEACH.jpg',
+                              fit: BoxFit.cover,
+                              width: 400.w,
+                              height: 250.h,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'South Beach',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    iconState['south'] = true;
+                                  });
+                                  speak('South');
+                                },
+                                icon: !iconState['south']!
+                                    ? const Icon(
+                                        Icons
+                                            .volume_down_rounded, // if clicked change color and icon
+                                        size: 30,
+                                        color: Color(0xff35bbca),
+                                      )
+                                    : const Icon(
+                                        Icons
+                                            .volume_up_rounded, // if clicked change color and icon
+                                        size: 30,
+                                        color: Colors.indigoAccent,
+                                      ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: Text(
+                            "South Beach, also nicknamed colloquially as SoBe, is a neighborhood in Miami Beach, Florida. It is located east of Miami between Biscayne Bay and the Atlantic Ocean. The area encompasses Miami Beach south of Dade Boulevard. ",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
