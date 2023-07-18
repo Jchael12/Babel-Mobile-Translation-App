@@ -68,7 +68,6 @@ class CustomSearchContents extends SearchDelegate {
 
     var key = Provider.of<GetIndex>(context, listen: false);
     // Display suggestions based on query and perform the same logic above.
-    // TODO: not sure if we need the buildResult, need to double check later.
     final List<MapEntry<String, GlobalKey>> filteredResults = [];
 
     for (MapEntry<String, GlobalKey> item in map.entries) {

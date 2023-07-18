@@ -188,7 +188,6 @@ class CustomSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     var updateLang = Provider.of<SourceLanguageModel>(context, listen: false);
     // Display suggestions based on query and perform the same logic above.
-    // TODO: not sure if we need the buildResult, need to double check later.
     final List<MapEntry<String, String>> filteredResults = [];
 
     for (MapEntry<String, String> item in ListLanguage.langs.entries) {

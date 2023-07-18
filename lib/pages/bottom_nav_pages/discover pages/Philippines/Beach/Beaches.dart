@@ -75,7 +75,6 @@ class _BeachesState extends State<Beaches> {
   bool get isAndroid => !kIsWeb && Platform.isAndroid;
   late FlutterTts flutterTts;
 
-  // TODO: need to play around in this.
   void initTts() {
     flutterTts = FlutterTts();
 
