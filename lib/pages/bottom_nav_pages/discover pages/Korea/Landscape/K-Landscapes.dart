@@ -152,7 +152,7 @@ class _LandscapesState extends State<KLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/gangneung.jpg',
+                            'assets/Landscape/GANGNEUNG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -395,7 +395,7 @@ class _LandscapesState extends State<KLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/NAMI.jpg',
+                            'assets/Landscape/NAMI.JPG',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
