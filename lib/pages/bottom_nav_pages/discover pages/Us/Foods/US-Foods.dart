@@ -9,16 +9,16 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateFood = {
-  'baguette': false,
-  'bouillabaisse': false,
-  'coq': false,
-  'cremebrulee': false,
-  'croissant': false,
-  'escargots': false,
-  'foiegras': false,
-  'quiche': false,
-  'ratatouille': false,
-  'tatin': false,
+  'applepie': false,
+  'bbq': false,
+  'buffalo': false,
+  'cheeseburger': false,
+  'clam': false,
+  'hotdog': false,
+  'pancakes': false,
+  'cheeessteak': false,
+  'pizza': false,
+  'taco': false,
 };
 
 final key1 = GlobalKey();
@@ -33,16 +33,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFoods = {
-  'Baguette': key1,
-  'Bouillabaisse': key2,
-  'Coq': key3,
-  'Cremebrulee': key4,
-  'Croissant': key5,
-  'Escargots': key6,
-  'Foiegras': key7,
-  'Quiche': key8,
-  'Ratatouille': key9,
-  'Tatin': key10,
+  'Applepie': key1,
+  'Bbq': key2,
+  'Buffalo': key3,
+  'Cheeseburger': key4,
+  'Clam': key5,
+  'Hotdog': key6,
+  'Pancakes': key7,
+  'Cheesesteak': key8,
+  'Pizza': key9,
+  'Taco': key10,
 };
 
 class USFoods extends StatefulWidget {
@@ -61,16 +61,16 @@ class _USFoodsState extends State<USFoods> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateFood['baguette'] = false;
-        iconStateFood['bouillabaisse'] = false;
-        iconStateFood['coq'] = false;
-        iconStateFood['cremebrulee'] = false;
-        iconStateFood['croissant'] = false;
-        iconStateFood['escargots'] = false;
-        iconStateFood['foiegras'] = false;
-        iconStateFood['quiche'] = false;
-        iconStateFood['ratatouille'] = false;
-        iconStateFood['tatin'] = false;
+        iconStateFood['applepie'] = false;
+        iconStateFood['bbq'] = false;
+        iconStateFood['buffalo'] = false;
+        iconStateFood['cheeseburger'] = false;
+        iconStateFood['clam'] = false;
+        iconStateFood['hotdog'] = false;
+        iconStateFood['pancakes'] = false;
+        iconStateFood['Cheesesteak'] = false;
+        iconStateFood['pizza'] = false;
+        iconStateFood['taco'] = false;
       });
     });
 
@@ -130,7 +130,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Baguette'],
+            key: searchMapFoods['Applepie'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -148,7 +148,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/BAGUETTE.jpg',
+                            'assets/Foods/APPLEPIE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -161,7 +161,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Baguette',
+                              'Applepie',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -171,11 +171,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['baguette'] = true;
+                                  iconStateFood['Applepie'] = true;
                                 });
-                                speak('Baguette');
+                                speak('Applepie');
                               },
-                              icon: !iconStateFood['baguette']!
+                              icon: !iconStateFood['applepie']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -195,7 +195,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "A baguette (/bæˈɡɛt/; French: [baɡɛt] (listen)) is a long, thin type of bread of French origin[3] that is commonly made from basic lean dough (the dough, though not the shape, is defined by French law).[4] It is distinguishable by its length and crisp crust.",
+                          'An apple pie is a fruit pie in which the principal filling ingredient is apples. Apple pie is often served with whipped cream, ice cream ("apple pie à la mode"), custard or cheddar cheese.[3] It is generally double-crusted, with pastry both above and below the filling; the upper crust may be solid or latticed (woven of crosswise strips).',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -211,7 +211,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Bouillabaisse'],
+            key: searchMapFoods['Bbq'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -229,7 +229,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/BOUILLABAISSE.jpg',
+                            'assets/Foods/BBQ.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -242,7 +242,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Bouillabaisse',
+                              'Barbeque Ribs',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -252,11 +252,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['bouillabaisse'] = true;
+                                  iconStateFood['bbq'] = true;
                                 });
-                                speak('Bouillabaisse');
+                                speak('Barbeque Ribs');
                               },
-                              icon: !iconStateFood['bouillabaisse']!
+                              icon: !iconStateFood['bbq']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -276,7 +276,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Bouillabaisse is a classic French dish from southern France, in particular, of the port town Marseille. It requires many different varieties of fish, and traditionally was made with whatever the fishermen hadn't sold that morning.",
+                          "Ribs of pork, beef, lamb, and venison are a cut of meat. The term ribs usually refers to the less meaty part of the chops, often cooked as a slab (not cut into separate ribs). Ribs of bison, goat, ostrich, crocodile, alligator, llama, alpaca, beefalo, African buffalo, water buffalo, kangaroo, deer, and other animals are also consumed in various parts of the world.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -292,7 +292,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Coq'],
+            key: searchMapFoods['Buffalo'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -310,7 +310,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/COQ.jpg',
+                            'assets/Foods/BUFFALO.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -323,7 +323,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Coq Au Vin',
+                              'Buffalo Wings',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -333,11 +333,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['coq'] = true;
+                                  iconStateFood['buffalo'] = true;
                                 });
-                                speak('Coq');
+                                speak('Buffalo Wings');
                               },
-                              icon: !iconStateFood['coq']!
+                              icon: !iconStateFood['buffalo']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -357,7 +357,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Coq au Vin is the well-known French chicken stew where pieces of meat are braised in a luscious, glossy red wine sauce with bacon, mushroom and onions. Like Beef Bourguignon, the beauty of this dish lies in its simplicity. There are remarkably few ingredients and it’s a simple process, but the results are fit for a king – or queen!",
+                          "A Buffalo wing in American cuisine is an unbreaded chicken wing section (flap or drumette) that is generally deep-fried, then coated or dipped in a sauce consisting of a vinegar-based cayenne pepper hot sauce and melted butter prior to serving.They are traditionally served hot, along with celery sticks and carrot sticks, and a dip of blue cheese dressing or, primarily outside of New York, ranch dressing.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -373,7 +373,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Cremebrulee'],
+            key: searchMapFoods['Cheeseburger'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -391,7 +391,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/CREMEBRULEE.jpg',
+                            'assets/Foods/CHEESEBURGER.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -404,7 +404,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Cremebrulee',
+                              'Cheeseburger',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -414,11 +414,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['cremebrulee'] = true;
+                                  iconStateFood['cheeseburger'] = true;
                                 });
-                                speak('Cremebrulee');
+                                speak('Cheeseburger');
                               },
-                              icon: !iconStateFood['cremebrulee']!
+                              icon: !iconStateFood['cheeseburger']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -438,7 +438,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Crème brûlée is a decadent French dessert consisting of a custard base and a caramelized sugar crust. The treat is traditionally served in individual ramekins. You can use a butane torch to achieve the perfect caramelization if you'd like, but this crème brûlée recipe is easily finished under your oven's broiler.",
+                          "A cheeseburger is a hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. Cheeseburgers can include variations in structure, ingredients and composition. As with other hamburgers, a cheeseburger may include various condiments and other toppings such as lettuce, tomato, onion, pickles, bacon, avocado, mushrooms, mayonnaise, ketchup, and mustard.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -454,7 +454,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Croissant'],
+            key: searchMapFoods['Clam'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -472,7 +472,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/CROISSANT.jpg',
+                            'assets/Foods/CLAM.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -485,7 +485,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Croissant',
+                              'Clam Chowder',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -495,11 +495,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['croissant'] = true;
+                                  iconStateFood['clam'] = true;
                                 });
-                                speak('Croissant');
+                                speak('Clam Chowder');
                               },
-                              icon: !iconStateFood['croissant']!
+                              icon: !iconStateFood['clam']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -519,7 +519,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "A croissant (French pronunciation: [kʁwasɑ̃] (listen)) is a buttery, flaky, viennoiserie pastry inspired by the shape of the Austrian kipferl but using the French yeast-leavened laminated dough.[1][better source needed] Croissants are named for their historical crescent shape.",
+                          "Clam chowder is any of several chowder soups in American cuisine containing clams. In addition to clams, common ingredients include diced potatoes, salt pork, and onions. Other vegetables are not typically used. It is believed that clams were used in chowder because of the relative ease of harvesting them.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -535,7 +535,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Escargots'],
+            key: searchMapFoods['Hotdog'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -553,7 +553,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/ESCARGOTS.jpg',
+                            'assets/Foods/HOTDOG.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -566,7 +566,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Escargots de Bourgogne',
+                              'Hotdog',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -576,11 +576,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['escargots'] = true;
+                                  iconStateFood['hotdog'] = true;
                                 });
-                                speak('Escargots');
+                                speak('Hotdog');
                               },
-                              icon: !iconStateFood['escargots']!
+                              icon: !iconStateFood['hotdog']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -600,7 +600,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Escargots de Bourgogne is the most common worldwide recipe of preparing escargots originating from French region of Burgundy. Snails used in this recipe are also known as ‘Burgundy snails’. This is Helix pomatia species of snail, or so called Roman snail, Apple snail.",
+                          "A hot dog (commonly spelled hotdog) is a food consisting of a grilled or steamed sausage served in the slit of a partially sliced bun. The term hot dog can refer to the sausage itself. The sausage used is a wiener (Vienna sausage) or a frankfurter (Frankfurter Würstchen, also just called frank). The names of these sausages commonly refer to their assembled dish. Some consider a hot dog to technically be a sandwich.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -616,7 +616,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Foiegras'],
+            key: searchMapFoods['Pancakes'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -634,7 +634,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/FOIE.jpg',
+                            'assets/Foods/PANCAKE.jpeg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -647,7 +647,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Foie Gras',
+                              'Pancakes',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -657,11 +657,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['foiegras'] = true;
+                                  iconStateFood['pancakes'] = true;
                                 });
-                                speak('Foiegras');
+                                speak('Pancakes');
                               },
-                              icon: !iconStateFood['foiegras']!
+                              icon: !iconStateFood['pancakes']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -681,7 +681,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Foie gras (French for 'fat liver'); French: [fwa ɡʁɑ], English: /ˌfwɑːˈɡrɑː/ (listen)) is a specialty food product made of the liver of a duck or goose. According to French law,[1] foie gras is defined as the liver of a duck or goose fattened by gavage (force feeding).",
+                          "A pancake (or hotcake, griddlecake, or flapjack) is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter. It is a type of batter bread. Archaeological evidence suggests that pancakes were probably eaten in prehistoric societies.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -697,7 +697,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Quiche'],
+            key: searchMapFoods['Cheesesteak'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -715,7 +715,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/QUICHE.jpg',
+                            'assets/Foods/CHEESESTEAK.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -728,7 +728,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Quiche Lorraine',
+                              'Cheesesteak',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -738,11 +738,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['quiche'] = true;
+                                  iconStateFood['cheeessteak'] = true;
                                 });
-                                speak('Quiche');
+                                speak('Cheesesteak');
                               },
-                              icon: !iconStateFood['quiche']!
+                              icon: !iconStateFood['cheeessteak']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -762,7 +762,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Quiche Lorraine is a French tart with a filling made of cream, eggs, and bacon or ham, in an open pastry case. It was little known outside the French region of Lorraine until the mid-20th century. As its popularity spread, nationally and internationally, the addition of cheese became commonplace, although it was criticised as inauthentic. The dish may be served hot, warm or cold.",
+                          "A cheesesteak (also known as a Philadelphia cheesesteak, Philly cheesesteak, cheesesteak sandwich, cheese steak, or steak and cheese) is a sandwich made from thinly sliced pieces of beefsteak and melted cheese in a long hoagie roll. A popular regional fast food, it has its roots in the U.S. city of Philadelphia, Pennsylvania",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -778,7 +778,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Ratatouille'],
+            key: searchMapFoods['Pizza'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -796,7 +796,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/RATATOUILLE.jpg',
+                            'assets/Foods/PIZZA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -809,7 +809,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Ratatouille',
+                              'Pizza',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -819,11 +819,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['ratatouille'] = true;
+                                  iconStateFood['pizza'] = true;
                                 });
-                                speak('Ratatouille');
+                                speak('Pizza');
                               },
-                              icon: !iconStateFood['ratatouille']!
+                              icon: !iconStateFood['pizza']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -843,7 +843,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Ratatouille is a bright and chunky summer vegetable stew, rich with olive oil and fragrant with garlic and herbs.Hailing from Provence, a region in the south of France near the Mediterranean Sea, ratatouille is a bright and chunky summer vegetable stew made with eggplant, zucchini, bell peppers, and tomatoes.",
+                          "Pizza (English: /ˈpiːtsə/ PEET-sə, Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as various types of sausage, anchovies, mushrooms, onions, olives, vegetables, meat, ham, etc.), which is then baked at a high temperature, traditionally in a wood-fired oven.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -859,7 +859,7 @@ class _USFoodsState extends State<USFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Tatin'],
+            key: searchMapFoods['Taco'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -877,7 +877,7 @@ class _USFoodsState extends State<USFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/TATIN.jpg',
+                            'assets/Foods/TACO.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -890,7 +890,7 @@ class _USFoodsState extends State<USFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Tarte Tatin',
+                              'Tacos',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -900,11 +900,11 @@ class _USFoodsState extends State<USFoods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['tatin'] = true;
+                                  iconStateFood['taco'] = true;
                                 });
-                                speak('Tatin');
+                                speak('Tacos');
                               },
-                              icon: !iconStateFood['tatin']!
+                              icon: !iconStateFood['taco']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -924,7 +924,7 @@ class _USFoodsState extends State<USFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The tarte Tatin (French pronunciation: ​[taʁt tatɛ̃]), named after the Tatin sisters who invented it and served it in their hotel as its signature dish, is a pastry in which fruit(usually apples) is caramelized in butter and sugar before the tart is baked. It originated in France but has spread to other countries over the year.",
+                          "A taco (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional Mexican food consisting of a small hand-sized corn- or wheat-based tortilla topped with a filling. The tortilla is then folded around the filling and eaten by hand. A taco can be made with a variety of fillings, including beef, pork, chicken, seafood, beans, vegetables, and cheese, allowing for great versatility and variety.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
