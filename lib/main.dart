@@ -133,7 +133,7 @@ class MyApp extends StatelessWidget {
               '/us': (context) => const Us(),
               '/us-beaches': (context) => const USBeaches(),
               '/us-foods': (context) => const USFoods(),
-              '/us-landscape': (context) => const USLandscapes(),
+              '/us-landscapes': (context) => const USLandscapes(),
               '/us-festivals': (context) => const USFestivals(),
               '/us-cultures': (context) => const USCultures(),
               '/korea': (context) => const Korea(),
