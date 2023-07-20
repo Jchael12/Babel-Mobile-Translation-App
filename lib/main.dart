@@ -134,7 +134,7 @@ class MyApp extends StatelessWidget {
               '/us-beaches': (context) => const USBeaches(),
               '/us-foods': (context) => const USFoods(),
               '/us-landscape': (context) => const USLandscapes(),
-              '/us-festival': (context) => const USFestivals(),
+              '/us-festivals': (context) => const USFestivals(),
               '/us-cultures': (context) => const USCultures(),
               '/korea': (context) => const Korea(),
               '/k-beaches': (context) => const KBeaches(),
