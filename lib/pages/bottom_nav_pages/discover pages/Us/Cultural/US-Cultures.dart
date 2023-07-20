@@ -10,16 +10,16 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateCulture = {
-  'gyeongbokgung': false,
-  'lotte-world': false,
-  'gyeongju': false,
-  'bukcheon': false,
-  'n-seoul': false,
-  'changdeokgung': false,
-  'korea-national-museum': false,
-  'korean-demilitarized-zone': false,
-  'korea-war-memorial': false,
-  'myeongdong': false,
+  'alcatraz': false,
+  'broadway': false,
+  'kennedy': false,
+  'rushmore': false,
+  'nm': false,
+  'smithsonian': false,
+  'getty': false,
+  'metropolitan': false,
+  'wwii': false,
+  'disney': false,
 };
 
 final key1 = GlobalKey();
@@ -34,16 +34,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapCultures = {
-  'Gyeongbokgung': key1,
-  'Lotte-World': key2,
-  'Gyeongju': key3,
-  'Bukcheon': key4,
-  'N-Seoul': key5,
-  'Changdeokgung': key6,
-  'Korea-National-Museum': key7,
-  'Korean-Demilitarized-Zone': key8,
-  'Korea-War-Memorial': key9,
-  'Myeongdong': key10,
+  'Alcatraz': key1,
+  'Broadway': key2,
+  'Kennedy': key3,
+  'Rushmore': key4,
+  'Nm': key5,
+  'Smithsonian': key6,
+  'Getty': key7,
+  'Metropolitan': key8,
+  'Wwii': key9,
+  'Disney': key10,
 };
 
 class USCultures extends StatefulWidget {
@@ -62,16 +62,16 @@ class _USCulturesState extends State<USCultures> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateCulture['gyeongbokgung'] = false;
-        iconStateCulture['lotte-world'] = false;
-        iconStateCulture['gyeongju'] = false;
-        iconStateCulture['bukcheon'] = false;
-        iconStateCulture['n-seoul'] = false;
-        iconStateCulture['changdeokgung'] = false;
-        iconStateCulture['korea-national-museum'] = false;
-        iconStateCulture['korean-demilitarized-zone'] = false;
-        iconStateCulture['korea-war-memorial'] = false;
-        iconStateCulture['myeongdong'] = false;
+        iconStateCulture['alcatraz'] = false;
+        iconStateCulture['broadway'] = false;
+        iconStateCulture['kennedy'] = false;
+        iconStateCulture['rushmore'] = false;
+        iconStateCulture['nm'] = false;
+        iconStateCulture['smithsonian'] = false;
+        iconStateCulture['getty'] = false;
+        iconStateCulture['metropolitan'] = false;
+        iconStateCulture['wwii'] = false;
+        iconStateCulture['disney'] = false;
       });
     });
 
@@ -132,7 +132,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Gyeongbokgung'],
+            key: searchMapCultures['Alcatraz'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -150,7 +150,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/GYEONGBOKGUNG.jpg',
+                            'assets/Cultural/ALCATRAZ.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -163,7 +163,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Gyeongbokgung',
+                              'Alcatraz Island',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -173,11 +173,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['gyeongbokgung'] = true;
+                                  iconStateCulture['alcatraz'] = true;
                                 });
-                                speak('Gyeongbokgung');
+                                speak('Alcatraz Island');
                               },
-                              icon: !iconStateCulture['gyeongbokgung']!
+                              icon: !iconStateCulture['alcatraz']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -197,7 +197,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Gyeongbokgung, also known as Gyeongbokgung Palace or Gyeongbok Palace, was the main royal palace of the Joseon Dynasty. Built in 1395, it is located in northern Seoul, South Korea.",
+                          "Alcatraz Island (/ˈælkəˌtræz/) is a small island 1.25 miles (2.01 km) offshore from San Francisco, California, United States. The island was developed in the mid-19th century with facilities for a lighthouse, a military fortification, and a military prison. In 1934, the island was converted into a federal prison, Alcatraz Federal Penitentiary.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -213,7 +213,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Lotte-world'],
+            key: searchMapCultures['Broadway'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -231,7 +231,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/LOTTEWORLD.jpg',
+                            'assets/Cultural/BROADWAY.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -244,7 +244,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Lotte-world',
+                              'Broadway',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -254,11 +254,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['lotte-world'] = true;
+                                  iconStateCulture['broadway'] = true;
                                 });
-                                speak('Lotte-world');
+                                speak('Broadway');
                               },
-                              icon: !iconStateCulture['lotte-world']!
+                              icon: !iconStateCulture['broadway']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -278,7 +278,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Lotte World is a major recreation complex in Seoul, South Korea. It consists of large indoor theme park, an outdoor amusement park called 'Magic Island', an artificial island linked by monorail, shopping malls, luxury hotel, observation tower, korean folk museum, sports facilities and movie theaters.",
+                          "Broadway theatre, or Broadway, are the theatrical performances presented in the 41 professional theatres, each with 500 or more seats, located in the Theater District and the Lincoln Center along Broadway, in Midtown Manhattan, New York City. Broadway and London's West End together represent the highest commercial level of live theater in the English-speaking world.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -294,7 +294,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Gyeongju'],
+            key: searchMapCultures['Kennedy'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -312,7 +312,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/GYEONGJU.jpg',
+                            'assets/Cultural/KENNEDY.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -325,7 +325,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Gyeongju',
+                              'Kennedy Space Center',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -335,11 +335,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['gyeongju'] = true;
+                                  iconStateCulture['kennedy'] = true;
                                 });
-                                speak('Gyeongju');
+                                speak('Kennedy');
                               },
-                              icon: !iconStateCulture['gyeongju']!
+                              icon: !iconStateCulture['kennedy']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -359,7 +359,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Gyeongju, historically known as Seorabeol, is a coastal city in the far southeastern corner of North Gyeongsang Province in South Korea. It is the second largest city by area in the province after Andong, covering 1,324km southeast of Seoul and 55km east of Daegu.",
+                          "The John F. Kennedy Space Center (KSC, originally known as the NASA Launch Operations Center), located on Merritt Island, Florida, is one of the National Aeronautics and Space Administration's (NASA) ten field centers. Since December 1968, KSC has been NASA's primary launch center of human spaceflight. Launch operations for the Apollo, Skylab and Space Shuttle programs were carried out from Kennedy Space Center Launch Complex 39 and managed by KSC.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -375,7 +375,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Bukcheon'],
+            key: searchMapCultures['Rushmore'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -393,7 +393,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/BUKCHEON.jpg',
+                            'assets/Cultural/RUSHMORE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -406,7 +406,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Bukcheon',
+                              'Mount Rushmore',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -416,11 +416,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['bukcheon'] = true;
+                                  iconStateCulture['rushmore'] = true;
                                 });
-                                speak('Bukcheon');
+                                speak('Mount Rushmore');
                               },
-                              icon: !iconStateCulture['bukcheon']!
+                              icon: !iconStateCulture['rushmore']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -440,7 +440,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Bukcheon Hanok Village is a Korean traditional village in Seoul with a long history located on the top of hill between Gyeongbok Palace, Changdeok Palace and Jongmyo Royal Shrine. The traditional village is composed of many alleys, and is preserved to show a 600 year-old urban environment.",
+                          "The Mount Rushmore National Memorial is a national memorial centered on a colossal sculpture carved into the granite face of Mount Rushmore (Lakota: Tȟuŋkášila Šákpe, or Six Grandfathers) in the Black Hills near Keystone, South Dakota, United States. Sculptor Gutzon Borglum designed the sculpture, called Shrine of Democracy, and oversaw the project's execution from 1927 to 1941 with the help of his son, Lincoln Borglum.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -456,7 +456,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['N-Seoul'],
+            key: searchMapCultures['Nm'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -474,7 +474,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/NTOWER.jpg',
+                            'assets/Cultural/NMMP.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -487,7 +487,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'N-Seoul Tower',
+                              'National Mall',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -497,11 +497,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['n-seoul'] = true;
+                                  iconStateCulture['nm'] = true;
                                 });
-                                speak('N-Seoul');
+                                speak('National Mall');
                               },
-                              icon: !iconStateCulture['n-seoul']!
+                              icon: !iconStateCulture['nm']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -521,7 +521,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "N-Seoul Tower, officially the YTN Seoul Tower and commonly known as Namsan Tower or Seoul Tower, is a communication and observation tower located on highest point in Seoul and is considered a local landmark.",
+                          "The National Mall is a landscaped park near the downtown area of Washington, D.C., the capital city of the United States. It contains and borders a number of museums of the Smithsonian Institution, art galleries, cultural institutions, and various memorials, sculptures, and statues. It is administered by the National Park Service (NPS) of the United States Department of the Interior as part of the National Mall and Memorial Parks unit of the National Park System.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -537,7 +537,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Changdeokgung'],
+            key: searchMapCultures['Smithsonian'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -555,7 +555,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/CHANGDEOKGUNG.jpg',
+                            'assets/Cultural/SMITHSONIAN.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -568,7 +568,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Changdeokgung Palace',
+                              'Smithsonian Institution',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -578,11 +578,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['changdeokgung'] = true;
+                                  iconStateCulture['smithsonian'] = true;
                                 });
-                                speak('Changedeokgung');
+                                speak('Smithsonian Institution');
                               },
-                              icon: !iconStateCulture['changdeokgung']!
+                              icon: !iconStateCulture['smithsonian']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -602,7 +602,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Changdeokgung also known as Changdeokgung Palace or Changdeok Palace, is set within a large park in Jongno District, Seoul, South Korea. It is one of the Five Grand Palaces built by the kings of the Joseon Dynasty. As it is located east Gyeongbok Palace, Changdeokgung along with Changgyeonggung is also referred to as the 'East Palace'.",
+                          "The Smithsonian Institution (/smɪθˈsoʊniən/ smith-SOH-nee-ən), or simply the Smithsonian, is a group of museums, education and research centers, the largest such complex in the world, created by the U.S. government ;for the increase and diffusion of knowledge'. Founded on August 10, 1846, it operates as a trust instrumentality and is not formally a part of any of the three branches of the federal government. The institution is named after its founding donor, British scientist James Smithson. It was originally organized as the United States National Museum, but that name ceased to exist administratively in 1967.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -618,7 +618,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Korea-National-Museum'],
+            key: searchMapCultures['Getty'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -636,7 +636,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/KMUSEUM.jpg',
+                            'assets/Cultural/GETTY.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -649,7 +649,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'National Museum of Korea',
+                              'The Getty Center',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -659,11 +659,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['korea-national-museum'] = true;
+                                  iconStateCulture['getty'] = true;
                                 });
-                                speak('Korea-National-Museum');
+                                speak('The Getty Center');
                               },
-                              icon: !iconStateCulture['korea-national-museum']!
+                              icon: !iconStateCulture['getty']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -683,7 +683,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Nation Museum of Korea is the flagship museum of Korea history and art in South Korea and is the cultural organization that represents Korea. Since its estblishment in 1945, the museum has been committed to various studies and research in the fields of archaeology, history and art, continously developing a variety of exhibitions and education programs.",
+                          "The Getty Center, in Los Angeles, California, is a campus of the Getty Museum and other programs of the Getty Trust. The 1.3 billion dollar center opened to the public on December 16, 1997, and is well known for its architecture, gardens, and views overlooking Los Angeles. The center sits atop a hill connected to a visitors' parking garage at the bottom of the hill by a three-car, cable-pulled hovertrain people mover.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -699,7 +699,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Korean-Demilitarized-Zone'],
+            key: searchMapCultures['Metropolitan'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -717,7 +717,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/KDZ.jpg',
+                            'assets/Cultural/METROPOLITAN.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -730,7 +730,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Korean Demilitarized Zone',
+                              'The Metropolitan Museum of Art',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -740,11 +740,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['korean-demilitarized-zone'] = true;
+                                  iconStateCulture['metropolitan'] = true;
                                 });
-                                speak('Korean-Demilitarized-Zone');
+                                speak('The Metropolitan Museum of Art');
                               },
-                              icon: !iconStateCulture['korean-demilitarized-zone']!
+                              icon: !iconStateCulture['metropolitan']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -764,7 +764,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Korean Demilitarized Zone is a strip of land running across the Korean Peninsula near the 38th parallel north. The demilitarized zone(DMZ) is a border barrier that dividess the Peninsula roughly in half. It was established to serve as a buffer zone between the coutries of North Korea and South Korea under the provisions of the Korean Armistice Agreement in 1953, an agreement between North Korea, China and the United Nations Command.",
+                          "The Metropolitan Museum of Art in New York City, colloquially ;the Met',[a] is the largest art museum in the Americas. In 2022 it welcomed 3,208,832 visitors, ranking it eighth on the list of most-visited art museums in the world, and the second-most visited art museum in the United States, after the National Gallery of Art in Washington D.C.. Its permanent collection contains over two million works,[1] divided among 17 curatorial departments.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -780,7 +780,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Korea-War-Memorial'],
+            key: searchMapCultures['Wwii'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -798,7 +798,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/WMK.jpg',
+                            'assets/Cultural/WWII.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -811,7 +811,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'War Memorial of Korea',
+                              'The National WWII Museum',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -821,11 +821,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['korea-war-memorial'] = true;
+                                  iconStateCulture['wwii'] = true;
                                 });
-                                speak('war-memorial-of-korea');
+                                speak('The National World War 2 Museum');
                               },
-                              icon: !iconStateCulture['korea-war-memorial']!
+                              icon: !iconStateCulture['wwii']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -845,7 +845,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The War Memorial of Korea is a museum lcoated in Yongsan-dong, Seoul, South Korea. It opened in 1994 on the former site of the army headquarters to exhibit and memorialize the military history of Korea. It was built for the purpose of preventing through lessons from the Korean War and for the hoped for peaceful reunification of North and South Korea.",
+                          "The National WWII Museum, formerly known as The National D-Day Museum, is a military history museum located in the Central Business District of New Orleans, Louisiana, U.S., on Andrew Higgins Drive between Camp Street and Magazine Street. The museum is located approximately 7 minutes from Decatur Street in the French Quarter. The museum focuses on the contribution made by the United States to Allied victory in World War II.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -861,7 +861,7 @@ class _USCulturesState extends State<USCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Myeongdong'],
+            key: searchMapCultures['Disney'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -879,7 +879,7 @@ class _USCulturesState extends State<USCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/MYEONGDONG.jpg',
+                            'assets/Cultural/DISNEY.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -892,7 +892,7 @@ class _USCulturesState extends State<USCultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Myeongdong',
+                              'Walt Disney World',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -902,11 +902,11 @@ class _USCulturesState extends State<USCultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['myeongdong'] = true;
+                                  iconStateCulture['disney'] = true;
                                 });
-                                speak('myeongdong');
+                                speak('Walt Disney World');
                               },
-                              icon: !iconStateCulture['myeongdong']!
+                              icon: !iconStateCulture['disney']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -926,7 +926,7 @@ class _USCulturesState extends State<USCultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Myeongdong is a dong in Jung-gu, Seoul, South Korea between Chungmu-ro, Eulji-ro and Namdaemun-ro. It covers 0.99km with a population of 3,409 and is mostly a commercial area, being one of Seoul's main shopping, parade route and tourism districts. In 2011, 2012 and 2013, Myeong-dong was listed as the ninth most expensive shopping street in the world. The area is known for its two historically significant sites, namely the Myeongdong Cathedral and the Myeongdong Nanta Theatre.",
+                          "The Walt Disney World Resort, also called Walt Disney World or Disney World, or simply abbreviated WDW, is an entertainment resort complex in Bay Lake and Lake Buena Vista, Florida, United States, near the cities of Orlando and Kissimmee. Opened on October 1, 1971, the resort is operated by Disney Parks, Experiences and Products, a division of The Walt Disney Company.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
