@@ -45,6 +45,9 @@ dependencies:
   flutter_tts: ^3.7.0
   avatar_glow: ^2.0.2
   intl: ^0.18.1
+  uuid: ^3.0.7
+  firebase_core: ^2.15.0
+  cloud_firestore: ^4.8.3
 
 dev_dependencies:
   flutter_test:
