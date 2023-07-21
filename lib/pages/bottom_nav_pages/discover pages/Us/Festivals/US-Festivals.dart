@@ -11,16 +11,16 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateFestival = {
-  'jeju-fire': false,
-  'jinju-lantern': false,
-  'seongsan-sunrise': false,
-  'hansik': false,
-  'daeboreum': false,
-  'seollal': false,
-  'dano': false,
-  'hwacheon': false,
-  'boryeong': false,
-  'gwangju': false,
+  'burningman': false,
+  'coachella': false,
+  'mardigras': false,
+  'nohf': false,
+  'oktoberfest': false,
+  'sundance': false,
+  'chicago': false,
+  'umf': false,
+  'balloon': false,
+  'comic': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
@@ -34,16 +34,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFestivals = {
-  'Jeju-Fire Festival': key1,
-  'Jinju-Lantern Festival': key2,
-  'Seongsan-Sunrise Festival': key3,
-  'Hansik Festival': key4,
-  'Daeboreum Festival': key5,
-  'Seollal Festival': key6,
-  'Dano Festival': key7,
-  'Hwacheon Festival': key8,
-  'Boryeong Festival': key9,
-  'Gwangju Festival': key10,
+  'Burningman': key1,
+  'Coachella': key2,
+  'Mardigras': key3,
+  'Nohf': key4,
+  'Oktoberfest': key5,
+  'Sundance': key6,
+  'Chicago': key7,
+  'Umf': key8,
+  'Balloon': key9,
+  'Comic': key10,
 };
 
 class USFestivals extends StatefulWidget {
@@ -62,16 +62,16 @@ class _USFestivalsState extends State<USFestivals> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateFestival['jeju-fire'] = false;
-        iconStateFestival['jinju-lantern'] = false;
-        iconStateFestival['seongsan-sunrise'] = false;
-        iconStateFestival['hansik'] = false;
-        iconStateFestival['daeboreum'] = false;
-        iconStateFestival['seollal'] = false;
-        iconStateFestival['dano'] = false;
-        iconStateFestival['hwacheon'] = false;
-        iconStateFestival['boryeong'] = false;
-        iconStateFestival['gwangju'] = false;
+        iconStateFestival['burningman'] = false;
+        iconStateFestival['coachella'] = false;
+        iconStateFestival['mardigras'] = false;
+        iconStateFestival['nohf'] = false;
+        iconStateFestival['oktoberfest'] = false;
+        iconStateFestival['sundance'] = false;
+        iconStateFestival['chicago'] = false;
+        iconStateFestival['umf'] = false;
+        iconStateFestival['balloon'] = false;
+        iconStateFestival['comic'] = false;
       });
     });
 
@@ -102,8 +102,7 @@ class _USFestivalsState extends State<USFestivals> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            ItemsSearch(map: searchMapFestivals)),
+                        builder: (context) => ItemsSearch(map: searchMapFestivals)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -134,7 +133,7 @@ class _USFestivalsState extends State<USFestivals> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Jeju-Fire Festival'],
+            key: searchMapFestivals['Burningman'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -154,7 +153,7 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/JEJUFIRE.jpg',
+                                'assets/Festival/BURNINGMAN.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 260.h,
@@ -167,7 +166,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Jeju-Fire Festival',
+                                  'Burning Man',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -177,11 +176,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['jeju-fire'] = true;
+                                      iconStateFestival['burningman'] = true;
                                     });
-                                    speak('Jeju-Fire Festival');
+                                    speak('Burning Man');
                                   },
-                                  icon: !iconStateFestival['jeju-fire']!
+                                  icon: !iconStateFestival['burningman']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -201,7 +200,179 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Jeju Fire Festival is a representative cultural festival related to Jeju's culture of livestock care. Held every March at Saebyeoloreum Volcanic Cone, the night sky lights up with fiery red. The festival features a media facade show, torch march, fire show, and more as well as various program and food trucks.",
+                              "Burning Man is an event focused on community, art, self-expression, and self-reliance held annually in the western United States. The name of the event comes from its culminating ceremony: the symbolic burning of a large wooden effigy, referred to as the Man, that occurs on the penultimate night of Burning Man, which is the Saturday evening before Labor Day. The event has been located since 1991 at Black Rock City in northwestern Nevada, a temporary city erected in the Black Rock Desert about 100 miles (160 km) north-northeast of Reno.",
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          SliverToBoxAdapter(
+            key: searchMapFestivals['Coachella'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 590.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20.0.w),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.w),
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: Image.asset(
+                                'assets/Festival/COACHELLA.jpg',
+                                fit: BoxFit.cover,
+                                width: 400.w,
+                                height: 250.h,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.h),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Coachella',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      iconStateFestival['coachella'] = true;
+                                    });
+                                    speak('Coachella');
+                                  },
+                                  icon: !iconStateFestival['coachella']!
+                                      ? const Icon(
+                                          Icons
+                                              .volume_down_rounded, // if clicked change color and icon
+                                          size: 30,
+                                          color: Color(0xff35bbca),
+                                        )
+                                      : const Icon(
+                                          Icons
+                                              .volume_up_rounded, // if clicked change color and icon
+                                          size: 30,
+                                          color: Colors.indigoAccent,
+                                        ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.h),
+                            child: Text(
+                              "Coachella (officially called Coachella Valley Music and Arts Festival, and sometimes known as Coachella Festival) is an annual music and arts festival held at the Empire Polo Club in Indio, California, in the Coachella Valley in the Colorado Desert. It was co-founded by Paul Tollett and Rick Van Santen in 1999, and is organized by Goldenvoice, a subsidiary of AEG Presents.[2] The event features musical artists from many genres of music, including rock, pop, indie, hip hop and electronic dance music, as well as art installations and sculptures.",
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          SliverToBoxAdapter(
+            key: searchMapFestivals['Mardigras'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 625.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20.0.w),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.w),
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: Image.asset(
+                                'assets/Festival/MARDIGRAS.jpg',
+                                fit: BoxFit.cover,
+                                width: 400.w,
+                                height: 250.h,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.h),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Mardi Gras',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      iconStateFestival['mardigras'] = true;
+                                    });
+                                    speak('Mardi Gras');
+                                  },
+                                  icon: !iconStateFestival['mardigras']!
+                                      ? const Icon(
+                                          Icons
+                                              .volume_down_rounded, // if clicked change color and icon
+                                          size: 30,
+                                          color: Color(0xff35bbca),
+                                        )
+                                      : const Icon(
+                                          Icons
+                                              .volume_up_rounded, // if clicked change color and icon
+                                          size: 30,
+                                          color: Colors.indigoAccent,
+                                        ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.h),
+                            child: Text(
+                              'Mardi Gras (UK: /ˌmɑːrdi ˈɡrɑː/, US: /ˈmɑːrdi ˌɡrɑː/) refers to events of the Carnival celebration, beginning on or after the Christian feasts of the Epiphany (Three Kings Day) and culminating on the day before Ash Wednesday, which is known as Shrove Tuesday. Mardi Gras is French for "Fat Tuesday", reflecting the practice of the last night of eating rich, fatty foods before the ritual Lenten sacrifices and fasting of the Lenten season.',
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -219,11 +390,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Jinju-Lantern Festival'],
+            key: searchMapFestivals['Nohf'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -239,10 +410,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/JINJULANTERN.jpg',
+                                'assets/Festival/NOHF.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -252,7 +423,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Jinju-Lantern Festival',
+                                  'New Orleans Jazz & Heritage',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -262,11 +433,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['jinju-lantern'] = true;
+                                      iconStateFestival['nohf'] = true;
                                     });
-                                    speak('Jinju-Lantern Festival');
+                                    speak('New Orleans Jazz & Heritage Festival');
                                   },
-                                  icon: !iconStateFestival['jinju-lantern']!
+                                  icon: !iconStateFestival['nohf']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -286,7 +457,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Jinju Namgang Yudeung Festival originates from the floating lanterns that were used during the Jinjuseong Fortress Battle of the Imjin War(1582-1598) as a military strategy to prevent Japanese troops from wading the Namgang river. The highlights of the festival are the floating events and programs including a fireworks show, water lighting show, cultural performance, and more.",
+                              "The New Orleans Jazz & Heritage Festival (commonly called Jazz Fest or Jazzfest) is an annual celebration of local music and culture held at the Fair Grounds Race Course in New Orleans, Louisiana. Jazz Fest attracts thousands of visitors to New Orleans each year. The New Orleans Jazz & Heritage Festival and Foundation Inc., as it is officially named, was established in 1970 as a 501(c) nonprofit organization (NPO).",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -304,11 +475,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Seongsan-Sunrise Festival'],
+            key: searchMapFestivals['Oktoberfest'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -324,10 +495,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/SEONGSANSUNRISE.jpg',
+                                'assets/Festival/OKTOBERFEST.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -337,7 +508,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Seongsan-Sunrise Festival',
+                                  'Oktoberfest Zinzinnati',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -347,11 +518,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['seongsan-sunrise'] = true;
+                                      iconStateFestival['oktoberfest'] = true;
                                     });
-                                    speak('Seongsan-Sunrise Festival');
+                                    speak('Oktoberfest Zinzinnati');
                                   },
-                                  icon: !iconStateFestival['seongsan-sunrise']!
+                                  icon: !iconStateFestival['oktoberfest']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -371,7 +542,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Welcoming the first day of the New Year, Seongsan Sunrise Festival features a natural festival aiming to spread the natural values of Seongsan Ilchulbong Peak, a UNESCO World Nature Heritage Site, to see the old year out and the new year in, and to share the traditional culture and artistic themed-tourism among visitors.",
+                              "Oktoberfest Zinzinnati is an annual weekend festival in the city of Cincinnati, Ohio. Based on the original German Oktoberfest, it is billed as the largest Oktoberfest celebration in the United States and second largest in the world. First held in 1976, it attracts an estimated 500,000 visitors every year in late September. It is held along six blocks of Downtown Cincinnati.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -389,11 +560,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Hansik Festival'],
+            key: searchMapFestivals['Sundance'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -409,10 +580,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/HANSIK.jpg',
+                                'assets/Festival/SUNDANCE.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -422,7 +593,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Hansik Festival',
+                                  'Sundance Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -432,11 +603,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['hansik'] = true;
+                                      iconStateFestival['sundance'] = true;
                                     });
-                                    speak('Hansik Festival');
+                                    speak('Sundance Festival');
                                   },
-                                  icon: !iconStateFestival['hansik']!
+                                  icon: !iconStateFestival['sundance']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -456,7 +627,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Hansik is 105 days after Dongji and is one of the major four festive holidays including Seollal, Dano and Chuseok. The term Hansik is derived from an old custom of not lighting fire, thus eating cold food. It is said that the origin of this holiday goes back to ancient China where the day was made to console Gaechachu, a loyal subject of Jin. ",
+                              "The Sundance Film Festival (formerly Utah/US Film Festival, then US Film and Video Festival) is an annual film festival organized by the Sundance Institute. It is the largest independent film festival in the United States, with more than 46,660 attending in 2016. It takes place each January in Park City, Utah; Salt Lake City, Utah; and at the Sundance Resort (a ski resort near Provo, Utah), and acts as a showcase for new work from American and international independent filmmakers.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -474,11 +645,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Daeboreum Festival'],
+            key: searchMapFestivals['Chicago'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -494,10 +665,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/DAEBOREUM.jpg',
+                                'assets/Festival/TOC.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -507,7 +678,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Daeboreum Festival',
+                                  'Taste of Chicago',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -517,11 +688,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['daeboreum'] = true;
+                                      iconStateFestival['chicago'] = true;
                                     });
-                                    speak('Daeboreum Festival');
+                                    speak('Taste of Chicago');
                                   },
-                                  icon: !iconStateFestival['daeboreum']!
+                                  icon: !iconStateFestival['chicago']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -541,7 +712,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Daeboreum Festival is being celebrated during the first 'full moon' of the new year. I believe it relates to the lunar farming calendar that signals farmers to prepare or do something on the farm. Usually, Koreans play fames the night before full moon. Traditionally, farmers sburn hays between the rice fields while others play around with cans containing charcoals with fire inside them.",
+                              "The Taste of Chicago (also known locally as The Taste) is the world's largest food festival, held for five days in July in Chicago, Illinois in Grant Park. The event is also the largest festival in Chicago.[1] Non-food-related events include live music on multiple stages, including the Petrillo Music Shell, pavilions, and performances. Musical acts vary from nationally known artists like Carlos Santana, Moby, Kenny Rogers, or Robert Plant to name just a few, to local artists.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -559,11 +730,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Seollal Festival'],
+            key: searchMapFestivals['Umf'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -579,10 +750,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/SEOLLAL.jpg',
+                                'assets/Festival/UMF.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -592,7 +763,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Seollal Festival',
+                                  'Ultra Music Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -602,11 +773,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['seollal'] = true;
+                                      iconStateFestival['umf'] = true;
                                     });
-                                    speak('Seollal Festival');
+                                    speak('Ultra Music Festival');
                                   },
-                                  icon: !iconStateFestival['seollal']!
+                                  icon: !iconStateFestival['umf']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -626,7 +797,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Seollal is a traditional festival and national holiday commemorating the first day of the lunisolar calendar. It is one of the most important traditional holidays for ethnic Koreans, being celebrated in both North and South Korea as well as Korean diaspora all around the world.",
+                              "Ultra Music Festival (UMF) is an annual outdoor electronic music festival that takes place during March in Miami, Florida, United States.[1] The festival was founded in 1999 by Russell Faibisch and Alex Omes. It was first held on Miami Beach, but besides a tenure at Bicentennial Park, and briefly being held at Virginia Key in 2019, it has primarily been held at Bayfront Park in downtown Miami. It was a two-day festival from 1998 to 2006.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -644,11 +815,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Dano Festival'],
+            key: searchMapFestivals['Balloon'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -664,10 +835,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/DANO.jpg',
+                                'assets/Festival/ALBUQUERQUE.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -677,7 +848,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Dano Festival',
+                                  'Balloon Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -687,11 +858,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['dano'] = true;
+                                      iconStateFestival['balloon'] = true;
                                     });
-                                    speak('Dano Festival');
+                                    speak('Albuquerque International Balloon Festival');
                                   },
-                                  icon: !iconStateFestival['dano']!
+                                  icon: !iconStateFestival['balloon']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -711,7 +882,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Dano also called Surit-nal, is a traditional Korean traditional holiday that falls on the 5th day of the fifth month of the lunar Korean calendar. It is an official holiday in North Korea and one of the major traditional holidays in South Korea. South Korea has retained several festivals related to the holiday, one of which is Gangneung Dano Festival designated by UNESCO as a 'Intangible Cultural Heritage of Humanity'. ",
+                              "The Albuquerque International Balloon Fiesta is a yearly hot air balloon festival that takes place in Albuquerque, New Mexico, during early October. The Balloon Fiesta is a nine-day event occurring in the first full week of October, and has over 500 hot air balloons each year far from its beginnings of merely 13 balloons in 1972. The event is the largest balloon festival in the world, followed by the Grand Est Mondial Air in France, and the León International Balloon Festival in Mexico.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -729,11 +900,11 @@ class _USFestivalsState extends State<USFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Hwacheon Festival'],
+            key: searchMapFestivals['Comic'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 565.h,
+                height: 625.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -749,10 +920,10 @@ class _USFestivalsState extends State<USFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/HWACHEON.jpg',
+                                'assets/Festival/COMIC.jpeg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
-                                height: 260.h,
+                                height: 250.h,
                               ),
                             ),
                           ),
@@ -762,7 +933,7 @@ class _USFestivalsState extends State<USFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Hwacheon Festival',
+                                  'New York Comic Con',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -772,11 +943,11 @@ class _USFestivalsState extends State<USFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['hwacheon'] = true;
+                                      iconStateFestival['comic'] = true;
                                     });
-                                    speak('Hwacheon Festival');
+                                    speak('New York Comic Con');
                                   },
-                                  icon: !iconStateFestival['hwacheon']!
+                                  icon: !iconStateFestival['comic']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -796,177 +967,7 @@ class _USFestivalsState extends State<USFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Hwacheon Sancheoneo Ice Festival takes place in Hwacheon-gun, Gwangwon-do with plenty of snow and ice, perfect for a winter getaway. It was even introducedd by CNN as one of the 'Seven Winter Wonders' in 2011. The main event of the festival, ice fishing, takes place on the frozen Hwacheoncheon Stream. The festival has been visited by more than a million people, attesting to the festival's charm. ",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Boryeong Festival'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 565.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/BORYEONG.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 260.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Boryeong Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['boryeong'] = true;
-                                    });
-                                    speak('Boryeong Festival');
-                                  },
-                                  icon: !iconStateFestival['boryeong']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "The Boryeong Mud Festival is an annual festival which takes place during the summer in Boryeong, a town around 200km south of Seoul, South Korea. The first mud festival was staged in 1998 and, by 2007, the festival attracted 2.2 million visitors to Boryeong.",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Gwangju Festival'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 565.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/GWANGJU.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 260.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Gwangju Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['gwangju'] = true;
-                                    });
-                                    speak('Gwangju Festival');
-                                  },
-                                  icon: !iconStateFestival['gwangju']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "The festival is held annually in a town with the name Kimchi which is located in the province of Gwangju. It all started back in 1994, where kimchi making was the highlighted event during festival. At the festival, you'll be able to taste and see a variety of Kimchi.",
+                              "The New York Comic Con is an annual New York City fan convention dedicated to Western comics, graphic novels, anime, manga, video games, cosplay, toys, movies, and television. It was first held in 2006. With an attendance of 200,000 in 2022, it is North America's most attended fan convention.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
