@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/utils/colors.dart';
+import 'package:uuid/uuid.dart';
 import 'pages/bottom_nav_pages/UI/speech.dart';
 import 'pages/bottom_nav_pages/UI/default_page.dart';
 import 'pages/bottom_nav_pages/UI/discover.dart';
@@ -34,6 +36,42 @@ class HomePageState extends State<HomePage> {
   TextStyle myTextStyle = const TextStyle(
     fontFamily: 'Space',
   );
+
+  String generateId() {
+    var uuid = const Uuid();
+    return uuid.v4();
+  }
+
+  // store in local disk so it won't generate unique id when user open/close the app.
+  Future<void> getIdFromSharedPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String stored = prefs.getString('id') ?? '';
+      if(stored == ''){
+        String newId = generateId();
+        await prefs.setString('id', newId);
+      } else {
+        print(stored);
+      }
+      
+      
+    //  if (storedId == null) {
+    //   String newId = generateId();
+    //   await prefs.setString('id', newId);
+    //   // setState(() {
+    //   //   id = newId;
+    //   // });
+    // } else {
+    //   // setState(() {
+    //   //   id = storedId;
+    //   // });
+    // }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getIdFromSharedPreferences();
+  }
 
   @override
   Widget build(BuildContext context) {

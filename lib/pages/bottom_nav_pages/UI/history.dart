@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/utils/colors.dart';
 
-class History extends StatelessWidget {
+// TODO: need to retrieve the data in database and display.
+class History extends StatefulWidget {
   const History({super.key});
+
+  @override
+  State<History> createState() => _HistoryState();
+}
+
+class _HistoryState extends State<History> {
+
+  getData() {
+  SharedPreferences.getInstance().then((prefs) {
+    String? data = prefs.getString('id'); // Use 'String?' since getString() returns 'Future<String?>'
+    print('Stored data: $data');
+    return data;
+  });
+}
+
+@override
+void initState(){
+  super.initState();
+  getData();
+}
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +40,7 @@ class History extends StatelessWidget {
           return langStt.history.isEmpty
               ? Center(
                   child: Text(
-                    "History is empty",
+                    "asd",
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontFamily: 'gothic',

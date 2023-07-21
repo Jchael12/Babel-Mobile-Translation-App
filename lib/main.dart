@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,6 +35,7 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Foods/US-Fo
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Landscapes/US-Landscapes.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/us.dart';
 import 'package:translate/utils/colors.dart';
+import 'firebase_options.dart';
 import 'states/model.dart';
 import 'states/show_hide_model.dart';
 import 'states/swap_lang.dart';
@@ -48,9 +50,11 @@ import 'pages/side_menu/about.dart';
 import 'pages/side_menu/privacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 

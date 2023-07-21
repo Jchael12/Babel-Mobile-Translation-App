@@ -1,8 +1,10 @@
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/states/list_supported_lang.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/states/swap_lang.dart';
@@ -12,6 +14,8 @@ import 'package:translate/utils/colors.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:translator/translator.dart';
 import 'dart:core';
+
+import '../../../states/user_model.dart';
 
 class Conversation extends StatefulWidget {
   // final stt.SpeechToText speech;
@@ -29,6 +33,7 @@ class _ConversationState extends State<Conversation> {
   bool speechEnabled = false;
   bool isListening = false;
   String text = 'Press the button to start speak!';
+  String id = '';
 
   // this list is used to compare if that language is supported or not.
   List<String> langId = [
@@ -100,10 +105,36 @@ class _ConversationState extends State<Conversation> {
     debugPrint('$speechEnabled');
   }
 
+  // create collection-documents-fields
+  Future createUser(
+      {required String toTranslate,
+      required String toBeTranslate,
+      required String id}) async {
+    final docUser = FirebaseFirestore.instance.collection(id).doc();
+
+    final user = User(
+      id: docUser.id,
+      text: toTranslate,
+      translatedText: toBeTranslate,
+    );
+
+    final json = user.toJson();
+
+    await docUser.set(json);
+  }
+
+  getData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    id = prefs.getString('id') ?? '';
+    print(id);
+    //return data;
+  }
+
   @override
   void initState() {
     super.initState();
     initSpeech();
+    getData();
   }
 
   @override
@@ -118,7 +149,6 @@ class _ConversationState extends State<Conversation> {
     var swap = Provider.of<Swap>(context, listen: false);
     var textProvider = Provider.of<LanguagesSpokeStt>(context, listen: false);
     var transProvider = Provider.of<TranslatedText>(context, listen: false);
-
     return Container(
       color: const Color(0xff222831),
       child: Stack(
@@ -321,6 +351,11 @@ class _ConversationState extends State<Conversation> {
                           String translatedText =
                               await translate(val.recognizedWords);
 
+                          createUser(
+                              toTranslate: val.recognizedWords,
+                              toBeTranslate: translatedText,
+                              id: id);
+                          // idProvider.setId(id!);
                           Widget add = textProvider.createContainer(
                               val.recognizedWords,
                               translatedText.toString(),
@@ -328,7 +363,7 @@ class _ConversationState extends State<Conversation> {
                           debugPrint(toLang);
 
                           textProvider.addContainer(add);
-                          
+
                           DateTime timeNow = DateTime.now();
                           String date =
                               DateFormat('EEEE, MMM d, yyyy').format(timeNow);
