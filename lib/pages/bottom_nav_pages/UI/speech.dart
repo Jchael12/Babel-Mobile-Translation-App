@@ -109,13 +109,17 @@ class _ConversationState extends State<Conversation> {
   Future createUser(
       {required String toTranslate,
       required String toBeTranslate,
-      required String id}) async {
+      required String id,
+      required String date,
+      required String time}) async {
     final docUser = FirebaseFirestore.instance.collection(id).doc();
 
     final user = User(
       id: docUser.id,
       text: toTranslate,
       translatedText: toBeTranslate,
+      date: date,
+      time: time,
     );
 
     final json = user.toJson();
@@ -331,6 +335,14 @@ class _ConversationState extends State<Conversation> {
                         ? langstt.langCode
                         : transStt.langCode);
 
+                    DateTime timeNow = DateTime.now();
+                    String date =
+                        DateFormat('EEEE, MMM d, yyyy').format(timeNow);
+                    final formatTime = DateFormat('h:mm a');
+                    final time = formatTime.format(timeNow);
+                    debugPrint('$date');
+                    debugPrint('$time');
+
                     Future<String> translate(String text) async {
                       final translator = GoogleTranslator();
 
@@ -354,7 +366,9 @@ class _ConversationState extends State<Conversation> {
                           createUser(
                               toTranslate: val.recognizedWords,
                               toBeTranslate: translatedText,
-                              id: id);
+                              id: id,
+                              date: date,
+                              time: time);
                           // idProvider.setId(id!);
                           Widget add = textProvider.createContainer(
                               val.recognizedWords,
@@ -363,14 +377,6 @@ class _ConversationState extends State<Conversation> {
                           debugPrint(toLang);
 
                           textProvider.addContainer(add);
-
-                          DateTime timeNow = DateTime.now();
-                          String date =
-                              DateFormat('EEEE, MMM d, yyyy').format(timeNow);
-                          final formatTime = DateFormat('h:mm a');
-                          final time = formatTime.format(timeNow);
-                          debugPrint('$date');
-                          debugPrint('$time');
 
                           debugPrint(textProvider.words);
                         },

@@ -31,7 +31,9 @@ class _HistoryState extends State<History> {
 
   Widget buildUser(User user) => Column(
         children: [
-          SizedBox(height: 15.h,),
+          SizedBox(
+            height: 15.h,
+          ),
           Container(
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
@@ -58,7 +60,27 @@ class _HistoryState extends State<History> {
                         splashRadius: 5,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: Text("Date and Time"),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text("Close"),
+                                ),
+                              ],
+                              //contentPadding: EdgeInsets.all(16),
+                              content: Text(
+                                "${user.date} \n${user.time}",
+                                style: TextStyle(fontFamily: 'gothic'),
+                              ),
+                            ),
+                          );
+                        },
                         icon: const Icon(Icons.info_outline_rounded),
                         iconSize: 28,
                         color: const Color(0xff35bbca),
@@ -111,7 +133,8 @@ class _HistoryState extends State<History> {
         });
         print("[SUCCESS] Retrieved ID from SharedPreferences: $id");
       } else {
-        print("[FAILED] Failed to retrieve ID from SharedPreferences. Data is null.");
+        print(
+            "[FAILED] Failed to retrieve ID from SharedPreferences. Data is null.");
       }
     } catch (e) {
       print("[ERROR]: Retrieving data from sharedpreferences $e");
