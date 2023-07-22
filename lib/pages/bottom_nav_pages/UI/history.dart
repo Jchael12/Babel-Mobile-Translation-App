@@ -109,9 +109,9 @@ class _HistoryState extends State<History> {
         setState(() {
           id = data;
         });
-        print("Retrieved ID from SharedPreferences: $id");
+        print("[SUCCESS] Retrieved ID from SharedPreferences: $id");
       } else {
-        print("Failed to retrieve ID from SharedPreferences. Data is null.");
+        print("[FAILED] Failed to retrieve ID from SharedPreferences. Data is null.");
       }
     } catch (e) {
       print("[ERROR]: Retrieving data from sharedpreferences $e");
