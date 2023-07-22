@@ -1,11 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:translate/states/stt.dart';
+import 'package:translate/states/user_model.dart';
 import 'package:translate/utils/colors.dart';
 
-// TODO: need to retrieve the data in database and display.
+// TODO: need to fix -> adding documents unorder.
 class History extends StatefulWidget {
   const History({super.key});
 
@@ -14,20 +14,115 @@ class History extends StatefulWidget {
 }
 
 class _HistoryState extends State<History> {
+  String id = '';
 
-  getData() {
-  SharedPreferences.getInstance().then((prefs) {
-    String? data = prefs.getString('id'); // Use 'String?' since getString() returns 'Future<String?>'
-    print('Stored data: $data');
-    return data;
-  });
-}
+  Stream<List<User>> readUser() {
+    if (id.isEmpty) {
+      // Return an empty stream or handle the situation appropriately.
+      print('id is empty');
+      return Stream.value([]);
+    } else {
+      print('id is not empty ${id}');
+      return FirebaseFirestore.instance.collection(id).snapshots().map(
+          (snapshot) =>
+              snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());
+    }
+  }
 
-@override
-void initState(){
-  super.initState();
-  getData();
-}
+  Widget buildUser(User user) => Column(
+        children: [
+          SizedBox(height: 15.h,),
+          Container(
+            padding: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Color(0xff393E46),
+            ),
+            child: Container(
+              //padding: const EdgeInsets.all(12),
+              height: 120.h,
+              decoration: BoxDecoration(
+                color: darkColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Stack(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                        onPressed: () async {},
+                        icon: const Icon(Icons.volume_down_rounded),
+                        iconSize: 30,
+                        color: const Color(0xff35bbca),
+                        splashRadius: 5,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.info_outline_rounded),
+                        iconSize: 28,
+                        color: const Color(0xff35bbca),
+                        splashRadius: 5,
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 40.h, left: 20.w),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            user.text,
+                            style: TextStyle(
+                              color: const Color(0xffEEEEEE),
+                              fontFamily: 'gothic',
+                              fontSize: 16.sp,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            user.translatedText,
+                            style: TextStyle(
+                              color: const Color(0xffEEEEEE),
+                              fontFamily: 'gothic',
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      );
+
+  getData() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? data = prefs.getString('id');
+      if (data != null) {
+        setState(() {
+          id = data;
+        });
+        print("Retrieved ID from SharedPreferences: $id");
+      } else {
+        print("Failed to retrieve ID from SharedPreferences. Data is null.");
+      }
+    } catch (e) {
+      print("[ERROR]: Retrieving data from sharedpreferences $e");
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,41 +130,23 @@ void initState(){
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       color: darkColor,
-      child: Consumer<LanguagesSpokeStt>(
-        builder: (context, langStt, child) {
-          return langStt.history.isEmpty
-              ? Center(
-                  child: Text(
-                    "asd",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontFamily: 'gothic',
-                      color: const Color(0xffEEEEEE),
-                    ),
-                  ),
-                )
-              : ListView.builder(
-                  itemCount: langStt.history.length,
-                  itemBuilder: (context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Dismissible(
-                        key: UniqueKey(),
-                        onDismissed: (DismissDirection direction) {
-                          langStt.removeItemHistory(index);
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color(0xff393E46),
-                          ),
-                          child: langStt.history[index],
-                        ),
-                      ),
-                    );
-                  },
-                );
+      child: StreamBuilder<List<User>>(
+        stream: readUser(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            final user = snapshot.data!;
+
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListView(
+                children: user.map(buildUser).toList(),
+              ),
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
         },
       ),
     );
