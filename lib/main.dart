@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Beaches/ES-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Cultural/ES-Cultures.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Festivals/ES-Festivals.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Foods/ES-Foods.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Landscapes/ES-Landscapes.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Beach/F-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Cultural/F-Cultures.dart';
@@ -133,6 +138,11 @@ class MyApp extends StatelessWidget {
               '/germany': (context) => const Germany(),
               '/russia': (context) => const Russia(),
               '/spain': (context) => const Spain(),
+              '/es-beaches': (context) => const ESBeaches(),
+              '/es-foods': (context) => const ESFoods(),
+              '/es-landscapes': (context) => const ESLandscapes(),
+              '/es-festivals': (context) => const ESFestivals(),
+              '/es-cultures': (context) => const ESCultures(),
               '/uae': (context) => const Uae(),
               '/us': (context) => const Us(),
               '/us-beaches': (context) => const USBeaches(),
