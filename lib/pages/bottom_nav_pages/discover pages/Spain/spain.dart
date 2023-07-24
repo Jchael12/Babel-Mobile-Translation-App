@@ -146,7 +146,7 @@ class Spain extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Clickable(
-                              destination: '/es-landscape',
+                              destination: '/es-landscapes',
                               child: Container(
                                 width: 150.w,
                                 height: 150.h,
