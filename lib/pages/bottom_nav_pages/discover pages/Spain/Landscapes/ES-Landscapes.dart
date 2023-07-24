@@ -11,16 +11,16 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateLandscape = {
-  'arashiyama': false,
-  'fuji': false,
-  'hitachi': false,
-  'himeji': false,
-  'kinkakuji': false,
-  'miyajima': false,
-  'nachi': false,
-  'oirase': false,
-  'shirakawa': false,
-  'tottori': false,
+  'canary': false,
+  'costa': false,
+  'donana': false,
+  'picos': false,
+  'pyrenees': false,
+  'rias': false,
+  'sierra': false,
+  'tabernas': false,
+  'teide': false,
+  'val': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
@@ -34,16 +34,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapLandscapes = {
-  'Arashiyama': key1,
-  'Fuji': key2,
-  'Hitachi': key3,
-  'Himeji': key4,
-  'Kinkakuji': key5,
-  'Miyajima': key6,
-  'Nachi': key7,
-  'Oirase': key8,
-  'Shirakawa': key9,
-  'Tottori': key10
+  'Canary': key1,
+  'Costa': key2,
+  'Donana': key3,
+  'Picos': key4,
+  'Pyrenees': key5,
+  'Rias': key6,
+  'Sierra': key7,
+  'Tabernas': key8,
+  'Teide': key9,
+  'Val': key10
 };
 
 class ESLandscapes extends StatefulWidget {
@@ -62,16 +62,16 @@ class _ESLandscapesState extends State<ESLandscapes> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateLandscape['arashiyama'] = false;
-        iconStateLandscape['fuji'] = false;
-        iconStateLandscape['hitachi'] = false;
-        iconStateLandscape['himeji'] = false;
-        iconStateLandscape['kinkakuji'] = false;
-        iconStateLandscape['miyajima'] = false;
-        iconStateLandscape['nachi'] = false;
-        iconStateLandscape['oirase'] = false;
-        iconStateLandscape['shirakawa'] = false;
-        iconStateLandscape['tottori'] = false;
+        iconStateLandscape['canary'] = false;
+        iconStateLandscape['costa'] = false;
+        iconStateLandscape['donana'] = false;
+        iconStateLandscape['picos'] = false;
+        iconStateLandscape['pyrenees'] = false;
+        iconStateLandscape['rias'] = false;
+        iconStateLandscape['sierra'] = false;
+        iconStateLandscape['tabernas'] = false;
+        iconStateLandscape['teide'] = false;
+        iconStateLandscape['val'] = false;
       });
     });
 
@@ -133,7 +133,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Arashiyama'],
+            key: searchMapLandscapes['Canary'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -151,7 +151,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/BAMBOO.jpg',
+                            'assets/Landscape/CANARY.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -164,7 +164,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Arashiyama Bamboo Groove',
+                              'Canary Islands',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -174,11 +174,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['arashiyama'] = true;
+                                  iconStateLandscape['canary'] = true;
                                 });
-                                speak('arashiyama');
+                                speak('Canary Islands');
                               },
-                              icon: !iconStateLandscape['arashiyama']!
+                              icon: !iconStateLandscape['canary']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -198,7 +198,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Arashiyama Bamboo Grove is one of Kyoto's top sights and for good reason: standing amid these these soaring stalks of bamboo is like being in another world.",
+                          "The Canary Islands (/kəˈnɛəri/; Spanish: Canarias, pronounced [kaˈnaɾjas]), also known informally as the Canaries, are a Spanish autonomous community and archipelago in Macaronesia in the Atlantic Ocean. At their closest point to the African mainland, they are 100 kilometres (62 miles) west of Morocco. They are the southernmost of the autonomous communities of Spain. The islands have a population of 2.2 million people and are the most populous special territory of the European Union.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -214,7 +214,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Fuji'],
+            key: searchMapLandscapes['Costa'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -232,7 +232,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/FUJI.jpeg',
+                            'assets/Landscape/COSTA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -245,7 +245,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Fuji',
+                              'Costa Brava',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -255,11 +255,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['fuji'] = true;
+                                  iconStateLandscape['costa'] = true;
                                 });
-                                speak('Fuji');
+                                speak('Costa Brava');
                               },
-                              icon: !iconStateLandscape['fuji']!
+                              icon: !iconStateLandscape['costa']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -279,7 +279,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Mount Fuji, located on the island of Honshu, is an active stratovolcano in Japan, with a summit elevation of 3,776.24m(12,389 ft 3 in). It is the tallest mountain in Japan, the second-highest volcano located on an island in Asia.",
+                          'The Costa Brava (Catalan: [ˈkɔstə ˈβɾaβə], Spanish: [ˈkosta ˈβɾaβa];[a] "Wild Coast" or "Rough Coast") is a coastal region of Catalonia in northeastern Spain. Whilst sources differ on the exact definition of the Costa Brava, it can be regarded as stretching from the town of Blanes, 60 km (37 mi) northeast of Barcelona, to the French border, and thus includes the coastal parts of the province of Girona.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -295,7 +295,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Hitachi'],
+            key: searchMapLandscapes['Donana'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -313,7 +313,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/HITACHI.jpg',
+                            'assets/Landscape/DONANA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -326,7 +326,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Hitachi Seaside Park',
+                              'Doñana National Park',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -336,11 +336,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['hitachi'] = true;
+                                  iconStateLandscape['donana'] = true;
                                 });
-                                speak('hitachi');
+                                speak('Doñana National Park');
                               },
-                              icon: !iconStateLandscape['hitachi']!
+                              icon: !iconStateLandscape['donana']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -360,7 +360,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Located in the area facing the Pacific Ocean in the city of Hitachinaka, Hitachi Seaside Park offers beautiful flowers in its well-kept, large gardens throughout the year. In spring, narcissuses, tulips and nemophila(baby blue eyes) attract lots of visitors.",
+                          "Doñana National Park or Parque Nacional y Natural de Doñana is a natural reserve in Andalucía, southern Spain, in the provinces of Huelva (most of its territory), Cádiz and Seville. It covers 543 km2 (209.65 sq mi), of which 135 km2 (52.12 sq mi) are a protected area. The park is an area of marshes, shallow streams, and sand dunes in Las Marismas, the delta where the Guadalquivir River flows into the Atlantic Ocean.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -376,7 +376,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Himeji'],
+            key: searchMapLandscapes['Picos'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -394,7 +394,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/HIMEJI.jpg',
+                            'assets/Landscape/PICOS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -407,7 +407,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Himeji Castle',
+                              'Picos de Europa',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -417,11 +417,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['himeji'] = true;
+                                  iconStateLandscape['picos'] = true;
                                 });
-                                speak('himeji');
+                                speak('Picos de Europa');
                               },
-                              icon: !iconStateLandscape['himeji']!
+                              icon: !iconStateLandscape['picos']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -441,7 +441,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Himeji Castle is a hilltop Japanese castle complex situated in the city of Himeji which is located in the Hyogo Prefecture in Japan. The castle is regarded as the finest surviving example of prototypical Japanese castle architecture, comprising a network of 83 rooms with advanced defensive systems from the feudal period.",
+                          "The Picos de Europa National Park (Spanish: Parque Nacional de Picos de Europa) is a National Park in the Picos de Europa mountain range, in northern Spain. It is within the boundaries of three autonomous communities, Asturias, Cantabria and Castile and León, which are represented on the body which runs the park. The park is also a popular destination for hikers and trekkers.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -457,7 +457,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Kinkakuji'],
+            key: searchMapLandscapes['Pyrenees'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -475,7 +475,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/KINKAKUJI.jpg',
+                            'assets/Landscape/PYRENEES.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -488,7 +488,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Kinkakuji',
+                              'Pyrenees',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -498,11 +498,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['kinkakuji'] = true;
+                                  iconStateLandscape['pyrenees'] = true;
                                 });
-                                speak('kinkakuji');
+                                speak('Pyrenees');
                               },
-                              icon: !iconStateLandscape['kinkakuji']!
+                              icon: !iconStateLandscape['pyrenees']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -522,7 +522,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Kinkakuji, literally 'Temple of the Golden Pavillion', officially named Rokuon-ji, is a Zen Buddhist temple in Kyoto, Japan. It is one of the most popular buildings in Kyoto, attracting many visitors annually. It is designated as a National Special Historic Site, a National Special Landscape and is one of 17 locations making up the Historic Monuments of Ancient Kyoto which are World Heritage Sites.",
+                          "The Pyrenees (/ˈpɪrɪniːz/; Spanish: Pirineos [piɾiˈneos]; French: Pyrénées [piʁene] (listen); Catalan: Pirineu [piɾiˈnɛw]; Basque: Pirinioak [piɾini.o.ak]; Occitan: Pirenèus [piɾeˈnɛws]; Aragonese: Pirineus) is a mountain range straddling the border of France and Spain. It extends nearly 500 km (310 mi) from its union with the Cantabrian Mountains to Cap de Creus on the Mediterranean coast. It reaches a maximum altitude of 3,404 metres (11,168 ft) at the peak of Aneto",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -538,7 +538,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Miyajima'],
+            key: searchMapLandscapes['Rias'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -556,7 +556,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/MIYAJIMA.jpg',
+                            'assets/Landscape/RIAS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -569,7 +569,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Miyajima Island',
+                              'Rías Baixas',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -579,11 +579,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['miyajima'] = true;
+                                  iconStateLandscape['rias'] = true;
                                 });
-                                speak('miyajima');
+                                speak('Rías Baixas');
                               },
-                              icon: !iconStateLandscape['miyajima']!
+                              icon: !iconStateLandscape['rias']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -603,7 +603,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Miyajima is small island less than an hour outside the city of Hiroshima. It is most famous for its giant torii gate, which at high tide seems to float on the water. The sight is ranked as one of Japan's three best views.",
+                          "Rías Baixas is a Spanish Denominación de Origen (DO) (Denominación de Orixe in Galician) for wines located in the province of Pontevedra and the south of the province of Corunna in the autonomous community of Galicia, Spain. It is renowned for its white wines made from the Albariño grape variety.[1] Its headquarters is located in the city of Pontevedra.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -619,7 +619,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Nachi'],
+            key: searchMapLandscapes['Sierra'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -637,7 +637,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/NACHI.jpg',
+                            'assets/Landscape/SIERRA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -650,7 +650,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Nachi Falls',
+                              'Sierra de Grazalema',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -660,11 +660,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['nachi'] = true;
+                                  iconStateLandscape['sierra'] = true;
                                 });
-                                speak('nachi-falls');
+                                speak('Sierra de Grazalema');
                               },
-                              icon: !iconStateLandscape['nachi']!
+                              icon: !iconStateLandscape['sierra']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -684,7 +684,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Nachi Falls in Nachikatsuura, Wakayama Prefecture, Japan, is one of the best-known waterfalls in Japan. With a drop of 133 meters(and 13 meters wide), it is the country's tallest water fall with single uninterrupted drop.",
+                          "The Sierra de Grazalema Natural Park (Spanish: Parque natural de la Sierra de Grazalema) is a natural park in the northeastern part of the province of Cádiz in southern Spain. The park encompasses, within its 51,695 hectares (127,740 acres), a complex of mountain ranges, known collectively as the Sierra de Grazalema, which, in turn, are part of the Cordillera Subbética. Other ranges within the park, comprising the Sierra de Grazalema, include the Sierra de Zafalgar, the Sierra del Pinar, and the Sierra de Endrinal. Pinar (or Torreón), 1,654 metres (5,427 ft) in elevation, is the tallest peak.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -700,7 +700,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Oirase'],
+            key: searchMapLandscapes['Tabernas'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -718,7 +718,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/OIRASE.jpg',
+                            'assets/Landscape/TABERNAS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -731,7 +731,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Oirase Gorge',
+                              'Tabernas Desert',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -741,11 +741,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['oirase'] = true;
+                                  iconStateLandscape['tabernas'] = true;
                                 });
-                                speak('oirase');
+                                speak('Tabernas Desert');
                               },
-                              icon: !iconStateLandscape['oirase']!
+                              icon: !iconStateLandscape['tabernas']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -765,7 +765,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Oirase Strean is a picturesque mountain in Aomori Prefecture that is one of Japan's most famous and popular autumn colors destinations. The stream flows along the floor of the Oirase Gorge, winding among trees which, while a lush green in spring and summer, turn brilliant shades of red, yellow and orange from late October through early November.",
+                          "The Tabernas Desert (Spanish: Desierto de Tabernas) is one of Spain's semi-arid deserts, located within Spain's south-eastern province of Almería. It is in the interior, about 30 kilometers (19 mi) north of the provincial capital Almería, in the Tabernas municipality in Andalusia. Due to its high elevation and inland location, it has slightly higher annual rainfall (more than 20 cm (7.9 in) per year) and lower annual average temperature than coastal areas of Almeria. A nature reserve (protected area), it spans 280 square kilometers (110 square miles).",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -781,7 +781,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Shirakawa'],
+            key: searchMapLandscapes['Teide'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -799,7 +799,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/SHIRAKAWA.jpg',
+                            'assets/Landscape/TEIDE.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -812,7 +812,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Shirakawa-Go',
+                              'Teide National Park',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -822,11 +822,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['shirakawa'] = true;
+                                  iconStateLandscape['teide'] = true;
                                 });
-                                speak('shirakawa');
+                                speak('Teide National Park');
                               },
-                              icon: !iconStateLandscape['shirakawa']!
+                              icon: !iconStateLandscape['teide']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -846,7 +846,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Shirakawa-Go and neighboring Gokayama regions line the Shogawa River Valley in the remote mountains that span from Gifu to Toyama Prefectures. Declared a UNDESCO world heritage site in 1995, they are famous for their traditional gassho-zukuri farmhouses, some of which are more than 250 years old.",
+                          "Teide National Park (Spanish: Parque nacional del Teide, pronounced [ˈpaɾke naθjoˈnal de ˈtejðe]) is a national park located in Tenerife, Canary Islands, Spain. The national park is centered on Mount Teide, the highest mountain of Spain (3,718 meters high) in addition, the highest volcano in the Atlantic Ocean islands and the third highest volcano in the world from its base in the ocean floor (7.500 meters high).",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -862,7 +862,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Tottori'],
+            key: searchMapLandscapes['Val'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -880,7 +880,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/TOTTORI.jpg',
+                            'assets/Landscape/VAL.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -893,7 +893,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Tottori Sand Dunes',
+                              "'Val d'Aran",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -903,11 +903,11 @@ class _ESLandscapesState extends State<ESLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['tottori'] = true;
+                                  iconStateLandscape['val'] = true;
                                 });
-                                speak('tottori');
+                                speak("Val d'Aran");
                               },
-                              icon: !iconStateLandscape['tottori']!
+                              icon: !iconStateLandscape['val']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -927,7 +927,7 @@ class _ESLandscapesState extends State<ESLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Tottori Sand Dunes are sand dunes located outside the city center of Tottori in Tottori Prefecture, Japan. At a lenght of 9 miles(14km) and less than 1.5 miles(2.4 km)wide, it is the largest sand dune in Japan. The sand dunes are part of San'in Kaigan Geopark, which is part of the UNESCO Global Geoparks.",
+                          "Aran (Occitan: [aˈɾan]; Catalan: [əˈɾan]; Spanish: [aˈɾan]) (previously[citation needed] officially called Val d'Aran in Aranese Occitan,[1][2][3][4][5] also Era Val d'Aran;[6] in other forms of Occitan it is called: Vath d'Aran or Vau d'Aran, in Catalan and Spanish: Vall d'Aran) is an administrative entity (formerly considered a comarca) in Lleida, Catalonia, Spain, consisting of the Aran Valley, 620.47 square kilometres (239.56 sq mi) in area, in the Pyrenees mountains, in the northwestern part of the province of Lleida.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
