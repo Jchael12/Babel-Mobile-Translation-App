@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/states/user_model.dart';
 import 'package:translate/utils/colors.dart';
 
-// TODO: need to fix -> adding documents unorder.
+
 class History extends StatefulWidget {
   const History({super.key});
 
@@ -158,11 +158,12 @@ class _HistoryState extends State<History> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final user = snapshot.data!;
+            final contents = user.map(buildUser).toList();
 
             return Padding(
               padding: const EdgeInsets.all(16.0),
               child: ListView(
-                children: user.map(buildUser).toList(),
+                children: contents.reversed.toList(),
               ),
             );
           } else {

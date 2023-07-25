@@ -111,8 +111,9 @@ class _ConversationState extends State<Conversation> {
       required String toBeTranslate,
       required String id,
       required String date,
-      required String time}) async {
-    final docUser = FirebaseFirestore.instance.collection(id).doc();
+      required String time,
+      required String docNumber}) async {
+    final docUser = FirebaseFirestore.instance.collection(id).doc(docNumber);
 
     final user = User(
       id: docUser.id,
@@ -325,9 +326,9 @@ class _ConversationState extends State<Conversation> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Consumer4<LanguagesStt, TransLanguageStt, TranslatedText, Swap>(
+                Consumer5<LanguagesStt, TransLanguageStt, TranslatedText, Swap, CustomId>(
                   builder:
-                      (context, langstt, transStt, transText, swap, child) {
+                      (context, langstt, transStt, transText, swap, customId, child) {
                     var fromLang = convertStt(swap.touchState % 2 == 0
                         ? transStt.langCode
                         : langstt.langCode);
@@ -357,7 +358,7 @@ class _ConversationState extends State<Conversation> {
                     void listen() async {
                       //if (speechEnabled) {
                       //setState(() => isListening = true);
-
+                      customId.incrementDocNumber();
                       await speech.listen(
                         onResult: (val) async {
                           String translatedText =
@@ -368,7 +369,8 @@ class _ConversationState extends State<Conversation> {
                               toBeTranslate: translatedText,
                               id: id,
                               date: date,
-                              time: time);
+                              time: time,
+                              docNumber: customId.docNumber);
                           // idProvider.setId(id!);
                           Widget add = textProvider.createContainer(
                               val.recognizedWords,
