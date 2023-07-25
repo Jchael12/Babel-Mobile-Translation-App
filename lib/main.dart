@@ -39,6 +39,7 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Festivals/U
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Foods/US-Foods.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Landscapes/US-Landscapes.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/us.dart';
+import 'package:translate/states/user_model.dart';
 import 'package:translate/utils/colors.dart';
 import 'firebase_options.dart';
 import 'states/model.dart';
@@ -104,6 +105,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<TranslatedText>(
           create: (_) => TranslatedText(),
+        ),
+        ChangeNotifierProvider<CustomId>(
+          create: (_) => CustomId(),
         ),
       ],
       child: ScreenUtilInit(

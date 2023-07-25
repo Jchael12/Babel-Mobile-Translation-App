@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class User {
   String id;
   final String text;
@@ -30,4 +32,15 @@ class User {
       time: json['time'],
       );
       
+}
+
+class CustomId extends ChangeNotifier {
+  int documentNumber = 0;
+
+  get docNumber => documentNumber.toString();
+
+  void incrementDocNumber(){
+    documentNumber++;
+    notifyListeners();
+  }
 }
