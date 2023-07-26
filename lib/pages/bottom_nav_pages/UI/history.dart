@@ -1,10 +1,13 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/states/user_model.dart';
 import 'package:translate/utils/colors.dart';
-
 
 class History extends StatefulWidget {
   const History({super.key});
@@ -15,6 +18,67 @@ class History extends StatefulWidget {
 
 class _HistoryState extends State<History> {
   String id = '';
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  late FlutterTts flutterTts;
+
+  Map<String, String> convertLangTts = {
+    'en': 'en-US',
+    'tl': 'fil-PH',
+    'ja': 'ja-JP',
+    'ko': 'ko-KR',
+    'zn-cn': 'zn-CN'
+  };
+
+  // TODO: need to get code lang.
+  String convertTts(String text){
+    for (var entry in convertLangTts.entries) {
+      if (entry.key == text) {
+        return entry.value;
+      }
+    }
+    return 'language not supported';
+  }
+
+  void initTts() {
+    flutterTts = FlutterTts();
+
+    if (isAndroid) {
+      _getDefaultEngine();
+      _getDefaultVoice();
+    }
+  }
+
+  Future _getDefaultEngine() async {
+    var engine = await flutterTts.getDefaultEngine;
+    if (engine != null) {
+      print(engine);
+    }
+  }
+
+  Future _getDefaultVoice() async {
+    var voice = await flutterTts.getDefaultVoice;
+    if (voice != null) {
+      print(voice);
+    }
+  }
+
+  Future speak(String text, String code) async {
+    String selectedLanguage = code;
+    List<dynamic> languages = await flutterTts.getLanguages;
+
+    flutterTts.setCompletionHandler(() {});
+
+    if (!languages.contains(selectedLanguage)) {
+      // Language not supported
+      debugPrint("Selected language is not supported on this device");
+      return;
+    } else {
+      flutterTts.setLanguage(selectedLanguage);
+      await flutterTts.setPitch(1);
+      await flutterTts.speak(convertTts(text));
+    }
+    setState(() {});
+  }
 
   Stream<List<User>> readUser() {
     if (id.isEmpty) {
@@ -145,6 +209,7 @@ class _HistoryState extends State<History> {
   void initState() {
     super.initState();
     getData();
+    initTts();
   }
 
   @override
