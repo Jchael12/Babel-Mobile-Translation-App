@@ -5,7 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:translate/states/stt.dart';
 import 'package:translate/states/user_model.dart';
 import 'package:translate/utils/colors.dart';
 
@@ -22,15 +24,20 @@ class _HistoryState extends State<History> {
   late FlutterTts flutterTts;
 
   Map<String, String> convertLangTts = {
-    'en': 'en-US',
-    'tl': 'fil-PH',
-    'ja': 'ja-JP',
-    'ko': 'ko-KR',
-    'zn-cn': 'zn-CN'
+    'en_US': 'en-US',
+    'fil_PH': 'fil-PH',
+    'ja_JP': 'ja-JP',
+    'ko_KR': 'ko-KR',
+    'cmn_CN': 'zn-CN',
+    'ar_AE': 'ar',
+    'fr_FR': 'fr-FR',
+    'es_ES': 'es-ES',
+    'ru_RU': 'ru-RU',
+    'de_DE': 'de-DE',
   };
 
   // TODO: need to get code lang.
-  String convertTts(String text){
+  String convertTts(String text) {
     for (var entry in convertLangTts.entries) {
       if (entry.key == text) {
         return entry.value;
@@ -75,7 +82,7 @@ class _HistoryState extends State<History> {
     } else {
       flutterTts.setLanguage(selectedLanguage);
       await flutterTts.setPitch(1);
-      await flutterTts.speak(convertTts(text));
+      await flutterTts.speak(text);
     }
     setState(() {});
   }
@@ -116,12 +123,21 @@ class _HistoryState extends State<History> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      IconButton(
-                        onPressed: () async {},
-                        icon: const Icon(Icons.volume_down_rounded),
-                        iconSize: 30,
-                        color: const Color(0xff35bbca),
-                        splashRadius: 5,
+                      Consumer<TransLanguageStt>(
+                        builder: (context, stt, child) {
+                          return IconButton(
+                            onPressed: () async {
+                              debugPrint(stt.langCode);
+                              var code = convertTts(stt.langCode);
+                              print('This is the code from history $code');
+                              await speak(user.translatedText, code);
+                            },
+                            icon: const Icon(Icons.volume_down_rounded),
+                            iconSize: 30,
+                            color: const Color(0xff35bbca),
+                            splashRadius: 5,
+                          );
+                        },
                       ),
                       IconButton(
                         onPressed: () {
