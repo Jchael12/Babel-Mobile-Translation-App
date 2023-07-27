@@ -36,7 +36,6 @@ class _HistoryState extends State<History> {
     'de_DE': 'de-DE',
   };
 
-  // TODO: need to get code lang.
   String convertTts(String text) {
     for (var entry in convertLangTts.entries) {
       if (entry.key == text) {
