@@ -41,6 +41,7 @@ class Introduction extends StatefulWidget {
 
 class _IntroductionState extends State<Introduction> {
   bool isLastPage = false;
+  final GlobalKey<_GetStartedBtnState> getStartedBtnKey = GlobalKey();
 
   @override
   void dispose() {
@@ -48,8 +49,18 @@ class _IntroductionState extends State<Introduction> {
     super.dispose();
   }
 
+  Future<void> delay() async {
+     Future.delayed(const Duration(seconds: 7), () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const HomePage()),
+        );
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
+    var varShow = Provider.of<ShowState>(context, listen: false);
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -76,23 +87,35 @@ class _IntroductionState extends State<Introduction> {
                 );
               },
             ),
-            !isLastPage ? Align(
-              alignment: Alignment.topRight,
-              child: TextButton(
-                onPressed: () {
-                  controllerPage.jumpToPage(2);
-                },
-                child: Text(
-                  "Skip",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'gothic',
-                    fontSize: 14.sp,
-                  ),
-                ),
-              ),
-            ) : SizedBox(),
-            isLastPage ? const GetStartedBtn() : const NextBtn(),
+            !isLastPage
+                ? Align(
+                    alignment: Alignment.topRight,
+                    child: TextButton(
+                      onPressed: () async {
+                        controllerPage.jumpToPage(2);
+                        varShow.setSwipeState(false);
+                        delay();
+                        // accessing GetStartedBtn's state then trigger the event
+                        getStartedBtnKey.currentState?.activateOnPressed();
+                        varShow.setShow(false);
+                        
+                      },
+                      child: Text(
+                        "Skip",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'gothic',
+                          fontSize: 14.sp,
+                        ),
+                      ),
+                    ),
+                  )
+                : SizedBox(),
+            isLastPage
+                ? GetStartedBtn(
+                    key: getStartedBtnKey,
+                  )
+                : const NextBtn(),
             isLastPage
                 ? SizedBox(
                     child: Consumer<ShowState>(builder: (context, data, child) {
@@ -151,13 +174,23 @@ class _PageIndicatorState extends State<PageIndicator> {
 }
 
 class GetStartedBtn extends StatefulWidget {
-  const GetStartedBtn({super.key});
+  final VoidCallback? onPressed;
+
+  const GetStartedBtn({Key? key, this.onPressed}) : super(key: key);
 
   @override
   State<GetStartedBtn> createState() => _GetStartedBtnState();
 }
 
 class _GetStartedBtnState extends State<GetStartedBtn> {
+  
+  // responsible for calling onPressed
+  void activateOnPressed() {
+    if (widget.onPressed != null) {
+      widget.onPressed!();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var varShow = Provider.of<ShowState>(context, listen: false);
@@ -184,7 +217,6 @@ class _GetStartedBtnState extends State<GetStartedBtn> {
               onPressed: () {
                 varShow.setSwipeState(false);
                 sleep();
-                debugPrint('This also code execute');
                 varShow.setShow(false);
               },
               style: ElevatedButton.styleFrom(
