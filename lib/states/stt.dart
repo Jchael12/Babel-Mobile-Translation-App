@@ -188,4 +188,9 @@ class LanguagesSpokeStt extends ChangeNotifier {
     history.removeAt(index);
     notifyListeners();
   }
+
+  void removeAllItems(){
+    containers.clear();
+    notifyListeners();
+  }
 }
