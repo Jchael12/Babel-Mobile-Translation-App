@@ -159,8 +159,11 @@ class HomePageState extends State<HomePage> {
             builder: (context, data, child) {
               return currentIndex == 1 && data.containers.isNotEmpty
                   ? IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.close),
+                      onPressed: () {
+                        data.removeAllItems();
+                      },
+                      icon: Icon(Icons.delete),
+                      iconSize: 22,
                     )
                   : SizedBox();
             },
