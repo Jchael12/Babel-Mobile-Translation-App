@@ -70,7 +70,13 @@ class LanguagesSpokeStt extends ChangeNotifier {
     'tl': 'fil-PH',
     'ja': 'ja-JP',
     'ko': 'ko-KR',
-    'zn-cn': 'zn-CN'
+    'zh-cn': 'zn-CN',
+    'ar': 'ar',
+    'fr': 'fr-FR',
+    'de': 'de-DE',
+    'ru': 'ru-RU',
+    'es': 'es-ES',
+
   };
 
   String convertTts(String text){
