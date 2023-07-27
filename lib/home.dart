@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:translate/states/stt.dart';
 import 'package:translate/utils/colors.dart';
 import 'package:uuid/uuid.dart';
 import 'pages/bottom_nav_pages/UI/speech.dart';
@@ -46,14 +48,13 @@ class HomePageState extends State<HomePage> {
   Future<void> getIdFromSharedPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String stored = prefs.getString('id') ?? '';
-      if(stored == ''){
-        String newId = generateId();
-        await prefs.setString('id', newId);
-      } else {
-        print(stored);
-      }
-      
-      
+    if (stored == '') {
+      String newId = generateId();
+      await prefs.setString('id', newId);
+    } else {
+      print(stored);
+    }
+
     //  if (storedId == null) {
     //   String newId = generateId();
     //   await prefs.setString('id', newId);
@@ -153,6 +154,18 @@ class HomePageState extends State<HomePage> {
           ),
         ),
         centerTitle: true,
+        actions: [
+          Consumer<LanguagesSpokeStt>(
+            builder: (context, data, child) {
+              return currentIndex == 1 && data.containers.isNotEmpty
+                  ? IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.close),
+                    )
+                  : SizedBox();
+            },
+          ),
+        ],
       ),
       drawer: Theme(
         data: Theme.of(context).copyWith(
