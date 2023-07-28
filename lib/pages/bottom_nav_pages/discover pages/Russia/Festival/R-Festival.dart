@@ -11,39 +11,24 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateFestival = {
-  'tenerife': false,
-  'feria': false,
-  'tomatina': false,
-  'fallas': false,
-  'pamplona': false,
-  'romeria': false,
-  'haro': false,
-  'santa': false,
-  'tamborrada': false,
-  'lamarce': false,
+  'golden': false,
+  'maslenitsa': false,
+  'moscow': false,
+  'orthodox': false,
+  'victory': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFestivals = {
-  'Tenerife': key1,
-  'Feria': key2,
-  'Tomatina': key3,
-  'Fallas': key4,
-  'Pamplona': key5,
-  'Romeria': key6,
-  'Haro': key7,
-  'Santa': key8,
-  'Tamborrada': key9,
-  'Lamarce': key10,
+  'Golden': key1,
+  'Maslenitsa': key2,
+  'Moscow': key3,
+  'Orthodox': key4,
+  'Victory': key5,
 };
 
 class RFestivals extends StatefulWidget {
@@ -62,16 +47,11 @@ class _RFestivalsState extends State<RFestivals> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateFestival['tenerife'] = false;
-        iconStateFestival['feria'] = false;
-        iconStateFestival['tomatina'] = false;
-        iconStateFestival['fallas'] = false;
-        iconStateFestival['pamplona'] = false;
-        iconStateFestival['romeria'] = false;
-        iconStateFestival['haro'] = false;
-        iconStateFestival['santa'] = false;
-        iconStateFestival['tamborrada'] = false;
-        iconStateFestival['lamarce'] = false;
+        iconStateFestival['golden'] = false;
+        iconStateFestival['maslenitsa'] = false;
+        iconStateFestival['moscow'] = false;
+        iconStateFestival['orthodox'] = false;
+        iconStateFestival['victory'] = false;
       });
     });
 
@@ -115,7 +95,7 @@ class _RFestivalsState extends State<RFestivals> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/Festival/festival_bg.jpg',
+                'assets/Festival/GOLDEN.jpg',
                 fit: BoxFit.cover,
               ),
               titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),
@@ -133,7 +113,7 @@ class _RFestivalsState extends State<RFestivals> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Tenerife'],
+            key: searchMapFestivals['Golden'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -153,7 +133,7 @@ class _RFestivalsState extends State<RFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/TENERIFE.jpg',
+                                'assets/Festival/GOLDEN.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 260.h,
@@ -166,7 +146,7 @@ class _RFestivalsState extends State<RFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Carnaval De Santa Cruz Tenerife',
+                                  'Golden Mask Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -176,11 +156,11 @@ class _RFestivalsState extends State<RFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['tenerife'] = true;
+                                      iconStateFestival['golden'] = true;
                                     });
-                                    speak('Carnaval De Santa Cruz Tenerife');
+                                    speak('Golden Mask');
                                   },
-                                  icon: !iconStateFestival['tenerife']!
+                                  icon: !iconStateFestival['golden']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -200,7 +180,7 @@ class _RFestivalsState extends State<RFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "The Carnival of Santa Cruz de Tenerife (Spanish: Carnaval de Santa Cruz de Tenerife) is held each February in Santa Cruz de Tenerife, the capital of the largest island of the Canary Islands, Spain and attracts people from all over the world. It is considered the second most important[1] most popular and internationally known carnival, after the one held in Rio de Janeiro (Brazil). Partially for this reason, the city of Santa Cruz de Tenerife is twinned with the city of Rio de Janeiro.",
+                              "The Golden Mask (Russian: Золотая Маска, zolotaya maska) is a Russian theatre festival and the National Theatre Award established in 1994 by the Theatre Union of Russia. The award is given to productions in all genres of theatre art: drama, opera, ballet, operetta and musical, and puppet theatre. It presents the most significant performances from all over Russia in Moscow in the spring of each year. The first Golden Mask award was given in 1995 presented by Union of Theatre Workers of the Russian Federation.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -219,7 +199,7 @@ class _RFestivalsState extends State<RFestivals> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Feria'],
+            key: searchMapFestivals['Maslenitsa'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -239,7 +219,7 @@ class _RFestivalsState extends State<RFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/FERIA.jpg',
+                                'assets/Festival/MASLENITSA.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -252,7 +232,7 @@ class _RFestivalsState extends State<RFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Feria De Abril',
+                                  'Maslenitsa',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -262,11 +242,11 @@ class _RFestivalsState extends State<RFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['feria'] = true;
+                                      iconStateFestival['maslenitsa'] = true;
                                     });
-                                    speak('Feria De Abril');
+                                    speak('Maslenitsa');
                                   },
-                                  icon: !iconStateFestival['feria']!
+                                  icon: !iconStateFestival['maslenitsa']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -286,7 +266,7 @@ class _RFestivalsState extends State<RFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "The April Fair or Seville Fair is a spring festival that is held annually in the city of Seville (Autonomous Community of Andalusia , Spain ), where the public gathers in a large venue called Real de la Feria, a name used for being the royal foundation of Isabel II, with streets with ephemeral booths, adorned with lanterns, through which horsemen and horse-drawn carriages circulate and through which some 500,000 visitors pass daily. 1​ It is celebrated one or two weeks after 2​ Holy Week and coincides with the bullfights in the Plaza de la Maestranza.",
+                              "Maslenitsa (Belarusian: Масленіца; Russian: Мaсленица; Rusyn: Пущаня; Ukrainian: Масляна or Масниця), also known as Butter Lady, Butter Week, Crepe week, or Cheesefare Week, is an Eastern Slavic religious and folk holiday which has retained a number of elements of Slavic mythology in its ritual. It is celebrated during the last week before Great Lent; that is, the eighth week before Eastern Orthodox Pascha.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -305,7 +285,7 @@ class _RFestivalsState extends State<RFestivals> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Tomatina'],
+            key: searchMapFestivals['Moscow'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -325,7 +305,7 @@ class _RFestivalsState extends State<RFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/TOMATINA.jpg',
+                                'assets/Festival/MOSCOW.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -338,7 +318,7 @@ class _RFestivalsState extends State<RFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'La Tomatina',
+                                  'Moscow Film Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -348,11 +328,11 @@ class _RFestivalsState extends State<RFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['tomatina'] = true;
+                                      iconStateFestival['moscow'] = true;
                                     });
-                                    speak('La Tomatina');
+                                    speak('Moscow International Film Festival');
                                   },
-                                  icon: !iconStateFestival['tomatina']!
+                                  icon: !iconStateFestival['moscow']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -372,7 +352,7 @@ class _RFestivalsState extends State<RFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "La Tomatina (Spanish pronunciation: [la tomaˈtina]) is a festival that is held in the Valencian town of Buñol, in the east of Spain 30 kilometres (19 mi) from the Mediterranean, in which participants throw tomatoes and get involved in a tomato fight purely for entertainment purposes. Since 1945 it has been held on the last Wednesday of August, during a week of festivities in Buñol.",
+                              "The Moscow International Film Festival (Russian: Моско́вский междунаро́дный кинофестива́ль, translit. Moskóvskiy myezhdunaródniy kinofyestivál; abbreviated as MIFF) is the film festival first held in Moscow in 1935 and became regular since 1959. From its inception to 1959, it was held every second year in July, alternating with the Karlovy Vary festival.[citation needed] The festival has been held annually since 1999.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -390,7 +370,7 @@ class _RFestivalsState extends State<RFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Fallas'],
+            key: searchMapFestivals['Orthodox'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -410,7 +390,7 @@ class _RFestivalsState extends State<RFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/FALLAS.jpg',
+                                'assets/Festival/ORTHODOX.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -423,7 +403,7 @@ class _RFestivalsState extends State<RFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Las Fallas',
+                                  'Russian Orthodox Christmas',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -433,11 +413,11 @@ class _RFestivalsState extends State<RFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['fallas'] = true;
+                                      iconStateFestival['orthodox'] = true;
                                     });
-                                    speak('Las Fallas');
+                                    speak('Russian Orthodox Christmas');
                                   },
-                                  icon: !iconStateFestival['fallas']!
+                                  icon: !iconStateFestival['orthodox']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -457,7 +437,7 @@ class _RFestivalsState extends State<RFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "The Fallas (Valencian: Falles; Spanish: Fallas) is a traditional celebration held annually in commemoration of Saint Joseph in the city of Valencia, Spain. The five main days celebrated are from 15 to 19 March,[1] while the Mascletà, a pyrotechnic spectacle of firecracker detonation and fireworks display, takes place every day from 1 to 19 March.[2] The term Fallas refers to both the celebration and the Falla monuments (Falla, singular; Fallas/Falles, plural) burnt during the celebration.",
+                              "Christmas in Russia (Russian: Рождество Христово, Rozhdestvo Khristovo), called Е́же по пло́ти Рождество Господа Бога и Спа́са нашего Иисуса Христа Yezhe po ploti Rozhdestvo Gospoda Boga i Spasa nashego Yisusa Khrista) in the Russian Orthodox Church, is a holiday commemorating the birth of Jesus Christ. It is celebrated on 25 December in the Julian calendar used by the Eastern Orthodox Church, which falls on 7 January in the common Gregorian calendar.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -475,7 +455,7 @@ class _RFestivalsState extends State<RFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Pamplona'],
+            key: searchMapFestivals['Victory'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -495,7 +475,7 @@ class _RFestivalsState extends State<RFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/PAMPLONA.jpg',
+                                'assets/Festival/VICTORY.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -508,7 +488,7 @@ class _RFestivalsState extends State<RFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Pamplona Bull Run',
+                                  'Victory Day',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -518,11 +498,11 @@ class _RFestivalsState extends State<RFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['pamplona'] = true;
+                                      iconStateFestival['victory'] = true;
                                     });
-                                    speak('Pamplona Bull Run');
+                                    speak('Victory Day');
                                   },
-                                  icon: !iconStateFestival['pamplona']!
+                                  icon: !iconStateFestival['victory']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -542,432 +522,7 @@ class _RFestivalsState extends State<RFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "A running of the bulls (Spanish: encierro, from the verb encerrar, 'to corral, to enclose'; Occitan: abrivado, literally 'haste, momentum'; Catalan: correbous, 'run-bulls') is an event that involves running in front of a small group of bulls, typically six but sometimes ten or more, that have been let loose on sectioned-off streets in a town, usually as part of a summertime festival. Particular breeds of cattle may be favored, such as the toro bravo in Spain, also often used in post-run bullfighting, and Camargue cattle in Occitan France, which are not fought.",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Romeria'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 625.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/ROMERIA.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Romeria Del Rocio',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['romeria'] = true;
-                                    });
-                                    speak('Romeria Del Rocio');
-                                  },
-                                  icon: !iconStateFestival['romeria']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "The Romería de El Rocío is a procession/pilgrimage on the second day of Pentecost to the Hermitage of El Rocío in the countryside of Almonte, Province of Huelva, Andalucia, Spain, in honor of the Virgin of El Rocío. In recent years the Romería has brought together roughly a million pilgrims each year. The pilgrimage dates from 1653, when the Virgin of Las Rocinas was appointed patron saint of Almonte. Originally it took place on 8 September. Since 1758, the Virgin has been known as the Virgin of El Rocío, and the pilgrimage has taken place on the second day of Pentecost",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Haro'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 625.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/HARO.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Haro Wine',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['haro'] = true;
-                                    });
-                                    speak('Haro Wine');
-                                  },
-                                  icon: !iconStateFestival['haro']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "The Haro Wine Festival is a summer festival in the town of Haro, La Rioja, Spain. It features a Batalla de Vino (Battle of Wine) and youth bullfights. It is considered a “Festival of International Tourist Interest” and, therefore, is very tourist friendly.[1] The festival takes place on June 29, the day of the patron saint San Pedro. The festival includes a mass that is celebrated at the Chapel of San Felices de Bilibio. San Felices de Bilibio, master of San Millán in the 6th century, lived and died in what is now known as the Cliffs of Bilibio. Since then, this chapel has been visited and admired by pilgrims.",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Santa'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 625.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/SANTA.jpeg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Semanat Santa',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['santa'] = true;
-                                    });
-                                    speak('Semana Santa');
-                                  },
-                                  icon: !iconStateFestival['santa']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              'Spain is known especially for its Holy Week traditions or Semana Santa. The celebration of Holy Week regarding popular piety relies almost exclusively on the processions of the brotherhoods or fraternities. These associations have their origins in the Middle Age, but a number of them were created during the Baroque Period, inspired by the Counterreformation and also during the 20th and 21st centuries. The membership is usually open to any Catholic person and family tradition is an important element to become a member or "brother" (hermano).',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Tamborrada'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 625.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/TAMBORRADA.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Tamborrada',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['tamborrada'] = true;
-                                    });
-                                    speak('Tamborrada');
-                                  },
-                                  icon: !iconStateFestival['tamborrada']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              'Tamborrada of Donostia (in Basque Donostiako Danborrada) is a celebratory drum festival held every year on January 20 in the city of San Sebastián, Spain. At midnight, in the Konstituzio Plaza in the "Alde Zaharra/Parte Vieja" (Old Town), the mayor raises the flag of San Sebastián. The festival lasts for 24 hours.[1] Participants, dressed as cooks and soldiers, march in companies across the city. The celebration ends at midnight, when people congregate at the Konstituzio Plaza and the city flag is simultaneously lowered at various locations.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Lamarce'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 625.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/LAMARCE.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'La Marce Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['lamarce'] = true;
-                                    });
-                                    speak('La Marce');
-                                  },
-                                  icon: !iconStateFestival['lamarce']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "La Mercè (Catalan pronunciation: [lə məɾˈsɛ]) is the annual festival (Catalan: festa major) of the city of Barcelona in Catalonia, Spain. It has been an official city holiday since 1871, when the local government first organized a program of special activities to observe the Roman Catholic feast day of Our Lady of Mercy, La Mare de Déu de la Mercè in Catalan. Although the actual feast day is September 24, the festivities begin a few days beforehand.",
+                              "Victory Day is a holiday that commemorates the Soviet victory over Nazi Germany in 1945. It was first inaugurated in the 15 republics of the Soviet Union following the signing of the German Instrument of Surrender late in the evening on 8 May 1945 (9 May Moscow Time). The Soviet government announced the victory early on 9 May after the signing ceremony in Berlin. Although the official inauguration occurred in 1945, the holiday became a non-labor day only in 1965, and only in certain Soviet republics.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,

@@ -11,39 +11,24 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateLandscape = {
-  'canary': false,
-  'costa': false,
-  'donana': false,
-  'picos': false,
-  'pyrenees': false,
-  'rias': false,
-  'sierra': false,
-  'tabernas': false,
-  'teide': false,
-  'val': false,
+  'caucasus': false,
+  'ring': false,
+  'kamchatka': false,
+  'baikal': false,
+  'geysers': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapLandscapes = {
-  'Canary': key1,
-  'Costa': key2,
-  'Donana': key3,
-  'Picos': key4,
-  'Pyrenees': key5,
-  'Rias': key6,
-  'Sierra': key7,
-  'Tabernas': key8,
-  'Teide': key9,
-  'Val': key10
+  'Caucasus': key1,
+  'Ring': key2,
+  'Kamchatka': key3,
+  'Baikal': key4,
+  'Geysers': key5,
 };
 
 class RLandscapes extends StatefulWidget {
@@ -62,16 +47,11 @@ class _RLandscapesState extends State<RLandscapes> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateLandscape['canary'] = false;
-        iconStateLandscape['costa'] = false;
-        iconStateLandscape['donana'] = false;
-        iconStateLandscape['picos'] = false;
-        iconStateLandscape['pyrenees'] = false;
-        iconStateLandscape['rias'] = false;
-        iconStateLandscape['sierra'] = false;
-        iconStateLandscape['tabernas'] = false;
-        iconStateLandscape['teide'] = false;
-        iconStateLandscape['val'] = false;
+        iconStateLandscape['caucasus'] = false;
+        iconStateLandscape['ring'] = false;
+        iconStateLandscape['kamchatka'] = false;
+        iconStateLandscape['baikal'] = false;
+        iconStateLandscape['geysers'] = false;
       });
     });
 
@@ -133,7 +113,7 @@ class _RLandscapesState extends State<RLandscapes> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Canary'],
+            key: searchMapLandscapes['Caucasus'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -151,7 +131,7 @@ class _RLandscapesState extends State<RLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/CANARY.jpg',
+                            'assets/Landscape/CAUCASUS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -164,7 +144,7 @@ class _RLandscapesState extends State<RLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Canary Islands',
+                              'Caucasus Mountains',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -174,11 +154,11 @@ class _RLandscapesState extends State<RLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['canary'] = true;
+                                  iconStateLandscape['caucasus'] = true;
                                 });
-                                speak('Canary Islands');
+                                speak('Caucasus Mountains');
                               },
-                              icon: !iconStateLandscape['canary']!
+                              icon: !iconStateLandscape['caucasus']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -198,7 +178,7 @@ class _RLandscapesState extends State<RLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Canary Islands (/kəˈnɛəri/; Spanish: Canarias, pronounced [kaˈnaɾjas]), also known informally as the Canaries, are a Spanish autonomous community and archipelago in Macaronesia in the Atlantic Ocean. At their closest point to the African mainland, they are 100 kilometres (62 miles) west of Morocco. They are the southernmost of the autonomous communities of Spain. The islands have a population of 2.2 million people and are the most populous special territory of the European Union.",
+                          "The Caucasus Mountains[a] are a mountain range at the intersection of Asia and Europe. Stretching between the Black Sea and the Caspian Sea, they are surrounded by the Caucasus region and are home to Mount Elbrus, the highest peak in Europe at 5,642 metres (18,510 ft) above sea level.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -214,7 +194,7 @@ class _RLandscapesState extends State<RLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Costa'],
+            key: searchMapLandscapes['Ring'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -232,7 +212,7 @@ class _RLandscapesState extends State<RLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/COSTA.jpg',
+                            'assets/Landscape/GOLDENRING.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -245,7 +225,7 @@ class _RLandscapesState extends State<RLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Costa Brava',
+                              'Golden Ring',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -255,11 +235,11 @@ class _RLandscapesState extends State<RLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['costa'] = true;
+                                  iconStateLandscape['ring'] = true;
                                 });
-                                speak('Costa Brava');
+                                speak('Golden Ring');
                               },
-                              icon: !iconStateLandscape['costa']!
+                              icon: !iconStateLandscape['ring']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -279,7 +259,7 @@ class _RLandscapesState extends State<RLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          'The Costa Brava (Catalan: [ˈkɔstə ˈβɾaβə], Spanish: [ˈkosta ˈβɾaβa];[a] "Wild Coast" or "Rough Coast") is a coastal region of Catalonia in northeastern Spain. Whilst sources differ on the exact definition of the Costa Brava, it can be regarded as stretching from the town of Blanes, 60 km (37 mi) northeast of Barcelona, to the French border, and thus includes the coastal parts of the province of Girona.',
+                          'The Golden Ring of Russia (Russian: Золото́е кольцо́ Росси́и) unites old Russian cities of five Oblasts – usually excluding Moscow – as a well-known theme-route. The grouping is centred northeast of the capital in what was the north-eastern part of ancient Rus". The ring formerly comprised the region known as Zalesye. The idea of the route and the term was created in 1967 by Soviet historian and essayist Yuri Bychkov, who published in Sovetskaya Kultura in November–December 1967 a series of essays on the cities under the heading: "Golden Ring".',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -295,7 +275,7 @@ class _RLandscapesState extends State<RLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Donana'],
+            key: searchMapLandscapes['Kamchatka'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -313,7 +293,7 @@ class _RLandscapesState extends State<RLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/DONANA.jpg',
+                            'assets/Landscape/KAMCHATKA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -326,7 +306,7 @@ class _RLandscapesState extends State<RLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Doñana National Park',
+                              'Kamchatka Peninsula',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -336,11 +316,11 @@ class _RLandscapesState extends State<RLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['donana'] = true;
+                                  iconStateLandscape['kamchatka'] = true;
                                 });
-                                speak('Doñana National Park');
+                                speak('Kamchatka Peninsula');
                               },
-                              icon: !iconStateLandscape['donana']!
+                              icon: !iconStateLandscape['kamchatka']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -360,7 +340,7 @@ class _RLandscapesState extends State<RLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Doñana National Park or Parque Nacional y Natural de Doñana is a natural reserve in Andalucía, southern Spain, in the provinces of Huelva (most of its territory), Cádiz and Seville. It covers 543 km2 (209.65 sq mi), of which 135 km2 (52.12 sq mi) are a protected area. The park is an area of marshes, shallow streams, and sand dunes in Las Marismas, the delta where the Guadalquivir River flows into the Atlantic Ocean.",
+                          "The Kamchatka Peninsula (Russian: полуостров Камчатка, romanized: Poluostrov Kamchatka, pronounced [pəlʊˈostrəf kɐmˈt͡ɕætkə]) is a 1,250-kilometre-long (777 mi) peninsula in the Russian Far East, with an area of about 270,000 km2 (104,248 sq mi). The Pacific Ocean and the Sea of Okhotsk make up the peninsula's eastern and western coastlines, respectively.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -376,7 +356,7 @@ class _RLandscapesState extends State<RLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Picos'],
+            key: searchMapLandscapes['Baikal'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -394,7 +374,7 @@ class _RLandscapesState extends State<RLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/PICOS.jpg',
+                            'assets/Landscape/BAIKAL.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -407,7 +387,7 @@ class _RLandscapesState extends State<RLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Picos de Europa',
+                              'Lake Baikal',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -417,11 +397,11 @@ class _RLandscapesState extends State<RLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['picos'] = true;
+                                  iconStateLandscape['baikal'] = true;
                                 });
-                                speak('Picos de Europa');
+                                speak('Lake Baikal');
                               },
-                              icon: !iconStateLandscape['picos']!
+                              icon: !iconStateLandscape['baikal']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -441,7 +421,7 @@ class _RLandscapesState extends State<RLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Picos de Europa National Park (Spanish: Parque Nacional de Picos de Europa) is a National Park in the Picos de Europa mountain range, in northern Spain. It is within the boundaries of three autonomous communities, Asturias, Cantabria and Castile and León, which are represented on the body which runs the park. The park is also a popular destination for hikers and trekkers.",
+                          "Lake Baikal (/baɪˈkɑːl, -ˈkæl/ by-KAHL, -⁠KAL) is a rift lake in Russia. It is situated in southern Siberia, between the federal subjects of Irkutsk Oblast to the northwest and the Republic of Buryatia to the southeast. With 23,615.39 km3 (5,670 cu mi) of water, Lake Baikal is the world's largest freshwater lake by volume, containing 22–23% of the world's fresh surface water, more than all of the North American Great Lakes combined.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -457,7 +437,7 @@ class _RLandscapesState extends State<RLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Pyrenees'],
+            key: searchMapLandscapes['Geysers'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -475,7 +455,7 @@ class _RLandscapesState extends State<RLandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/PYRENEES.jpg',
+                            'assets/Landscape/GEYSERS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -488,7 +468,7 @@ class _RLandscapesState extends State<RLandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Pyrenees',
+                              'Valley of Geysers',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -498,11 +478,11 @@ class _RLandscapesState extends State<RLandscapes> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateLandscape['pyrenees'] = true;
+                                  iconStateLandscape['geysers'] = true;
                                 });
-                                speak('Pyrenees');
+                                speak('Valley of Geysers');
                               },
-                              icon: !iconStateLandscape['pyrenees']!
+                              icon: !iconStateLandscape['geysers']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -522,412 +502,7 @@ class _RLandscapesState extends State<RLandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Pyrenees (/ˈpɪrɪniːz/; Spanish: Pirineos [piɾiˈneos]; French: Pyrénées [piʁene] (listen); Catalan: Pirineu [piɾiˈnɛw]; Basque: Pirinioak [piɾini.o.ak]; Occitan: Pirenèus [piɾeˈnɛws]; Aragonese: Pirineus) is a mountain range straddling the border of France and Spain. It extends nearly 500 km (310 mi) from its union with the Cantabrian Mountains to Cap de Creus on the Mediterranean coast. It reaches a maximum altitude of 3,404 metres (11,168 ft) at the peak of Aneto",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapLandscapes['Rias'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 581.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Landscape/RIAS.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Rías Baixas',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateLandscape['rias'] = true;
-                                });
-                                speak('Rías Baixas');
-                              },
-                              icon: !iconStateLandscape['rias']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Rías Baixas is a Spanish Denominación de Origen (DO) (Denominación de Orixe in Galician) for wines located in the province of Pontevedra and the south of the province of Corunna in the autonomous community of Galicia, Spain. It is renowned for its white wines made from the Albariño grape variety.[1] Its headquarters is located in the city of Pontevedra.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapLandscapes['Sierra'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 581.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Landscape/SIERRA.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Sierra de Grazalema',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateLandscape['sierra'] = true;
-                                });
-                                speak('Sierra de Grazalema');
-                              },
-                              icon: !iconStateLandscape['sierra']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Sierra de Grazalema Natural Park (Spanish: Parque natural de la Sierra de Grazalema) is a natural park in the northeastern part of the province of Cádiz in southern Spain. The park encompasses, within its 51,695 hectares (127,740 acres), a complex of mountain ranges, known collectively as the Sierra de Grazalema, which, in turn, are part of the Cordillera Subbética. Other ranges within the park, comprising the Sierra de Grazalema, include the Sierra de Zafalgar, the Sierra del Pinar, and the Sierra de Endrinal. Pinar (or Torreón), 1,654 metres (5,427 ft) in elevation, is the tallest peak.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapLandscapes['Tabernas'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 581.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Landscape/TABERNAS.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Tabernas Desert',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateLandscape['tabernas'] = true;
-                                });
-                                speak('Tabernas Desert');
-                              },
-                              icon: !iconStateLandscape['tabernas']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Tabernas Desert (Spanish: Desierto de Tabernas) is one of Spain's semi-arid deserts, located within Spain's south-eastern province of Almería. It is in the interior, about 30 kilometers (19 mi) north of the provincial capital Almería, in the Tabernas municipality in Andalusia. Due to its high elevation and inland location, it has slightly higher annual rainfall (more than 20 cm (7.9 in) per year) and lower annual average temperature than coastal areas of Almeria. A nature reserve (protected area), it spans 280 square kilometers (110 square miles).",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapLandscapes['Teide'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 581.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Landscape/TEIDE.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Teide National Park',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateLandscape['teide'] = true;
-                                });
-                                speak('Teide National Park');
-                              },
-                              icon: !iconStateLandscape['teide']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Teide National Park (Spanish: Parque nacional del Teide, pronounced [ˈpaɾke naθjoˈnal de ˈtejðe]) is a national park located in Tenerife, Canary Islands, Spain. The national park is centered on Mount Teide, the highest mountain of Spain (3,718 meters high) in addition, the highest volcano in the Atlantic Ocean islands and the third highest volcano in the world from its base in the ocean floor (7.500 meters high).",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapLandscapes['Val'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 581.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Landscape/VAL.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "'Val d'Aran",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateLandscape['val'] = true;
-                                });
-                                speak("Val d'Aran");
-                              },
-                              icon: !iconStateLandscape['val']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Aran (Occitan: [aˈɾan]; Catalan: [əˈɾan]; Spanish: [aˈɾan]) (previously[citation needed] officially called Val d'Aran in Aranese Occitan,[1][2][3][4][5] also Era Val d'Aran;[6] in other forms of Occitan it is called: Vath d'Aran or Vau d'Aran, in Catalan and Spanish: Vall d'Aran) is an administrative entity (formerly considered a comarca) in Lleida, Catalonia, Spain, consisting of the Aran Valley, 620.47 square kilometres (239.56 sq mi) in area, in the Pyrenees mountains, in the northwestern part of the province of Lleida.",
+                          "The Valley of Geysers (Russian: Долина гейзеров) is a geyser field on Kamchatka Peninsula, Russia, and has the second largest concentration of geysers in the world. This six-kilometre-long (3.7 mi) basin with approximately ninety geysers and many hot springs is situated on the Kamchatka Peninsula in the Russian Far East, predominantly on the left bank of the ever-deepening Geysernaya River, into which geothermal waters flow from a relatively young stratovolcano, Kikhpinych.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
