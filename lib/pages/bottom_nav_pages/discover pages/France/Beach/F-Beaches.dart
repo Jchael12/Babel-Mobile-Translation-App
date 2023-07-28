@@ -154,7 +154,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BAULE.jpg',
+                              'assets/Beaches/BAULE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -235,7 +235,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BASQUES.jpg',
+                              'assets/Beaches/BASQUES.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -316,7 +316,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BIARRITZ.jpg',
+                              'assets/Beaches/BIARRITZ.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -397,7 +397,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CALVI.jpg',
+                              'assets/Beaches/CALVI.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -478,7 +478,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/DEAUVILLE.jpg',
+                              'assets/Beaches/DEAUVILLE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -559,7 +559,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/DELUZ.jpg',
+                              'assets/Beaches/DELUZ.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -640,7 +640,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/GRANDENOCHE.jpg',
+                              'assets/Beaches/GRANDENOCHE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -722,7 +722,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/PALOMBAGGIA.jpg',
+                              'assets/Beaches/PALOMBAGGIA.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -803,7 +803,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/PAMPELONNE.jpg',
+                              'assets/Beaches/PAMPELONNE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -884,7 +884,7 @@ class _FBeachesState extends State<FBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/PRADO.jpg',
+                              'assets/Beaches/PRADO.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,

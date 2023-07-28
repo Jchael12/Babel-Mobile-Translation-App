@@ -212,7 +212,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/ANGUIB.jpg',
+                            'assets/Beaches/ANGUIB.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -291,7 +291,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/BALER.jpg',
+                            'assets/Beaches/BALER.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -451,7 +451,7 @@ class _BeachesState extends State<Beaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BLUELAGOON.jpg',
+                              'assets/Beaches/BLUELAGOON.png',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -610,7 +610,7 @@ class _BeachesState extends State<Beaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CRYSTALCOVE.jpg',
+                              'assets/Beaches/CRYSTALCOVE.png',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -690,7 +690,7 @@ class _BeachesState extends State<Beaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/ELNIDO.jpg',
+                              'assets/Beaches/ELNIDO.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -772,7 +772,7 @@ class _BeachesState extends State<Beaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/KAYANGAN.jpg',
+                              'assets/Beaches/KAYANGAN.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 200.h,
@@ -852,7 +852,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/LAMBUG.jpg',
+                            'assets/Beaches/LAMBUG.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -931,7 +931,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/MACTAN.jpg',
+                            'assets/Beaches/MACTAN.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -1010,7 +1010,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/Malapascua.jpg',
+                            'assets/Beaches/Malapascua.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -1247,7 +1247,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/SIARGAO.jpg',
+                            'assets/Beaches/SIARGAO.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -1328,7 +1328,7 @@ class _BeachesState extends State<Beaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/WHITEISLAND.jpg',
+                              'assets/Beaches/WHITEISLAND.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,

@@ -153,7 +153,7 @@ class _JBeachesState extends State<JBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/OKINAWA.jpg',
+                              'assets/Beaches/OKINAWA.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -234,7 +234,7 @@ class _JBeachesState extends State<JBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/KAMAKURA.jpg',
+                              'assets/Beaches/KAMAKURA.png',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -313,7 +313,7 @@ class _JBeachesState extends State<JBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/YONEHARA.jpg',
+                              'assets/Beaches/YONEHARA.png',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -392,7 +392,7 @@ class _JBeachesState extends State<JBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/MIBARU.jpg',
+                              'assets/Beaches/MIBARU.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 200.h,
@@ -473,7 +473,7 @@ class _JBeachesState extends State<JBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/AHAREN.jpg',
+                              'assets/Beaches/AHAREN.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -552,7 +552,7 @@ class _JBeachesState extends State<JBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/ODAIBA.jpg',
+                            'assets/Beaches/ODAIBA.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -630,7 +630,7 @@ class _JBeachesState extends State<JBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/NAOSHIMA.jpg',
+                            'assets/Beaches/NAOSHIMA.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -708,7 +708,7 @@ class _JBeachesState extends State<JBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/KATSURAHAMA.jpg',
+                            'assets/Beaches/KATSURAHAMA.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -786,7 +786,7 @@ class _JBeachesState extends State<JBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/JODOGAHAMA.jpg',
+                            'assets/Beaches/JODOGAHAMA.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -864,7 +864,7 @@ class _JBeachesState extends State<JBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/ZUSHI.jpg',
+                            'assets/Beaches/ZUSHI.png',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,

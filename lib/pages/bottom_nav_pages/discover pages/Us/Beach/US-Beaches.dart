@@ -154,7 +154,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CLEARWATER.jpg',
+                              'assets/Beaches/CLEARWATER.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -235,7 +235,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CORONADO.jpg',
+                              'assets/Beaches/CORONADO.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -316,7 +316,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/DAYTONA.jpg',
+                              'assets/Beaches/DAYTONA.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -397,7 +397,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/GULF.jpg',
+                              'assets/Beaches/GULF.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -478,7 +478,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/HANALEI.jpg',
+                              'assets/Beaches/HANALEI.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -559,7 +559,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/MIAMI.jpg',
+                              'assets/Beaches/MIAMI.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -640,7 +640,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/MYRTLE.jpg',
+                              'assets/Beaches/MYRTLE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -721,7 +721,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/OUTERBANKS.jpg',
+                              'assets/Beaches/OUTERBANKS.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -802,7 +802,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/SANTAMONICA.jpeg',
+                              'assets/Beaches/SANTAMONICA.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -883,7 +883,7 @@ class _USBeachesState extends State<USBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/SOUTHBEACH.jpg',
+                              'assets/Beaches/SOUTHBEACH.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
