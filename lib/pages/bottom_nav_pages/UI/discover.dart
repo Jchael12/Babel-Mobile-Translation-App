@@ -10,17 +10,16 @@ class Discover extends StatefulWidget {
 
 class _DiscoverState extends State<Discover> {
   List<Country> countries = [
-    Country(name: 'China', image: 'assets/CHINA.png', route: '/china'),
-    Country(name: 'France', image: 'assets/PHIL.png', route: '/france'),
-    Country(name: 'Germany', image: 'assets/PHIL.png', route: '/germany'),
-    Country(name: 'Japan', image: 'assets/JAPAN.png', route: '/japan'),
-    Country(name: 'korea', image: 'assets/KOREA.png', route: '/korea'),
-    Country(
-        name: 'Philippines', image: 'assets/PHIL.png', route: '/philippines'),
-    Country(name: 'Russia', image: 'assets/PHIL.png', route: '/russia'),
-    Country(name: 'Spain', image: 'assets/PHIL.png', route: '/spain'),
-    Country(name: 'United Arab Emirates', image: 'assets/PHIL.png', route: '/uae'),
-    Country(name: 'United States', image: 'assets/PHIL.png', route: '/us'),
+    Country(name: 'China', image: 'assets/flag/china.png', route: '/china'),
+    Country(name: 'France', image: 'assets/flag/france.png', route: '/france'),
+    Country(name: 'Germany', image: 'assets/flag/germany.png', route: '/germany'),
+    Country(name: 'Japan', image: 'assets/flag/japan.png', route: '/japan'),
+    Country(name: 'Korea', image: 'assets/flag/korea.png', route: '/korea'),
+    Country(name: 'Philippines', image: 'assets/flag/ph.png', route: '/philippines'),
+    Country(name: 'Russia', image: 'assets/flag/russia.png', route: '/russia'),
+    Country(name: 'Spain', image: 'assets/flag/spain.png', route: '/spain'),
+    Country(name: 'United Arab Emirates', image: 'assets/flag/uae.png', route: '/uae'),
+    Country(name: 'United States', image: 'assets/flag/usa.png', route: '/us'),
   ];
 
   @override
