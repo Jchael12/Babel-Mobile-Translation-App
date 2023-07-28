@@ -327,7 +327,21 @@ class HomePageState extends State<HomePage> {
                 selectedTileColor: Colors.grey[300],
                 onTap: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/about');
+                  // ** This is temporary
+                  showAboutDialog(
+                    context: context,
+                    applicationIcon:
+                        Image.asset('assets/icon.png', width: 35, height: 35),
+                    applicationName: 'Babel',
+                    applicationVersion: 'version: 1.0',
+                    applicationLegalese: '©2023 BSCS 3 - Group 1',
+                    children: [
+                      Text('\nThis app is developed by:\n'),
+                      Text('\t\t\t\t\tJohn Michael Abbas'),
+                      Text('\t\t\t\t\tNerwin Panis'),
+                      Text('\t\t\t\t\tDenniel Lurion'),
+                    ],
+                  );
                 },
               ),
               ListTile(

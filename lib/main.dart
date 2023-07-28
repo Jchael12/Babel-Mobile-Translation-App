@@ -52,7 +52,6 @@ import 'pages/bottom_nav_pages/discover pages/Korea/Landscape/K-Landscapes.dart'
 import 'pages/bottom_nav_pages/discover pages/Korea/festival/K-Festivals.dart';
 import 'pages/bottom_nav_pages/trans_language.dart';
 import 'pages/intro_page/introduction.dart';
-import 'pages/side_menu/about.dart';
 import 'pages/side_menu/privacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -123,7 +122,7 @@ class MyApp extends StatelessWidget {
             title: 'Babel',
             home: OneTimeWelcomePage(prefs: prefs),
             routes: {
-              '/about': (context) => const About(),
+              //'/about': (context) => const About(),
               '/privacy': (context) => const Privacy(),
               '/lang': (context) => const SourceLanguage(),
               '/translang': (context) => const LanguagesToTranslate(),
