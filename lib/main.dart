@@ -3,6 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Beaches/G-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Cultural/G-Cultures.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Festival/G-Festivals.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Food/G-Foods.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Landscape/G-Landscapes.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Russia/Beaches/R-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Russia/Cultural/R-Cultural.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Russia/Festival/R-Festival.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Russia/Food/R-Foods.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Russia/Landscape/R-Landscapes.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Beaches/ES-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Cultural/ES-Cultures.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Festivals/ES-Festivals.dart';
@@ -139,14 +149,29 @@ class MyApp extends StatelessWidget {
               '/f-cultures': (context) => const FRCultures(),
               '/f-landscape': (context) => const FRLandscapes(),
               '/germany': (context) => const Germany(),
+              '/g-beaches': (context) => const GBeaches(),
+              '/g-foods': (context) => const GFoods(),
+              '/g-festivals': (context) => const GFestivals(),
+              '/g-cultures': (context) => const GCultures(),
+              '/g-landscape': (context) => const GLandscapes(),
               '/russia': (context) => const Russia(),
+              '/r-beaches': (context) => const RBeaches(),
+              '/r-foods': (context) => const RFoods(),
+              '/r-festivals': (context) => const RFestivals(),
+              '/r-cultures': (context) => const RCultures(),
+              '/r-landscape': (context) => const RLandscapes(),
               '/spain': (context) => const Spain(),
               '/es-beaches': (context) => const ESBeaches(),
               '/es-foods': (context) => const ESFoods(),
               '/es-landscapes': (context) => const ESLandscapes(),
               '/es-festivals': (context) => const ESFestivals(),
               '/es-cultures': (context) => const ESCultures(),
-              '/uae': (context) => const Uae(),
+              '/uae': (context) => const UAE(),
+              '/uae-beaches': (context) => const ESBeaches(),
+              '/uae-foods': (context) => const ESFoods(),
+              '/uae-landscapes': (context) => const ESLandscapes(),
+              '/uae-festivals': (context) => const ESFestivals(),
+              '/uae-cultures': (context) => const ESCultures(),
               '/us': (context) => const Us(),
               '/us-beaches': (context) => const USBeaches(),
               '/us-foods': (context) => const USFoods(),

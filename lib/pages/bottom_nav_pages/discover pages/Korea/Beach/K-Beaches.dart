@@ -134,7 +134,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/SURFYBEACH.jpg',
+                              'assets/Beaches/SURFYBEACH.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -215,7 +215,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/GWAKJI.jpg',
+                              'assets/Beaches/GWAKJI.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -296,7 +296,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/JANGHO.jpg',
+                              'assets/Beaches/JANGHO.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -375,7 +375,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/SOKCHO.jpg',
+                              'assets/Beaches/SOKCHO.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -454,7 +454,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/JEONGDONGJIN.jpg',
+                              'assets/Beaches/JEONGDONGJIN.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -533,7 +533,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/YEONGILDAE.jpg',
+                              'assets/Beaches/YEONGILDAE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -611,7 +611,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/WONPYEONG.jpg',
+                              'assets/Beaches/WONPYEONG.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -689,7 +689,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/DAECHEON.jpg',
+                              'assets/Beaches/DAECHEON.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -767,7 +767,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/HAEUNDAE.jpg',
+                              'assets/Beaches/HAEUNDAE.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -845,7 +845,7 @@ class _KBeachesState extends State<KBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/GWANGALLI.jpg',
+                              'assets/Beaches/GWANGALLI.png',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
