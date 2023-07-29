@@ -10,6 +10,7 @@ import 'pages/bottom_nav_pages/UI/default_page.dart';
 import 'pages/bottom_nav_pages/UI/discover.dart';
 import 'pages/bottom_nav_pages/UI/history.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -54,18 +55,28 @@ class HomePageState extends State<HomePage> {
     } else {
       print(stored);
     }
+  }
 
-    //  if (storedId == null) {
-    //   String newId = generateId();
-    //   await prefs.setString('id', newId);
-    //   // setState(() {
-    //   //   id = newId;
-    //   // });
-    // } else {
-    //   // setState(() {
-    //   //   id = storedId;
-    //   // });
-    // }
+  Future<void> launchEmail() async {
+    String? encodeQueryParameters(Map<String, String> params) {
+      return params.entries
+          .map((MapEntry<String, String> e) =>
+              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+          .join('&');
+    }
+
+    final Uri email = Uri(
+      scheme: 'mailto',
+      path: 'babel.dev8@gmail.com',
+      query: encodeQueryParameters(
+          <String, String>{'subject': "Feedback, suggestions etc.", 'body': ""}),
+    );
+
+    try {
+      await launchUrl(email);
+    } catch (exception) {
+      debugPrint(exception.toString());
+    }
   }
 
   @override
@@ -327,7 +338,7 @@ class HomePageState extends State<HomePage> {
                 selectedTileColor: Colors.grey[300],
                 onTap: () {
                   Navigator.pop(context);
-                  // ** This is temporary
+                  // ** NOTE: This is temporary
                   showAboutDialog(
                     context: context,
                     applicationIcon:
@@ -359,7 +370,9 @@ class HomePageState extends State<HomePage> {
                   ),
                 ),
                 selectedTileColor: Colors.grey[300],
-                onTap: () {},
+                onTap: () {
+                  launchEmail();
+                },
               ),
               ListTile(
                 leading: const Icon(
