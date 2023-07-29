@@ -116,7 +116,7 @@ class _FRFestivalsState extends State<FRFestivals> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/Festival/festival_bg.jpg',
+                'assets/bg_contents/france-festival.png',
                 fit: BoxFit.cover,
               ),
               titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),

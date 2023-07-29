@@ -119,7 +119,7 @@ class _FBeachesState extends State<FBeaches> {
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  'assets/Beaches/BC.png',
+                  'assets/bg_contents/france-beach.png',
                   fit: BoxFit.cover,
                 ),
                 titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),

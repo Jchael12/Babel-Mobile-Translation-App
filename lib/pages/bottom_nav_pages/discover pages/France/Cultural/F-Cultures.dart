@@ -115,7 +115,7 @@ class _FRCulturesState extends State<FRCultures> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/Cultural/CAC.png',
+                'assets/bg_contents/france-culture.png',
                 fit: BoxFit.cover,
               ),
               titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),

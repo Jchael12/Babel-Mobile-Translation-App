@@ -116,7 +116,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                'assets/Landscape/landscape_bg.jpg',
+                'assets/bg_contents/france-landscape.png',
                 fit: BoxFit.cover,
               ),
               titlePadding: EdgeInsets.only(top: 5.h, bottom: 10.h),
