@@ -34,16 +34,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapCultures = {
-  'Arles': key1,
-  'Dday': key2,
-  'Eiffel': key3,
-  'Louvre': key4,
-  'Mont': key5,
+  'Arles Amphitheatre': key1,
+  'D-day Landing Beach': key2,
+  'Eiffel Tower': key3,
+  'Louvre Museum': key4,
+  'Mont Saint-Michel': key5,
   'Montmartre': key6,
   'Musee': key7,
   'Notredame': key8,
-  'Sainte': key9,
-  'Versailles': key10,
+  'Place of Versailles': key9,
+  'Sainte-Chappelle': key10,
 };
 
 class FRCultures extends StatefulWidget {
@@ -131,7 +131,7 @@ class _FRCulturesState extends State<FRCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Arles'],
+            key: searchMapCultures['Arles Amphitheatre'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -174,7 +174,7 @@ class _FRCulturesState extends State<FRCultures> {
                                 setState(() {
                                   iconStateCulture['arles'] = true;
                                 });
-                                speak('Arles');
+                                speak('Arles Amphitheatre');
                               },
                               icon: !iconStateCulture['arles']!
                                   ? const Icon(
@@ -212,11 +212,11 @@ class _FRCulturesState extends State<FRCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Dday'],
+            key: searchMapCultures['D-day Landing Beach'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 525.h,
+                height: 530.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -255,7 +255,7 @@ class _FRCulturesState extends State<FRCultures> {
                                 setState(() {
                                   iconStateCulture['dday'] = true;
                                 });
-                                speak('Dday');
+                                speak('D-day Landing Beach');
                               },
                               icon: !iconStateCulture['dday']!
                                   ? const Icon(
@@ -293,11 +293,11 @@ class _FRCulturesState extends State<FRCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Eiffel'],
+            key: searchMapCultures['Eiffel Tower'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 515.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -334,7 +334,7 @@ class _FRCulturesState extends State<FRCultures> {
                                 setState(() {
                                   iconStateCulture['eiffel'] = true;
                                 });
-                                speak('Eiffel');
+                                speak('Eiffel Tower');
                               },
                               icon: !iconStateCulture['eiffel']!
                                   ? const Icon(
@@ -372,7 +372,7 @@ class _FRCulturesState extends State<FRCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Louvre'],
+            key: searchMapCultures['Louvre Museum'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -415,7 +415,7 @@ class _FRCulturesState extends State<FRCultures> {
                                 setState(() {
                                   iconStateCulture['louvre'] = true;
                                 });
-                                speak('Louvre');
+                                speak('Louvre Museum');
                               },
                               icon: !iconStateCulture['louvre']!
                                   ? const Icon(
@@ -453,7 +453,7 @@ class _FRCulturesState extends State<FRCultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Mont'],
+            key: searchMapCultures['Mont Saint-Michel'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -496,7 +496,7 @@ class _FRCulturesState extends State<FRCultures> {
                                 setState(() {
                                   iconStateCulture['mont'] = true;
                                 });
-                                speak('Mont');
+                                speak('Mont Saint-Michel');
                               },
                               icon: !iconStateCulture['mont']!
                                   ? const Icon(
@@ -776,89 +776,9 @@ class _FRCulturesState extends State<FRCultures> {
               ),
             ),
           ),
+        
           SliverToBoxAdapter(
-            key: searchMapCultures['Sainte'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/SAINTE.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 200.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Sainte-Chappelle',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['sainte'] = true;
-                                });
-                                speak('Sainte');
-                              },
-                              icon: !iconStateCulture['sainte']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Mont-Saint-Michel (French pronunciation: ​[lə mɔ̃ sɛ̃ miʃɛl]; Norman: Mont Saint Miché; English: Saint Michael's Mount) is a tidal island and mainland commune in Normandy, France.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Versailles'],
+            key: searchMapCultures['Place of Versailles'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -901,7 +821,7 @@ class _FRCulturesState extends State<FRCultures> {
                                 setState(() {
                                   iconStateCulture['versailles'] = true;
                                 });
-                                speak('Versailles');
+                                speak('Place of Versailles');
                               },
                               icon: !iconStateCulture['versailles']!
                                   ? const Icon(
@@ -924,6 +844,88 @@ class _FRCulturesState extends State<FRCultures> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "The Palace of Versailles(French: Château de Versaille)is a former royal residence built by King Louis XIV located in Versailles, about 19 kilometers (12 mi) west of Paris, France. The palace is owned by the French Republic and since 1995 has been managed, under the direction of the French Ministry of Culture, by the Public Establishment of the Palace, Museum and National Estate of Versailles.",
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          SliverToBoxAdapter(
+            key: searchMapCultures['Sainte-Chappelle'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 500.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20.0.w),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.w),
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Image.asset(
+                            'assets/Cultural/SAINTE.jpg',
+                            fit: BoxFit.cover,
+                            width: 400.w,
+                            height: 200.h,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Sainte-Chappelle',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  iconStateCulture['sainte'] = true;
+                                });
+                                speak('Sainte-Chappelle');
+                              },
+                              icon: !iconStateCulture['sainte']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Text(
+                          "Mont-Saint-Michel (French pronunciation: ​[lə mɔ̃ sɛ̃ miʃɛl]; Norman: Mont Saint Miché; English: Saint Michael's Mount) is a tidal island and mainland commune in Normandy, France.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

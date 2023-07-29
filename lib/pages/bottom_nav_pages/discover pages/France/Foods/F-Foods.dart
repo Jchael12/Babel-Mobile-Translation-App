@@ -35,14 +35,14 @@ final key10 = GlobalKey();
 Map<String, GlobalKey> searchMapFoods = {
   'Baguette': key1,
   'Bouillabaisse': key2,
-  'Coq': key3,
+  'Coq Au Vin': key3,
   'Cremebrulee': key4,
   'Croissant': key5,
-  'Escargots': key6,
-  'Foiegras': key7,
-  'Quiche': key8,
+  'Escargots de Bourgogne': key6,
+  'Foie Gras': key7,
+  'Quiche Lorraine': key8,
   'Ratatouille': key9,
-  'Tatin': key10,
+  'Tarte Tatin': key10,
 };
 
 class FRFoods extends StatefulWidget {
@@ -292,11 +292,11 @@ class _FRFoodsState extends State<FRFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Coq'],
+            key: searchMapFoods['Coq Au Vin'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 530.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -335,7 +335,7 @@ class _FRFoodsState extends State<FRFoods> {
                                 setState(() {
                                   iconStateFood['coq'] = true;
                                 });
-                                speak('Coq');
+                                speak('Coq Au Vin');
                               },
                               icon: !iconStateFood['coq']!
                                   ? const Icon(
@@ -377,7 +377,7 @@ class _FRFoodsState extends State<FRFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 530.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -458,7 +458,7 @@ class _FRFoodsState extends State<FRFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 515.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -535,11 +535,11 @@ class _FRFoodsState extends State<FRFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Escargots'],
+            key: searchMapFoods['Escargots de Bourgogne'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 510.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -578,7 +578,7 @@ class _FRFoodsState extends State<FRFoods> {
                                 setState(() {
                                   iconStateFood['escargots'] = true;
                                 });
-                                speak('Escargots');
+                                speak('Escargots de Bourgogne');
                               },
                               icon: !iconStateFood['escargots']!
                                   ? const Icon(
@@ -616,7 +616,7 @@ class _FRFoodsState extends State<FRFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Foiegras'],
+            key: searchMapFoods['Foie Gras'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -659,7 +659,7 @@ class _FRFoodsState extends State<FRFoods> {
                                 setState(() {
                                   iconStateFood['foiegras'] = true;
                                 });
-                                speak('Foiegras');
+                                speak('Foie Gras');
                               },
                               icon: !iconStateFood['foiegras']!
                                   ? const Icon(
@@ -697,11 +697,11 @@ class _FRFoodsState extends State<FRFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Quiche'],
+            key: searchMapFoods['Quiche Lorraine'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -740,7 +740,7 @@ class _FRFoodsState extends State<FRFoods> {
                                 setState(() {
                                   iconStateFood['quiche'] = true;
                                 });
-                                speak('Quiche');
+                                speak('Quiche Lorraine');
                               },
                               icon: !iconStateFood['quiche']!
                                   ? const Icon(
@@ -782,7 +782,7 @@ class _FRFoodsState extends State<FRFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 530.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -859,11 +859,11 @@ class _FRFoodsState extends State<FRFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Tatin'],
+            key: searchMapFoods['Tarte Tatin'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 530.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -902,7 +902,7 @@ class _FRFoodsState extends State<FRFoods> {
                                 setState(() {
                                   iconStateFood['tatin'] = true;
                                 });
-                                speak('Tatin');
+                                speak('Tarte Tatin');
                               },
                               icon: !iconStateFood['tatin']!
                                   ? const Icon(

@@ -34,16 +34,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapLandscapes = {
-  'Alsace': key1,
-  'Brittany': key2,
+  'Alsace Wine Route': key1,
+  'Brittany Coast': key2,
   'Camargue': key3,
-  'Dordogne': key4,
-  'Alps': key5,
-  'Riviera': key6,
-  'Verdon': key7,
-  'Loire': key8,
-  'Blanc': key9,
-  'Lavender': key10
+  'Dordogne Valley': key4,
+  'French Alps': key5,
+  'French Riviera': key6,
+  'Gorges du Verdon': key7,
+  'Loire Valley': key8,
+  'Mont Blanc': key9,
+  'Provence Lavender Field': key10
 };
 
 class FRLandscapes extends StatefulWidget {
@@ -134,11 +134,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alsace'],
+            key: searchMapLandscapes['Alsace Wine Route'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -215,7 +215,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Brittany'],
+            key: searchMapLandscapes['Brittany Coast'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -377,7 +377,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Dordogne'],
+            key: searchMapLandscapes['Dordogne Valley'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -458,7 +458,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Alps'],
+            key: searchMapLandscapes['French Alps'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -539,11 +539,11 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Riviera'],
+            key: searchMapLandscapes['French Riviera'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 581.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -620,7 +620,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Verdon'],
+            key: searchMapLandscapes['Gorges du Verdon'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -701,7 +701,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Loire'],
+            key: searchMapLandscapes['Loire Valley'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -782,7 +782,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Blanc'],
+            key: searchMapLandscapes['Mont Blanc'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -863,7 +863,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Lavender'],
+            key: searchMapLandscapes['Provence Lavender Field'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(

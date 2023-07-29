@@ -34,16 +34,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFestivals = {
-  'Avignon': key1,
-  'Bastille': key2,
-  'Cannes': key3,
-  'Jazz': key4,
-  'Lights': key5,
-  'Lorient': key6,
-  'Menton': key7,
-  'Nice': key8,
-  'Nuits': key9,
-  'Rock': key10,
+  'Bastille Day': key1,
+  'Cannes Film Festival': key2,
+  'Festival of Avignon': key3,
+  'Festival of Lights': key4,
+  'Interceltique de Lorient': key5,
+  'Jazz in Marciac': key6,
+  'Menton Lemon Festival': key7,
+  'Nice Carnival': key8,
+  'Nuits Sonores': key9,
+  'Rock En Seine': key10,
 };
 
 class FRFestivals extends StatefulWidget {
@@ -102,7 +102,8 @@ class _FRFestivalsState extends State<FRFestivals> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ItemsSearch(map: searchMapFestivals)),
+                        builder: (context) =>
+                            ItemsSearch(map: searchMapFestivals)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -133,92 +134,7 @@ class _FRFestivalsState extends State<FRFestivals> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Avignon'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 565.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/AVIGNON.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 260.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Festival of Avignon',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['avignon'] = true;
-                                    });
-                                    speak('Avignon');
-                                  },
-                                  icon: !iconStateFestival['avignon']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "The Festival d'Avignon, or Avignon Festival, is an annual arts festival held in the French city of Avignon every summer in July in the courtyard of the Palais des Papes as well as in other locations of the city. Founded in 1947 by Jean Vilar, it is the oldest existent festival in France. Alongside the official festival, the 'In' one, a number of shows are presented in Avignon at the same time of the year and are known as the 'Off'.",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Bastille'],
+            key: searchMapFestivals['Bastille Day'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -263,18 +179,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['bastille'] = true;
                                     });
-                                    speak('Avignon');
+                                    speak('Bastille Day');
                                   },
                                   icon: !iconStateFestival['bastille']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -302,8 +218,9 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Cannes'],
+            key: searchMapFestivals['Cannes Film Festival'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -348,18 +265,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['cannes'] = true;
                                     });
-                                    speak('Cannes');
+                                    speak('Cannes Film Festival');
                                   },
                                   icon: !iconStateFestival['cannes']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -387,8 +304,9 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Jazz'],
+            key: searchMapFestivals['Festival of Avignon'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -408,7 +326,7 @@ class _FRFestivalsState extends State<FRFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/JAZZ.jpg',
+                                'assets/Festival/AVIGNON.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 260.h,
@@ -421,7 +339,7 @@ class _FRFestivalsState extends State<FRFestivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Jazz in Marciac',
+                                  'Festival of Avignon',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -431,20 +349,20 @@ class _FRFestivalsState extends State<FRFestivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['jazz'] = true;
+                                      iconStateFestival['avignon'] = true;
                                     });
-                                    speak('Jazz');
+                                    speak('Festival of Avignon');
                                   },
-                                  icon: !iconStateFestival['jazz']!
+                                  icon: !iconStateFestival['avignon']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -455,7 +373,7 @@ class _FRFestivalsState extends State<FRFestivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Jazz in Marciac (JIM) is a jazz festival that takes place in Marciac, Occitania, France. The festival takes place over a period of three weeks, usually from late July to mid-August. The first festival took place in 1978.Programs",
+                              "The Festival d'Avignon, or Avignon Festival, is an annual arts festival held in the French city of Avignon every summer in July in the courtyard of the Palais des Papes as well as in other locations of the city. Founded in 1947 by Jean Vilar, it is the oldest existent festival in France. Alongside the official festival, the 'In' one, a number of shows are presented in Avignon at the same time of the year and are known as the 'Off'.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -472,8 +390,9 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Lights'],
+            key: searchMapFestivals['Festival of Lights'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -518,18 +437,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['lights'] = true;
                                     });
-                                    speak('lights');
+                                    speak('Festival of Lights');
                                   },
                                   icon: !iconStateFestival['lights']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -557,8 +476,9 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Lorient'],
+            key: searchMapFestivals['Interceltique de Lorient'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -603,18 +523,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['lorient'] = true;
                                     });
-                                    speak('lorient');
+                                    speak('Interceltique de Lorient');
                                   },
                                   icon: !iconStateFestival['lorient']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -642,8 +562,95 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Menton'],
+            key: searchMapFestivals['Jazz in Marciac'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 565.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(20.0.w),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.w),
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: Image.asset(
+                                'assets/Festival/JAZZ.jpg',
+                                fit: BoxFit.cover,
+                                width: 400.w,
+                                height: 260.h,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.h),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Jazz in Marciac',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      iconStateFestival['jazz'] = true;
+                                    });
+                                    speak('Jazz in Marciac');
+                                  },
+                                  icon: !iconStateFestival['jazz']!
+                                      ? const Icon(
+                                          Icons
+                                              .volume_down_rounded,
+                                          size: 30,
+                                          color: Color(0xff35bbca),
+                                        )
+                                      : const Icon(
+                                          Icons
+                                              .volume_up_rounded,
+                                          size: 30,
+                                          color: Colors.indigoAccent,
+                                        ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 20.h),
+                            child: Text(
+                              "Jazz in Marciac (JIM) is a jazz festival that takes place in Marciac, Occitania, France. The festival takes place over a period of three weeks, usually from late July to mid-August. The first festival took place in 1978.Programs",
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          SliverToBoxAdapter(
+            key: searchMapFestivals['Menton Lemon Festival'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -688,18 +695,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['menton'] = true;
                                     });
-                                    speak('menton');
+                                    speak('Menton Lemon Festival');
                                   },
                                   icon: !iconStateFestival['menton']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -727,8 +734,9 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Nice'],
+            key: searchMapFestivals['Nice Carnival'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -773,18 +781,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['nice'] = true;
                                     });
-                                    speak('nice');
+                                    speak('Nice Carnival');
                                   },
                                   icon: !iconStateFestival['nice']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -812,8 +820,9 @@ class _FRFestivalsState extends State<FRFestivals> {
               ),
             ),
           ),
+
           SliverToBoxAdapter(
-            key: searchMapFestivals['Nuits'],
+            key: searchMapFestivals['Nuits Sonores'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -858,18 +867,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['nuits'] = true;
                                     });
-                                    speak('nuits');
+                                    speak('Nuits Sonores');
                                   },
                                   icon: !iconStateFestival['nuits']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),
@@ -898,7 +907,7 @@ class _FRFestivalsState extends State<FRFestivals> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFestivals['Rock'],
+            key: searchMapFestivals['Rock En Seine'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -943,18 +952,18 @@ class _FRFestivalsState extends State<FRFestivals> {
                                     setState(() {
                                       iconStateFestival['rock'] = true;
                                     });
-                                    speak('rock');
+                                    speak('Rock En Seine');
                                   },
                                   icon: !iconStateFestival['rock']!
                                       ? const Icon(
                                           Icons
-                                              .volume_down_rounded, // if clicked change color and icon
+                                              .volume_down_rounded,
                                           size: 30,
                                           color: Color(0xff35bbca),
                                         )
                                       : const Icon(
                                           Icons
-                                              .volume_up_rounded, // if clicked change color and icon
+                                              .volume_up_rounded,
                                           size: 30,
                                           color: Colors.indigoAccent,
                                         ),

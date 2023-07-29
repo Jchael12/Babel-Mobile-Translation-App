@@ -33,16 +33,16 @@ final key9 = GlobalKey();
 final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMap = {
-  'Baule': key1,
-  'Basques': key2,
-  'Biarritz': key3,
-  'Calvi': key4,
-  'Deauville': key5,
-  'Deluz': key6,
-  'GrandeConche': key7,
-  'Palombaggia': key8,
-  'Pampelonne': key9,
-  'Prado': key10,
+  'Plage de la Baule': key1,
+  'Plage de la Cote des Basques': key2,
+  'Plage de Biarritz': key3,
+  'Plage de Calvi': key4,
+  'Plage de Deauville': key5,
+  'Plage de Saint-Jean-de-luz': key6,
+  'Plage de  Grande Conche': key7,
+  'Plage de Palombaggia': key8,
+  'Plage de Pampelonne': key9,
+  'Plage de Prado': key10,
 };
 
 final ScrollController scrollController = ScrollController();
@@ -136,7 +136,7 @@ class _FBeachesState extends State<FBeaches> {
             ),
             //sliver items
             SliverToBoxAdapter(
-              key: searchMap['Baule'],
+              key: searchMap['Plage de la Baule'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -179,7 +179,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['baule'] = true;
                                   });
-                                  speak('Baule');
+                                  speak('Plage de la Baule');
                                 },
                                 icon: !iconState['baule']!
                                     ? const Icon(
@@ -217,7 +217,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Basques'],
+              key: searchMap['Plage de la Cote des Basques'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -260,7 +260,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['basques'] = true;
                                   });
-                                  speak('Basques');
+                                  speak('Plage de la Cote des Basques');
                                 },
                                 icon: !iconState['basques']!
                                     ? const Icon(
@@ -298,7 +298,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Biarritz'],
+              key: searchMap['Plage de Biarritz'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -341,7 +341,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['biarritz'] = true;
                                   });
-                                  speak('Biarritz');
+                                  speak('Plage de Biarritz');
                                 },
                                 icon: !iconState['biarritz']!
                                     ? const Icon(
@@ -379,7 +379,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Calvi'],
+              key: searchMap['Plage de Calvi'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -422,7 +422,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['calvi'] = true;
                                   });
-                                  speak('Calvi');
+                                  speak('Plage de Calvi');
                                 },
                                 icon: !iconState['calvi']!
                                     ? const Icon(
@@ -460,7 +460,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Deauville'],
+              key: searchMap['Plage de Deauville'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -503,7 +503,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['deauville'] = true;
                                   });
-                                  speak('Deauville');
+                                  speak('Plage de Deauville');
                                 },
                                 icon: !iconState['deauville']!
                                     ? const Icon(
@@ -541,7 +541,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Deluz'],
+              key: searchMap['Plage de Saint-Jean-de-luz'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -584,7 +584,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['deluz'] = true;
                                   });
-                                  speak('Deluz');
+                                  speak('Plage de Saint-Jean-de-luz');
                                 },
                                 icon: !iconState['deluz']!
                                     ? const Icon(
@@ -622,7 +622,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['GrandeConche'],
+              key: searchMap['Plage de  Grande Conche'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -665,7 +665,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['grandeconche'] = true;
                                   });
-                                  speak('GrandeConche');
+                                  speak('Plage de  Grande Conche');
                                 },
                                 icon: !iconState['grandeconche']!
                                     ? const Icon(
@@ -704,7 +704,7 @@ class _FBeachesState extends State<FBeaches> {
             ),
 
             SliverToBoxAdapter(
-              key: searchMap['Palombaggia'],
+              key: searchMap['Plage de Palombaggia'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -747,7 +747,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['pallombagia'] = true;
                                   });
-                                  speak('Palombaggia');
+                                  speak('Plage de Palombaggia');
                                 },
                                 icon: !iconState['palombaggia']!
                                     ? const Icon(
@@ -785,7 +785,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Pampelonne'],
+              key: searchMap['Plage de Pampelonne'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -828,7 +828,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['pampelonne'] = true;
                                   });
-                                  speak('Pampelonne');
+                                  speak('Plage de Pampelonne');
                                 },
                                 icon: !iconState['pampelonne']!
                                     ? const Icon(
@@ -866,7 +866,7 @@ class _FBeachesState extends State<FBeaches> {
               ),
             ),
             SliverToBoxAdapter(
-              key: searchMap['Prado'],
+              key: searchMap['Plage de Prado'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -909,7 +909,7 @@ class _FBeachesState extends State<FBeaches> {
                                   setState(() {
                                     iconState['prado'] = true;
                                   });
-                                  speak('Prado');
+                                  speak('Plage de Prado');
                                 },
                                 icon: !iconState['prado']!
                                     ? const Icon(
