@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -9,16 +11,11 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateFood = {
-  'adobo': false,
-  'sinigang': false,
-  'crispy': false,
-  'sisig': false,
-  'kare-kare': false,
-  'balut': false,
-  'bicol': false,
-  'halo-halo': false,
-  'ice': false,
-  'bulalo': false,
+  'dimsum': false,
+  'kungpao': false,
+  'pekingduck': false,
+  'xiaolongbao': false,
+  'yangzhou': false,
 };
 
 final key1 = GlobalKey();
@@ -26,33 +23,23 @@ final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFoods = {
-  'Adobo': key1,
-  'Sinigang': key2,
-  'Crispy Pata': key3,
-  'Sisig': key4,
-  'Kare-Kare': key5,
-  'Balut': key6,
-  'Bicol Express': key7,
-  'Halo-Halo': key8,
-  'Ice Candy': key9,
-  'Bulalo': key10,
+  'Dimsum': key1,
+  'Kungpao': key2,
+  'Pekingduck': key3,
+  'Xiaolongbao': key4,
+  'Yangzhou': key5,
 };
 
-class Foods extends StatefulWidget {
-  const Foods({super.key});
+class CFoods extends StatefulWidget {
+  const CFoods({super.key});
 
   @override
-  State<Foods> createState() => _FoodsState();
+  State<CFoods> createState() => _CFoodsState();
 }
 
-class _FoodsState extends State<Foods> {
+class _CFoodsState extends State<CFoods> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -61,16 +48,7 @@ class _FoodsState extends State<Foods> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateFood['adobo'] = false;
-        iconStateFood['sinigang'] = false;
-        iconStateFood['crispy'] = false;
-        iconStateFood['sisig'] = false;
-        iconStateFood['kare-kare'] = false;
-        iconStateFood['balut'] = false;
-        iconStateFood['bicol'] = false;
-        iconStateFood['halo-halo'] = false;
-        iconStateFood['ice'] = false;
-        iconStateFood['bulalo'] = false;
+        iconStateFood['kimchi'] = false;
       });
     });
 
@@ -130,7 +108,7 @@ class _FoodsState extends State<Foods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Adobo'],
+            key: searchMapFoods['Dimsum'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -148,7 +126,7 @@ class _FoodsState extends State<Foods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/ADOBO.jpg',
+                            'assets/Foods/DIMSUM.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -161,7 +139,7 @@ class _FoodsState extends State<Foods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Adobo',
+                              'Dimsum',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -171,11 +149,11 @@ class _FoodsState extends State<Foods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['adobo'] = true;
+                                  iconStateFood['dimsum'] = true;
                                 });
-                                speak('Adobo');
+                                speak('Dimsum');
                               },
-                              icon: !iconStateFood['adobo']!
+                              icon: !iconStateFood['dimsum']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -195,7 +173,7 @@ class _FoodsState extends State<Foods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Adobo is often the national dish of the Philippines and it's centainly the most famous Filipino dish. The flavor is created using vinegar, soy sauce, garlic, bay leaves, and black pepper. Also chilli pepper are sometimes added to give it a little spice.",
+                          "Dim sum (traditional Chinese: 點心; simplified Chinese: 点心; pinyin: diǎn xīn; Jyutping: dim2 sam1) is a large range of small Cantonese dishes that are traditionally enjoyed in restaurants for brunch. Most modern dim sum dishes are commonly associated with Cantonese cuisine, although dim sum dishes also exist in other Chinese cuisines.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -211,7 +189,7 @@ class _FoodsState extends State<Foods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Sinigang'],
+            key: searchMapFoods['Kungpao'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -227,7 +205,7 @@ class _FoodsState extends State<Foods> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.w),
                         child: Image.asset(
-                          'assets/Foods/SINIGANG.jpg',
+                          'assets/Foods/KUNGPAO.jpg',
                           fit: BoxFit.cover,
                           width: 400.w,
                           height: 220.h,
@@ -239,7 +217,7 @@ class _FoodsState extends State<Foods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Sinigang',
+                              'Kung Pao Chicken',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -249,11 +227,11 @@ class _FoodsState extends State<Foods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['sinigang'] = true;
+                                  iconStateFood['kungpao'] = true;
                                 });
-                                speak('Sinigang');
+                                speak('Kung Pao Chicken');
                               },
-                              icon: !iconStateFood['sinigang']!
+                              icon: !iconStateFood['kungpao']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -273,7 +251,7 @@ class _FoodsState extends State<Foods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Sinigang is a sour soup that is typically made with pork and tamarind though sometinmes other sour fruits like guava, green mango or calamansi are used insted. Tomatoes, garlic, onion and various other vegetables complete the stew. It's delicious Filipino comfort food and makes for a hearty hangover breakfast if had a few to many liquor the night before.",
+                          "Kung pao chicken is a popular Chinese restaurant dish of stir-fried chicken, peanuts and vegetables. It’s traditionally made with specialty ingredients, like Sichuan peppercorns, Chinese black vinegar, Chinese rice wine, and whole dried red chilies. This Americanized version replaces those hard-to-find-ingredients with staples from your neighborhood supermarket. It has all the same spicy, sweet, and sour appeal of traditional kung pao chicken, and it makes a really nice weeknight dinner with a side of rice.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -289,85 +267,7 @@ class _FoodsState extends State<Foods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Crispy Pata'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/PATA.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Crispy Pata',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['crispy'] = true;
-                                });
-                                speak('Crispy Pata');
-                              },
-                              icon: !iconStateFood['crispy']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Crispy Pata refers to a famous Filipino dish of deep-fried pork trotters or knuckles served with a dipping sauce made with vinegar, soy sauce, garlic, onions, sugar and black pepper. To prepare, the pork leg is boiled to tenderize the meat before being deep-fried till golden brown and crispy. When cooked well, crispy pata is crunchy on the outside with moist and tender meat. It's usually served as a main dish with white rice.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Sisig'],
+            key: searchMapFoods['Pekingduck'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -383,7 +283,7 @@ class _FoodsState extends State<Foods> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.w),
                         child: Image.asset(
-                          'assets/Foods/SISIG.jpg',
+                          'assets/Foods/PEKINGDUCK.jpg',
                           fit: BoxFit.cover,
                           width: 400.w,
                           height: 220.h,
@@ -395,7 +295,7 @@ class _FoodsState extends State<Foods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Sisig',
+                              'Peking Duck',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -405,11 +305,11 @@ class _FoodsState extends State<Foods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['sisig'] = true;
+                                  iconStateFood['pekingduck'] = true;
                                 });
-                                speak('Sisig');
+                                speak('Peking Duck');
                               },
-                              icon: !iconStateFood['sisig']!
+                              icon: !iconStateFood['pekingduck']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -429,7 +329,7 @@ class _FoodsState extends State<Foods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Pork Sisig is most common and it consist of chopped up pig ears, jowls and liver, onion, chili peppers delivered on a sizzling hot skillet with a raw egg on top. You'll need to mix in the egg to cook it before the skillet cools down. It usually comes with a couple calamansi halves so you can squeeze the juice over the top.",
+                          "Peking duck is a dish from Beijing (Peking)[a] that has been prepared since the Imperial era. The meat is characterized by its thin, crispy skin, with authentic versions of the dish serving mostly the skin and little meat, sliced in front of the diners by the cook. Ducks bred especially for the dish are slaughtered after 65 days and seasoned before being roasted in a closed or hung oven. The meat is often eaten with spring onion, cucumber and sweet bean sauce with pancakes rolled around the fillings. Sometimes pickled radish is also inside. Crispy aromatic duck is a similar dish to Peking duck and is popular in the United Kingdom.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -445,7 +345,7 @@ class _FoodsState extends State<Foods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Kare-Kare'],
+            key: searchMapFoods['Xiaolongbao'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -461,10 +361,10 @@ class _FoodsState extends State<Foods> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.w),
                         child: Image.asset(
-                          'assets/Foods/KAREKARE.jpg',
+                          'assets/Foods/XIAOLONGBAO.jpg',
                           fit: BoxFit.cover,
                           width: 400.w,
-                          height: 200.h,
+                          height: 220.h,
                         ),
                       ),
                       Padding(
@@ -473,7 +373,7 @@ class _FoodsState extends State<Foods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Kare-Kare',
+                              'Xiaolongbao',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -483,11 +383,11 @@ class _FoodsState extends State<Foods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['kare-kare'] = true;
+                                  iconStateFood['xiaolongbao'] = true;
                                 });
-                                speak('Kare-kare');
+                                speak('Xiaolongbao');
                               },
-                              icon: !iconStateFood['kare-kare']!
+                              icon: !iconStateFood['xiaolongbao']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -507,7 +407,7 @@ class _FoodsState extends State<Foods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Kare-Kare is thick stew made from oxtail, vegetables and peanut sauce. It reminded us a bit of massaman curry from Thailand which makes sense as the world 'kare' is derived from the Filipino word for curry. Supposedly the best kare-kare comes from Pampanga which is just north of Manila, but you'll find this dish served all over the Philippines.",
+                          'Xiaolongbao (/ˈʃaʊlɒŋˌbaʊ/) refers to a type of small Chinese steamed bun (baozi) traditionally prepared in a xiaolong, a small bamboo steaming basket, hence the name. Xiaolongbao are often referred to as a kind of "dumpling", but should not be confused with Chinese jiaozi or wonton.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -523,11 +423,11 @@ class _FoodsState extends State<Foods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Balut'],
+            key: searchMapFoods['Yangzhou'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 520.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -539,7 +439,7 @@ class _FoodsState extends State<Foods> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.w),
                         child: Image.asset(
-                          'assets/Foods/BALUT.jpg',
+                          'assets/Foods/YANGZHOU.jpg',
                           fit: BoxFit.cover,
                           width: 400.w,
                           height: 220.h,
@@ -551,7 +451,7 @@ class _FoodsState extends State<Foods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Balut',
+                              'Yangzhou Fried Rice',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -561,11 +461,11 @@ class _FoodsState extends State<Foods> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateFood['balut'] = true;
+                                  iconStateFood['yangzhou'] = true;
                                 });
-                                speak('Balut');
+                                speak('Yangzhou Fried Rice');
                               },
-                              icon: !iconStateFood['balut']!
+                              icon: !iconStateFood['yangzhou']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -585,319 +485,7 @@ class _FoodsState extends State<Foods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Balut is probably the most infamous street food in the Philippines and the most likely to be a part of drunken dare involving tourists. It is basically just boiled duck egg. However, the duck eggs used for Balut have been fertilized and allowed to incubate anywhere from 14 to  18 days.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Bicol Express'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 515.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/BICOLEXPRESS.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Bicol Express',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['bicol'] = true;
-                                });
-                                speak('Bicol Express');
-                              },
-                              icon: !iconStateFood['bicol']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Bicol Express is a stew made with pork belly, coconut milk/cream, bagoong alamang(shrimp paste), and generous amounts of finger chillis and siling labuyo(bird's eye chili). It's spicy and creamy and best eaten with steamed rice to help tone down the heat. Bicol Express got its name from a cooking competition in Manila in the 1970's.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Halo-Halo'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 530.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/HALOHALO.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Halo-Halo',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['halo-halo'] = true;
-                                });
-                                speak('Halo-halo');
-                              },
-                              icon: !iconStateFood['halo-halo']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Literally meaning 'mix mix' the name halo-halo is pretty description for this tranditional Filipino dessert that includes every sweet treat the restaurant has in their refrigerator and freezer. While components vary, you'll find some common and add-ons at most halo-halo carts and bars: jellies, flan, macapuno, palm seed, sweetened red beans, shaved ice, ube ice cream, fresh fruit, toasted coconut flakes, pinipig.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Ice Candy'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 500.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/ICECANDY.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Ice Candy',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['ice'] = true;
-                                });
-                                speak('Ice Candy');
-                              },
-                              icon: !iconStateFood['ice']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Ice Candy is made by mixing fruit juice with sugar and milk, then pouring it into slender practice bags that are tied shut and frozen. Ice Candy is eaten just like a home made push pop. Tea or bite off the top of the plastic and squeeze from the buttom.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Bulalo'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 515.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/BULALO.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Bulalo',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['bulalo'] = true;
-                                });
-                                speak('Bulalo');
-                              },
-                              icon: !iconStateFood['bulalo']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Bulalo is light-colored soup made with leafy vegetables, corn on the cob and beef shanks filled with bone marrow. It's basically a type of Nilaga dish (Boiled meat and vegies soup) made specifically with beef shanks containing marrow. To prepare, the beef shanks are simmered for several hours until the collagen and fat melt into the clea broth.",
+                          "Yangzhou fried rice (Traditional Chinese: 揚州炒飯; Simplified Chinese : 扬州炒饭; Pinyin : Yángzhōu chǎofàn, Jyutping: Joeng4zau1 Caau2faan6) is a popular Chinese-style wok fried rice dish in many Chinese restaurants throughout the world. It is commonly sold in the UK as special fried rice, in the US as house special fried rice, in Australia and New Zealand as combination fried rice and in Vietnam as cơm chiên dương châu.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

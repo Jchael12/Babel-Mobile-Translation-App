@@ -30,7 +30,7 @@ class China extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Clickable(
-                          destination: '/beaches',
+                          destination: '/c-beaches',
                           child: Container(
                             width: 150.w,
                             height: 150.h,
@@ -55,7 +55,7 @@ class China extends StatelessWidget {
                           ),
                         ),
                         Clickable(
-                          destination: '/cultures',
+                          destination: '/c-cultures',
                           child: Container(
                             width: 150.w,
                             height: 150.h,
@@ -87,7 +87,7 @@ class China extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Clickable(
-                            destination: '/foods',
+                            destination: '/c-foods',
                             child: Container(
                               width: 150.w,
                               height: 150.h,
@@ -112,7 +112,7 @@ class China extends StatelessWidget {
                             ),
                           ),
                           Clickable(
-                            destination: '/festivals',
+                            destination: '/c-festivals',
                             child: Container(
                               width: 150.w,
                               height: 150.h,
@@ -146,7 +146,7 @@ class China extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Clickable(
-                            destination: '/landscape',
+                            destination: '/c-landscape',
                             child: Container(
                               width: 150.w,
                               height: 150.h,

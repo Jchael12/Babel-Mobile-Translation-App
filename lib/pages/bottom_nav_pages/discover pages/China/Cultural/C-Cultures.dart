@@ -10,11 +10,11 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateCulture = {
-  'intramuros': false,
-  'rizal': false,
-  "quiapo": false,
-  "cultural": false,
-  'vigan': false,
+  'forbidden': false,
+  'wall': false,
+  "shaolin": false,
+  "summer": false,
+  'terracotta': false,
 };
 
 final key1 = GlobalKey();
@@ -24,21 +24,21 @@ final key4 = GlobalKey();
 final key5 = GlobalKey();
 
 Map<String, GlobalKey> searchMapCultures = {
-  'Intramuros': key1,
-  'Rizal Park': key2,
-  'Quiapo Church': key3,
-  'Cultural Center': key4,
-  'Vigan City': key5
+  'Forbidden': key1,
+  'Wall': key2,
+  'Shaolin': key3,
+  'Summer': key4,
+  'Terracotta': key5
 };
 
-class Cultures extends StatefulWidget {
-  const Cultures({super.key});
+class CCultures extends StatefulWidget {
+  const CCultures({super.key});
 
   @override
-  State<Cultures> createState() => _CulturesState();
+  State<CCultures> createState() => _CCulturesState();
 }
 
-class _CulturesState extends State<Cultures> {
+class _CCulturesState extends State<CCultures> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -47,11 +47,11 @@ class _CulturesState extends State<Cultures> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateCulture['intramuros'] = false;
-        iconStateCulture['rizal'] = false;
-        iconStateCulture['quiapo'] = false;
-        iconStateCulture['cultural'] = false;
-        iconStateCulture['vigan'] = false;
+        iconStateCulture['forbidden'] = false;
+        iconStateCulture['wall'] = false;
+        iconStateCulture['shaolin'] = false;
+        iconStateCulture['summer'] = false;
+        iconStateCulture['terracotta'] = false;
       });
     });
 
@@ -111,7 +111,7 @@ class _CulturesState extends State<Cultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Intramuros'],
+            key: searchMapCultures['Forbidden'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -129,7 +129,7 @@ class _CulturesState extends State<Cultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/INTRAMUROS.jpg',
+                            'assets/Cultural/FORBIDDEN.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -142,7 +142,7 @@ class _CulturesState extends State<Cultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Intramuros',
+                              'Forbidden City',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -152,11 +152,11 @@ class _CulturesState extends State<Cultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['intramuros'] = true;
+                                  iconStateCulture['forbidden'] = true;
                                 });
-                                speak('Intramuros');
+                                speak('Forbidden City');
                               },
-                              icon: !iconStateCulture['intramuros']!
+                              icon: !iconStateCulture['forbidden']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -176,7 +176,7 @@ class _CulturesState extends State<Cultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Intramuros is an ancient walled city in Manila, it is one of the top spots that tourists visit here in the Philippines. It was built by Spaniards in 1521 it was designed as a tight grid to keep its street functional but contained. Today, this is the only district in manila that has been successful in keeping its old Spanish-era look.",
+                          "The Forbidden City (Chinese: 紫禁城; pinyin: Zǐjìnchéng) is a palace complex in Dongcheng District, Beijing, China, at the center of the Imperial City of Beijing. It is surrounded by numerous opulent imperial gardens and temples including the 22 ha (54-acre) Zhongshan Park, the sacrificial Imperial Ancestral Temple, the 69 ha (171-acre) Beihai Park, and the 23 ha (57-acre) Jingshan Park. It is officially administered by the Palace Museum.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -192,7 +192,7 @@ class _CulturesState extends State<Cultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Rizal Park'],
+            key: searchMapCultures['Wall'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -210,7 +210,7 @@ class _CulturesState extends State<Cultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/RIZAL.jpg',
+                            'assets/Cultural/WALL.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -223,7 +223,7 @@ class _CulturesState extends State<Cultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Rizal Park',
+                              'Great Wall of China',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -233,11 +233,11 @@ class _CulturesState extends State<Cultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['rizal'] = true;
+                                  iconStateCulture['wall'] = true;
                                 });
-                                speak('RizalPark');
+                                speak('Great Wall of China');
                               },
-                              icon: !iconStateCulture['rizal']!
+                              icon: !iconStateCulture['wall']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -257,7 +257,7 @@ class _CulturesState extends State<Cultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Rizal Park, also known as Luneta Park. It is an iconic and one of the most visited by tourist from other countries or from other provinces. This park carries a rich history as it is the location of Rizal's (Philippine National Hero) execution. The place was also called Bagumbayan during the spanish colonization in the Philippines.",
+                          'The Great Wall of China (traditional Chinese: 萬里長城; simplified Chinese: 万里长城; pinyin: Wànlǐ Chángchéng, literally "ten thousand li long wall") is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe. Several walls were built from as early as the 7th century BC, with selective stretches later joined by Qin Shi Huang (220–206 BC), the first emperor of China. ',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -273,7 +273,7 @@ class _CulturesState extends State<Cultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Quiapo Church'],
+            key: searchMapCultures['Shaolin'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -291,7 +291,7 @@ class _CulturesState extends State<Cultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/QUIAPO.jpg',
+                            'assets/Cultural/SHAOLIN.jpg',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -302,7 +302,7 @@ class _CulturesState extends State<Cultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Quiapo Church',
+                              'Shaolin Temple',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -312,11 +312,11 @@ class _CulturesState extends State<Cultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['quiapo'] = true;
+                                  iconStateCulture['shaolin'] = true;
                                 });
-                                speak('Quiapo Church');
+                                speak('Shaolin Temple');
                               },
-                              icon: !iconStateCulture['quiapo']!
+                              icon: !iconStateCulture['shaolin']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -336,7 +336,7 @@ class _CulturesState extends State<Cultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Quiapo Church is also known as the minor Basilica of the Black Nazarene or Saint John the Baptist Parish. It is a prominent basilica in the district of Quiapo Manila. The church is famous because it is the home of Black Nazarene, a black statue of Jesus Christ that sait to be miraculous. Quiapo Church holds a novena every friday in honor of the Black Nazarene.",
+                          "Shaolin Monastery (少林寺; shǎolínsì), also known as Shaolin Temple, is a renowned monastic institution recognized as the birthplace of Chan Buddhism and the cradle of Shaolin Kung Fu. It is located at the foot of Wuru Peak of the Songshan mountain range in Dengfeng County, Henan Province, China. The name reflects its location in the ancient grove (林; lín) of Mount Shaoshi, in the hinterland of the Songshan mountains.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -352,7 +352,7 @@ class _CulturesState extends State<Cultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Cultural Center'],
+            key: searchMapCultures['Summer'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -370,7 +370,7 @@ class _CulturesState extends State<Cultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/CULTURALCENTER.jpg',
+                            'assets/Cultural/SUMMER.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 200.h,
@@ -383,7 +383,7 @@ class _CulturesState extends State<Cultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Cultural Center',
+                              'Summer Palace',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -393,11 +393,11 @@ class _CulturesState extends State<Cultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['cultural'] = true;
+                                  iconStateCulture['summer'] = true;
                                 });
-                                speak('Cultural Center');
+                                speak('Summer Palace');
                               },
-                              icon: !iconStateCulture['cultural']!
+                              icon: !iconStateCulture['summer']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -417,7 +417,7 @@ class _CulturesState extends State<Cultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Cultural Center of the Philippines was created back in 1966 with its purpose of promoting and preserving the best Filipino Arts and Culture. Through its Cultural Exchange Program, the CCP supports the growth and development of regional arts centers all over the country.",
+                          "The Summer Palace (simplified Chinese: 颐和园; traditional Chinese: 頤和園; pinyin: Yíhéyuán) is a vast ensemble of lakes, gardens and palaces in Beijing. It was an imperial garden in the Qing dynasty. Inside includes Longevity Hill (万寿山; 萬壽山; Wànshòu Shān) Kunming Lake and Seventeen Hole Bridge. It covers an expanse of 2.9 square kilometres (1.1 sq mi), three-quarters of which is water.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -433,7 +433,7 @@ class _CulturesState extends State<Cultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Vigan City'],
+            key: searchMapCultures['Terracotta'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -451,7 +451,7 @@ class _CulturesState extends State<Cultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/VIGAN.jpg',
+                            'assets/Cultural/TERRACOTTA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 200.h,
@@ -464,7 +464,7 @@ class _CulturesState extends State<Cultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Vigan City',
+                              'Terracotta Army',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -474,11 +474,11 @@ class _CulturesState extends State<Cultures> {
                             IconButton(
                               onPressed: () {
                                 setState(() {
-                                  iconStateCulture['vigan'] = true;
+                                  iconStateCulture['terracotta'] = true;
                                 });
-                                speak('Vigan City');
+                                speak('Terracotta Army');
                               },
-                              icon: !iconStateCulture['vigan']!
+                              icon: !iconStateCulture['terracotta']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -498,7 +498,7 @@ class _CulturesState extends State<Cultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Know for its perfectly-preserved Spanish Colonial architecture and culture,Vigan, Ilocos Sur easily became one of the country's tourism giants. Inviting millions of tourists not only from different parts of the country but the whole world. Vigan is unique for having preserved much of its Hispanic colonial character, particularly its grid street pattern historic urban lay out. Its significance also lies on how the different architectural influences are blended to create a homogenous townscape.",
+                          "The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first emperor of China. It is a form of funerary art buried with the emperor in 210–209 BCE with the purpose of protecting him in his afterlife.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
