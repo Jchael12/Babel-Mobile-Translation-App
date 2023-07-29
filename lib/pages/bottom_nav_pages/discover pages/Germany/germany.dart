@@ -37,7 +37,7 @@ class Germany extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/Beaches/KBC.png'),
+                                  image: AssetImage('assets/bg_contents/german-beach.png'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(10.r),
@@ -62,7 +62,7 @@ class Germany extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/Cultural/CAC.png'),
+                                  image: AssetImage('assets/bg_contents/german-culture.png'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(10.r),
@@ -94,7 +94,7 @@ class Germany extends StatelessWidget {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   image: const DecorationImage(
-                                    image: AssetImage('assets/Foods/FDC.png'),
+                                    image: AssetImage('assets/bg_contents/german-food.png'),
                                     fit: BoxFit.cover,
                                   ),
                                   borderRadius: BorderRadius.circular(10.r),
@@ -120,7 +120,7 @@ class Germany extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   image: const DecorationImage(
                                       image: AssetImage(
-                                          'assets/Festival/festival_bg.jpg'),
+                                          'assets/bg_contents/german-festival.png'),
                                       fit: BoxFit.cover),
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10.r),
@@ -156,7 +156,7 @@ class Germany extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10.r),
                                   image: const DecorationImage(
                                     image: AssetImage(
-                                        'assets/Landscape/landscape_bg.jpg'),
+                                        'assets/bg_contents/german-landscape.png'),
                                     fit: BoxFit.cover,
                                   ),
                                 ),

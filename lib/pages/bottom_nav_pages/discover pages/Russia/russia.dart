@@ -36,7 +36,7 @@ class Russia extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/Beaches/KBC.png'),
+                                  image: AssetImage('assets/bg_contents/russia-beach.png'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(10.r),
@@ -61,7 +61,7 @@ class Russia extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/Cultural/CAC.png'),
+                                  image: AssetImage('assets/bg_contents/russia-culture.png'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(10.r),
@@ -93,7 +93,7 @@ class Russia extends StatelessWidget {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   image: const DecorationImage(
-                                    image: AssetImage('assets/Foods/FDC.png'),
+                                    image: AssetImage('assets/bg_contents/russia-food.png'),
                                     fit: BoxFit.cover,
                                   ),
                                   borderRadius: BorderRadius.circular(10.r),
@@ -119,7 +119,7 @@ class Russia extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   image: const DecorationImage(
                                       image: AssetImage(
-                                          'assets/Festival/festival_bg.jpg'),
+                                          'assets/bg_contents/russia-festival.png'),
                                       fit: BoxFit.cover),
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10.r),
@@ -155,7 +155,7 @@ class Russia extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10.r),
                                   image: const DecorationImage(
                                     image: AssetImage(
-                                        'assets/Landscape/landscape_bg.jpg'),
+                                        'assets/bg_contents/russia-landscape.png'),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
