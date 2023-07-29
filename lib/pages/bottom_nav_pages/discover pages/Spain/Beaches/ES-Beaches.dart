@@ -200,7 +200,7 @@ class _ESBeachesState extends State<ESBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "La Barceloneta (Catalan pronunciation: [lə βəɾsəluˈnɛtə]) is a neighborhood in the Ciutat Vella district of Barcelona, Catalonia, Spain. The neighborhood was constructed during the 18th century for the residents of the Ribera neighborhood who had been displaced by the construction of the Ciutadella of Barcelona. The neighborhood is roughly triangular, bordered by the Mediterranean Sea, the Moll d'Espanya of Port Vell, and the El Born neighborhood.",
+                            "La Barceloneta (Catalan pronunciation: [lə βəɾsəlu'nɛtə]) is a neighborhood in the Ciutat Vella district of Barcelona, Catalonia, Spain. The neighborhood was constructed during the 18th century for the residents of the Ribera neighborhood who had been displaced by the construction of the Ciutadella of Barcelona. The neighborhood is roughly triangular, bordered by the Mediterranean Sea, the Moll d'Espanya of Port Vell, and the El Born neighborhood.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
