@@ -408,7 +408,7 @@ class HomePageState extends State<HomePage> {
                     color: darkColor,
                   ),
                   title: Text(
-                    'Privacy Policy',
+                    'Term of Use',
                     style: TextStyle(
                       fontFamily: 'GothicA1',
                       fontSize: 15.sp,
@@ -420,6 +420,23 @@ class HomePageState extends State<HomePage> {
                     Navigator.pop(context);
                     Navigator.pushNamed(context, '/privacy');
                   },
+                ),
+                ListTile(
+                  selectedColor: Colors.grey,
+                  leading: const Icon(
+                    Icons.copyright_rounded,
+                    color: darkColor,
+                  ),
+                  title: Text(
+                    'Credit Links',
+                    style: TextStyle(
+                      fontFamily: 'GothicA1',
+                      fontSize: 15.sp,
+                      color: darkColor,
+                    ),
+                  ),
+                  selectedTileColor: Colors.grey[300],
+                  onTap: () {},
                 ),
               ],
             ),

@@ -133,7 +133,7 @@ class MyApp extends StatelessWidget {
             home: OneTimeWelcomePage(prefs: prefs),
             routes: {
               //'/about': (context) => const About(),
-              '/privacy': (context) => const Privacy(),
+              '/privacy': (context) => const TermOfUse(),
               '/lang': (context) => const SourceLanguage(),
               '/translang': (context) => const LanguagesToTranslate(),
               '/foods': (context) => const Foods(),
