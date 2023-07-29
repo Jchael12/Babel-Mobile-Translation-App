@@ -47,14 +47,14 @@ Map<String, GlobalKey> searchMap = {
 
 final ScrollController scrollController = ScrollController();
 
-class ESBeaches extends StatefulWidget {
-  const ESBeaches({super.key});
+class GBeaches extends StatefulWidget {
+  const GBeaches({super.key});
 
   @override
-  State<ESBeaches> createState() => _ESBeachesState();
+  State<GBeaches> createState() => _GBeachesState();
 }
 
-class _ESBeachesState extends State<ESBeaches> {
+class _GBeachesState extends State<GBeaches> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -153,7 +153,7 @@ class _ESBeachesState extends State<ESBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BARCELONATA.png',
+                              'assets/Beaches/BARCELONATA.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -234,7 +234,7 @@ class _ESBeachesState extends State<ESBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BOLONIA.png',
+                              'assets/Beaches/BOLONIA.jpg',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -313,7 +313,7 @@ class _ESBeachesState extends State<ESBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CONCHA.png',
+                              'assets/Beaches/CONCHA.jpg',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -392,7 +392,7 @@ class _ESBeachesState extends State<ESBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/VICTORIA.png',
+                              'assets/Beaches/VICTORIA.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 200.h,
@@ -473,7 +473,7 @@ class _ESBeachesState extends State<ESBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/CANTERAS.png',
+                              'assets/Beaches/CANTERAS.jpg',
                               fit: BoxFit.cover,
                               width: 400.w,
                               height: 250.h,
@@ -552,7 +552,7 @@ class _ESBeachesState extends State<ESBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/MURO.png',
+                            'assets/Beaches/MURO.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -630,7 +630,7 @@ class _ESBeachesState extends State<ESBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/PAPAGAYO.png',
+                            'assets/Beaches/PAPAGAYO.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -708,7 +708,7 @@ class _ESBeachesState extends State<ESBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/RODAS.png',
+                            'assets/Beaches/RODAS.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -786,7 +786,7 @@ class _ESBeachesState extends State<ESBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/ILLETES.png',
+                            'assets/Beaches/ILLETES.jpeg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -864,7 +864,7 @@ class _ESBeachesState extends State<ESBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/ZAHARA.png',
+                            'assets/Beaches/ZAHARA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
