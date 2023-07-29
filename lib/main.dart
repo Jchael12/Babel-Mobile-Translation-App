@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/Beach/C-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/Cultural/C-Cultures.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/Food/C-Food.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/Landscape/C-Landscapes.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/festival/C-Festivals.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Beaches/G-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Cultural/G-Cultures.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Germany/Festival/G-Festivals.dart';
@@ -191,6 +196,11 @@ class MyApp extends StatelessWidget {
               '/j-foods': (context) => const JFoods(),
               '/j-landscape': (context) => const JLandscapes(),
               '/china': (context) => const China(),
+              '/c-beaches': (context) => const CBeaches(),
+              '/c-cultures': (context) => const CCultures(),
+              '/c-festivals': (context) => const CFestivals(),
+              '/c-foods': (context) => const CFoods(),
+              '/c-landscape': (context) => const CLandscapes(),
             },
           );
         },

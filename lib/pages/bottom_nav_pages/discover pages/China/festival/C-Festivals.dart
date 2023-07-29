@@ -11,49 +11,34 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateFestival = {
-  'ati-atihan': false,
-  'sinulog': false,
-  'dinagyang': false,
-  'panagbenga': false,
-  'moriones': false,
-  'pahiyas': false,
-  'pintados': false,
-  'aliwan': false,
-  'penafrancia': false,
-  'air': false,
+  'cny': false,
+  'dragonboat': false,
+  'midautumn': false,
+  'qingming': false,
+  'lantern': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFestivals = {
-  'Ati-Atihan Festival': key1,
-  'Sinulog Festival': key2,
-  'Dinagyang Festival': key3,
-  'Panagbenga Festival': key4,
-  'Moriones Festival': key5,
-  'Pahiyas Festival': key6,
-  'Pintados Festival': key7,
-  'Aliwan Festival': key8,
-  'Penefrancia Festival': key9,
-  'Air Balloon Fiesta': key10,
+  'Cny': key1,
+  'Dragonboat': key2,
+  'Midautumn': key3,
+  'Qingming': key4,
+  'Lantern': key5,
 };
 
-class Festivals extends StatefulWidget {
-  const Festivals({super.key});
+class CFestivals extends StatefulWidget {
+  const CFestivals({super.key});
 
   @override
-  State<Festivals> createState() => _FestivalsState();
+  State<CFestivals> createState() => _CFestivalsState();
 }
 
-class _FestivalsState extends State<Festivals> {
+class _CFestivalsState extends State<CFestivals> {
   speak(String text) async {
     final FlutterTts flutterTts = FlutterTts();
     String selectedLanguage = "fil-PH";
@@ -62,16 +47,11 @@ class _FestivalsState extends State<Festivals> {
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateFestival['ati-atihan'] = false;
-        iconStateFestival['sinulog'] = false;
-        iconStateFestival['dinagyang'] = false;
-        iconStateFestival['panagbenga'] = false;
-        iconStateFestival['moriones'] = false;
-        iconStateFestival['pahiyas'] = false;
-        iconStateFestival['pintados'] = false;
-        iconStateFestival['aliwan'] = false;
-        iconStateFestival['penafrancia'] = false;
-        iconStateFestival['air'] = false;
+        iconStateFestival['cny'] = false;
+        iconStateFestival['dragonboat'] = false;
+        iconStateFestival['midautumn'] = false;
+        iconStateFestival['qingming'] = false;
+        iconStateFestival['lantern'] = false;
       });
     });
 
@@ -133,7 +113,7 @@ class _FestivalsState extends State<Festivals> {
           //sliver items
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Ati-Atihan Festival'],
+            key: searchMapFestivals['Cny'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -153,7 +133,7 @@ class _FestivalsState extends State<Festivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/Ati-Atihan.jpg',
+                                'assets/Festival/CNY.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 260.h,
@@ -166,7 +146,7 @@ class _FestivalsState extends State<Festivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Ati-Atihan Festival',
+                                  'Chinese New Year',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -176,11 +156,11 @@ class _FestivalsState extends State<Festivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['ati-atihan'] = true;
+                                      iconStateFestival['cny'] = true;
                                     });
-                                    speak('Ati-atihan Festival');
+                                    speak('Chinese New Year');
                                   },
-                                  icon: !iconStateFestival['ati-atihan']!
+                                  icon: !iconStateFestival['cny']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -200,11 +180,7 @@ class _FestivalsState extends State<Festivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Location: Aklan\n"
-                              "Date: 3rd Sunday of January\n\n"
-                              "For good reason, the Ati-Atihan Festival is considered the national "
-                              "holiday of the Philippines. This religious festival is one of the oldest in "
-                              "the Philippines and is sometimes regarded as the best and biggest Mardi Gras in the world.",
+                              "Chinese New Year is the festival that celebrates the beginning of a new year on the traditional lunisolar Chinese calendar. In Chinese, the festival is commonly referred to as the Spring Festival (traditional Chinese: 春節; simplified Chinese: 春节; pinyin: Chūnjié)[2] as the spring season in the lunisolar calendar traditionally starts with lichun, the first of the twenty-four solar terms which the festival celebrates around the time of the Chinese New Year.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -223,7 +199,7 @@ class _FestivalsState extends State<Festivals> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Sinulog Festival'],
+            key: searchMapFestivals['Dragonboat'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -243,7 +219,7 @@ class _FestivalsState extends State<Festivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/sinulog.jpg',
+                                'assets/Festival/DRAGONBOAT.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -256,7 +232,7 @@ class _FestivalsState extends State<Festivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Sinulog Festival',
+                                  'Dragon Boat Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -266,11 +242,11 @@ class _FestivalsState extends State<Festivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['sinulog'] = true;
+                                      iconStateFestival['dragonboat'] = true;
                                     });
-                                    speak('Sinulog Festival');
+                                    speak('Dragon Boat Festival');
                                   },
-                                  icon: !iconStateFestival['sinulog']!
+                                  icon: !iconStateFestival['dragonboat']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -290,12 +266,7 @@ class _FestivalsState extends State<Festivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Location: Cebu City\n"
-                              "Date: 3rd Sunday of January\n\n"
-                              "On the third weekend in January, Cebu City offers a festival dish that "
-                              "can compete with any in the world. This celebration, often referred to as "
-                              "Sinulog, draws together talented locals from the city and neighboring provinces "
-                              "to display their abilities through pageantry, street dancing, sports, and other events.",
+                              "The Dragon Boat Festival (simplified Chinese: 端午节; traditional Chinese: 端午節; pinyin: Duānwǔ Jié) is a traditional Chinese holiday which occurs on the fifth day of the fifth month of the Chinese calendar, which corresponds to late May or June in the Gregorian calendar.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -314,7 +285,7 @@ class _FestivalsState extends State<Festivals> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Dinagyang Festival'],
+            key: searchMapFestivals['Midautumn'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -334,7 +305,7 @@ class _FestivalsState extends State<Festivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/dinagyang.jpg',
+                                'assets/Festival/MIDAUTUMN.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -347,7 +318,7 @@ class _FestivalsState extends State<Festivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Dinagyang Festival',
+                                  'Mid Autumn Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -357,11 +328,11 @@ class _FestivalsState extends State<Festivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['dinagyang'] = true;
+                                      iconStateFestival['midautumn'] = true;
                                     });
-                                    speak('Dinagyang Festival');
+                                    speak('Mid Autumn Festival');
                                   },
-                                  icon: !iconStateFestival['dinagyang']!
+                                  icon: !iconStateFestival['midautumn']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -381,9 +352,7 @@ class _FestivalsState extends State<Festivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Location: IloIlo City\n"
-                              "Date: 4th Sunday of January\n\n"
-                              "Every year on the fourth weekend of January, the entire city of Iloilo shuts down for a street festival. Typically, during this festival, the streets are closed off while people enjoy unending food and drink while listening to bands playing on every corner. Boom boxes that are really tall are everywhere. In this festival, various tribes get together and perform engaging street dance routines and presentations.",
+                              "The Mid-Autumn Festival (Chinese: 中秋節 / 中秋节), also known as the Moon Festival or Mooncake Festival, is a traditional festival celebrated in Chinese culture. Similar holidays are celebrated in Japan (Tsukimi), Korea (Chuseok), Vietnam (Tết Trung Thu), and other countries in East and Southeast Asia.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -402,7 +371,7 @@ class _FestivalsState extends State<Festivals> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Panagbenga Festival'],
+            key: searchMapFestivals['Qingming'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -422,7 +391,7 @@ class _FestivalsState extends State<Festivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/panagbenga.jpg',
+                                'assets/Festival/QINGMING.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -435,7 +404,7 @@ class _FestivalsState extends State<Festivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Panagbenga Festival',
+                                  'Qingming Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -445,11 +414,11 @@ class _FestivalsState extends State<Festivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['panagbenga'] = true;
+                                      iconStateFestival['qingming'] = true;
                                     });
-                                    speak('Panagbenga Festival');
+                                    speak('Qingming Festival');
                                   },
-                                  icon: !iconStateFestival['panagbenga']!
+                                  icon: !iconStateFestival['qingming']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -469,10 +438,7 @@ class _FestivalsState extends State<Festivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Location: Baguio City\n"
-                              "Date: February 1 - March 4\n\n"
-                              'The "season of blooming" festival, which takes place in Baguio City in February, is a feast whose appeal stems mostly from its flora and wildlife theme. Expect charming parades of floral floats around the city and kids wearing plant and animal decorations.\n\n'
-                              'Session Road in Bloom, when the roadway is closed to make way for exquisite flower carts, lovely street dancing, and outdoor cafes, is a sight to behold. For those who have just finished the frenzied celebrations of January, it is a welcome celebration. ',
+                              "The Qingming festival or Ching Ming Festival, also known as Tomb-Sweeping Day in English (sometimes also called Chinese Memorial Day, Ancestors' Day, the Clear Brightness Festival, or the Pure Brightness Festival), is a traditional Chinese festival observed by ethnic Chinese in mainland China, Hong Kong, Macau, Taiwan, Malaysia, Singapore, Cambodia, Indonesia, Philippines, Thailand, and Vietnam. A celebration of spring, it falls on the first day of the fifth solar term (also called Qingming) of the traditional Chinese lunisolar calendar.",
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -491,7 +457,7 @@ class _FestivalsState extends State<Festivals> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapFestivals['Moriones Festival'],
+            key: searchMapFestivals['Lantern'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -511,7 +477,7 @@ class _FestivalsState extends State<Festivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/moriones.jpg',
+                                'assets/Festival/LANTERN.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,
@@ -524,7 +490,7 @@ class _FestivalsState extends State<Festivals> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Moriones Festival',
+                                  'Lantern Festival',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -534,11 +500,11 @@ class _FestivalsState extends State<Festivals> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      iconStateFestival['moriones'] = true;
+                                      iconStateFestival['lantern'] = true;
                                     });
-                                    speak('Moriones Festival');
+                                    speak('Lantern Festival');
                                   },
-                                  icon: !iconStateFestival['moriones']!
+                                  icon: !iconStateFestival['lantern']!
                                       ? const Icon(
                                           Icons
                                               .volume_down_rounded, // if clicked change color and icon
@@ -558,454 +524,7 @@ class _FestivalsState extends State<Festivals> {
                           Padding(
                             padding: EdgeInsets.only(top: 20.h),
                             child: Text(
-                              "Location: Marinduque Province\n"
-                              "Date: April 2 - 7\n\n"
-                              'People swarm to the island province of Marinduque in the Philippines during Holy Week for a weeklong celebration of St. Longinus. Numerous participants dress in armor to simulate the saint being sought out by other centurions after becoming a Christian.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Pahiyas Festival'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 660.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/pahiyas.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Pahiyas Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['pahiyas'] = true;
-                                    });
-                                    speak('Pahiyas Festival');
-                                  },
-                                  icon: !iconStateFestival['pahiyas']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "Location: Lucban, Quezon\n"
-                              "Date: May 14 - 15\n\n"
-                              "The Pahiyas, a distinctive harvest festival, is held in Lucban every May. Farm products are used by locals to brightly decorate their dwellings. The competition-based nature of the show adds to the event's glitz.\n\n"
-                              'If you would like to take the item off the walls without paying, come out with a basket. The sigarilyas, sitaw, and talong, as well as the other luscious fruits and vegetables described in the Bahay Kubo song, are frequently on display.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Pintados Festival'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 660.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/pintados.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Pintados Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['pintados'] = true;
-                                    });
-                                    speak('Pintados Festival');
-                                  },
-                                  icon: !iconStateFestival['pintados']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "Location: Tacloban City, Leyte\n"
-                              "Date: June 28 - 29\n\n"
-                              "This festival is the highlight of June for residents of Tacloban City. It is the fourth celebration in honor of Sto. Niño-the baby Jesus. Yes, Filipinos love to remind everyone to be childlike in their ways and treasure their children, placing their hopes in them.\n\n"
-                              'This festival has been growing in popularity over the years as it sends a lot of participants to the next festival on this list, the Aliwan Fiesta.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Aliwan Festival'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 595.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/aliwan.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Aliwan Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['aliwan'] = true;
-                                    });
-                                    speak('Aliwan Festival');
-                                  },
-                                  icon: !iconStateFestival['aliwan']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "Location: CCP Complex Pasay City\n"
-                              "Date: April 26 - 28\n\n"
-                              "The final week of April is when the Aliwan Fiesta takes place. With a debut date of 2003, this event is among the most recent in the nation. However, only a few other things in the nation can match its tremendous popularity. The festival, which takes place in Pasay City, is currently hailed as the origin of all celebrations in the nation.",
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Penefrancia Festival'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 768.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/penafrancia.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Penafrancia Festival',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['penafrancia'] = true;
-                                    });
-                                    speak('Penafrancia Festival');
-                                  },
-                                  icon: !iconStateFestival['penafrancia']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "Location: Naga, Camarines Sur\n"
-                              "Date: 3rd Saturday of September\n\n"
-                              "The Penafrancia Festival is an annual religious festival held in the city of Naga in the Bicol region of the Philippines. The festival is in honor of Our Lady of Peñafrancia, the patroness of the Bicol region.\n\n"
-                              'The festival takes place on the third Saturday of September and lasts for nine days. It features a series of religious and cultural events, including a fluvial procession where the image of Our Lady of Peñafrancia is carried on a brightly decorated barge down the Naga River. This is followed by a procession on land where devotees carry the image of the patroness on their shoulders, shouting “Viva la Virgen!”.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
-          SliverToBoxAdapter(
-            key: searchMapFestivals['Air Balloon Fiesta'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 680.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0.w),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10.w),
-                            child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                'assets/Festival/air_balloon.jpg',
-                                fit: BoxFit.cover,
-                                width: 400.w,
-                                height: 250.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Air Balloon Fiesta',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      iconStateFestival['air'] = true;
-                                    });
-                                    speak('Air Balloon Festia');
-                                  },
-                                  icon: !iconStateFestival['air']!
-                                      ? const Icon(
-                                          Icons
-                                              .volume_down_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Color(0xff35bbca),
-                                        )
-                                      : const Icon(
-                                          Icons
-                                              .volume_up_rounded, // if clicked change color and icon
-                                          size: 30,
-                                          color: Colors.indigoAccent,
-                                        ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h),
-                            child: Text(
-                              "Location: Clark Freeport Zone, Angeles City, Pampanga\n"
-                              "Date: Every 2nd week of February\n\n"
-                              "Everyone is thrilled that the Philippine International Hot Air Balloon Fiesta is returning. The four-day celebration now has a new location after formerly taking place in Pampanga. The festival offers a variety of flying-related activities, including skydiving, paragliding, and breathtaking hot air balloon rides.\n\n"
-                              'The longest-running festival in Asia will bring together travelers and aviators from all around the world.',
-                              textAlign: TextAlign.justify,
+                              "The Lantern Festival (traditional Chinese: 元宵節; simplified Chinese: 元宵节; pinyin: Yuánxiāo jié), also called Shangyuan Festival (traditional Chinese: 上元節; simplified Chinese: 上元节; pinyin: Shàngyuán jié), is a Chinese traditional festival celebrated on the fifteenth day of the first month in the lunisolar Chinese calendar, during the full moon. Usually falling in February or early March on the Gregorian calendar, it marks the final day of the traditional Chinese New Year celebrations. As early as the Western Han Dynasty (206 BC–AD 25), it had become a festival with great significance.", textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 color: Colors.white,
