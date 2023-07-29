@@ -1,4 +1,7 @@
 // ignore_for_file: file_names
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -54,9 +57,35 @@ class FRCultures extends StatefulWidget {
 }
 
 class _FRCulturesState extends State<FRCultures> {
-  speak(String text) async {
-    final FlutterTts flutterTts = FlutterTts();
-    String selectedLanguage = "fil-PH";
+  final ScrollController scrollController = ScrollController();
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  late FlutterTts flutterTts;
+
+  void initTts() {
+    flutterTts = FlutterTts();
+
+    if (isAndroid) {
+      _getDefaultEngine();
+      _getDefaultVoice();
+    }
+  }
+
+  Future _getDefaultEngine() async {
+    var engine = await flutterTts.getDefaultEngine;
+    if (engine != null) {
+      print(engine);
+    }
+  }
+
+  Future _getDefaultVoice() async {
+    var voice = await flutterTts.getDefaultVoice;
+    if (voice != null) {
+      print(voice);
+    }
+  }
+
+  Future speak(String text) async {
+    String selectedLanguage = "fr-FR";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {
@@ -90,10 +119,24 @@ class _FRCulturesState extends State<FRCultures> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    initTts();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
+    flutterTts.stop();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: darkColor,
       body: CustomScrollView(
+        controller: scrollController,
         slivers: [
           SliverAppBar(
             actions: [
@@ -170,11 +213,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['arles'] = true;
                                 });
-                                speak('Arles Amphitheatre');
+                                await speak('Arles Amphitheatre');
                               },
                               icon: !iconStateCulture['arles']!
                                   ? const Icon(
@@ -251,11 +294,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['dday'] = true;
                                 });
-                                speak('D-day Landing Beach');
+                                await speak('D-day Landing Beach');
                               },
                               icon: !iconStateCulture['dday']!
                                   ? const Icon(
@@ -330,11 +373,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['eiffel'] = true;
                                 });
-                                speak('Eiffel Tower');
+                                await speak('Eiffel Tower');
                               },
                               icon: !iconStateCulture['eiffel']!
                                   ? const Icon(
@@ -411,11 +454,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['louvre'] = true;
                                 });
-                                speak('Louvre Museum');
+                                await speak('Louvre Museum');
                               },
                               icon: !iconStateCulture['louvre']!
                                   ? const Icon(
@@ -492,11 +535,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['mont'] = true;
                                 });
-                                speak('Mont Saint-Michel');
+                                await speak('Mont Saint-Michel');
                               },
                               icon: !iconStateCulture['mont']!
                                   ? const Icon(
@@ -573,11 +616,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['montmartre'] = true;
                                 });
-                                speak('Montmartre');
+                                await speak('Montmartre');
                               },
                               icon: !iconStateCulture['montmartre']!
                                   ? const Icon(
@@ -654,11 +697,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['musee'] = true;
                                 });
-                                speak('Musee');
+                                await speak('Musee');
                               },
                               icon: !iconStateCulture['musee']!
                                   ? const Icon(
@@ -735,11 +778,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['notredame'] = true;
                                 });
-                                speak('Notredame');
+                                await speak('Notredame');
                               },
                               icon: !iconStateCulture['notredame']!
                                   ? const Icon(
@@ -817,11 +860,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['versailles'] = true;
                                 });
-                                speak('Place of Versailles');
+                                await speak('Place of Versailles');
                               },
                               icon: !iconStateCulture['versailles']!
                                   ? const Icon(
@@ -899,11 +942,11 @@ class _FRCulturesState extends State<FRCultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
                                   iconStateCulture['sainte'] = true;
                                 });
-                                speak('Sainte-Chappelle');
+                                await speak('Sainte-Chappelle');
                               },
                               icon: !iconStateCulture['sainte']!
                                   ? const Icon(

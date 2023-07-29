@@ -1,4 +1,7 @@
 // ignore_for_file: file_names
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +48,7 @@ Map<String, GlobalKey> searchMap = {
   'Plage de Prado': key10,
 };
 
-final ScrollController scrollController = ScrollController();
+
 
 class FBeaches extends StatefulWidget {
   const FBeaches({super.key});
@@ -55,9 +58,35 @@ class FBeaches extends StatefulWidget {
 }
 
 class _FBeachesState extends State<FBeaches> {
-  speak(String text) async {
-    final FlutterTts flutterTts = FlutterTts();
-    String selectedLanguage = "fil-PH";
+  final ScrollController scrollController = ScrollController();
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  late FlutterTts flutterTts;
+
+  void initTts() {
+    flutterTts = FlutterTts();
+
+    if (isAndroid) {
+      _getDefaultEngine();
+      _getDefaultVoice();
+    }
+  }
+
+  Future _getDefaultEngine() async {
+    var engine = await flutterTts.getDefaultEngine;
+    if (engine != null) {
+      print(engine);
+    }
+  }
+
+  Future _getDefaultVoice() async {
+    var voice = await flutterTts.getDefaultVoice;
+    if (voice != null) {
+      print(voice);
+    }
+  }
+
+  Future speak(String text) async {
+    String selectedLanguage = "fr-FR";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {
@@ -88,6 +117,19 @@ class _FBeachesState extends State<FBeaches> {
     setState(() {
       isSpeakingCompleted = false;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initTts();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
+    flutterTts.stop();
   }
 
   @override
@@ -175,11 +217,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['baule'] = true;
                                   });
-                                  speak('Plage de la Baule');
+                                  await speak('Plage de la Baule');
                                 },
                                 icon: !iconState['baule']!
                                     ? const Icon(
@@ -256,11 +298,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['basques'] = true;
                                   });
-                                  speak('Plage de la Cote des Basques');
+                                  await speak('Plage de la Cote des Basques');
                                 },
                                 icon: !iconState['basques']!
                                     ? const Icon(
@@ -337,11 +379,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['biarritz'] = true;
                                   });
-                                  speak('Plage de Biarritz');
+                                  await speak('Plage de Biarritz');
                                 },
                                 icon: !iconState['biarritz']!
                                     ? const Icon(
@@ -418,11 +460,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['calvi'] = true;
                                   });
-                                  speak('Plage de Calvi');
+                                  await speak('Plage de Calvi');
                                 },
                                 icon: !iconState['calvi']!
                                     ? const Icon(
@@ -499,11 +541,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['deauville'] = true;
                                   });
-                                  speak('Plage de Deauville');
+                                  await speak('Plage de Deauville');
                                 },
                                 icon: !iconState['deauville']!
                                     ? const Icon(
@@ -580,11 +622,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async{
                                   setState(() {
                                     iconState['deluz'] = true;
                                   });
-                                  speak('Plage de Saint-Jean-de-luz');
+                                  await speak('Plage de Saint-Jean-de-luz');
                                 },
                                 icon: !iconState['deluz']!
                                     ? const Icon(
@@ -661,11 +703,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['grandeconche'] = true;
                                   });
-                                  speak('Plage de  Grande Conche');
+                                  await speak('Plage de  Grande Conche');
                                 },
                                 icon: !iconState['grandeconche']!
                                     ? const Icon(
@@ -743,11 +785,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['pallombagia'] = true;
                                   });
-                                  speak('Plage de Palombaggia');
+                                  await speak('Plage de Palombaggia');
                                 },
                                 icon: !iconState['palombaggia']!
                                     ? const Icon(
@@ -824,11 +866,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['pampelonne'] = true;
                                   });
-                                  speak('Plage de Pampelonne');
+                                  await speak('Plage de Pampelonne');
                                 },
                                 icon: !iconState['pampelonne']!
                                     ? const Icon(
@@ -905,11 +947,11 @@ class _FBeachesState extends State<FBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
                                     iconState['prado'] = true;
                                   });
-                                  speak('Plage de Prado');
+                                  await speak('Plage de Prado');
                                 },
                                 icon: !iconState['prado']!
                                     ? const Icon(
