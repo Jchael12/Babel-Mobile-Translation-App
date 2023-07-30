@@ -410,7 +410,7 @@ class _JFestivalsState extends State<JFestivals> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: Image.asset(
-                                'assets/Festival/AOMORI.jpg',
+                                'assets/Festival/NEBUTA.jpg',
                                 fit: BoxFit.cover,
                                 width: 400.w,
                                 height: 250.h,

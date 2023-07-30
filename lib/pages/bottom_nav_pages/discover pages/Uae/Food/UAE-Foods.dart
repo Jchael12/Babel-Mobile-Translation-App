@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -9,16 +12,11 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateFood = {
-  'churros': false,
-  'gazpacho': false,
-  'jamon': false,
-  'paella': false,
-  'patatas': false,
-  'pisto': false,
-  'pulpo': false,
-  'sangria': false,
-  'tortilla': false,
-  'tapas': false,
+  'al harees': false,
+  'falafel': false,
+  'machboos': false,
+  'shawarma': false,
+  'umm ali': false,
 };
 
 final key1 = GlobalKey();
@@ -26,51 +24,62 @@ final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapFoods = {
-  'Churros': key1,
-  'Gazpacho': key2,
-  'Jamon': key3,
-  'Paella': key4,
-  'Patatas': key5,
-  'Pisto': key6,
-  'Pulpo': key7,
-  'Sangria': key8,
-  'Tortilla': key9,
-  'Tapas': key10,
+  'Al Harees': key1,
+  'Falafel': key2,
+  'Macboos': key3,
+  'Shawarma': key4,
+  'Umm Ali': key5,
 };
 
-class UAEFoods extends StatefulWidget {
-  const UAEFoods({super.key});
+class UAFoods extends StatefulWidget {
+  const UAFoods({super.key});
 
   @override
-  State<UAEFoods> createState() => _UAEFoodsState();
+  State<UAFoods> createState() => _UAFoodsState();
 }
 
-class _UAEFoodsState extends State<UAEFoods> {
-  speak(String text) async {
-    final FlutterTts flutterTts = FlutterTts();
+class _UAFoodsState extends State<UAFoods> {
+  final ScrollController scrollController = ScrollController();
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  late FlutterTts flutterTts;
+
+  void initTts() {
+    flutterTts = FlutterTts();
+
+    if (isAndroid) {
+      _getDefaultEngine();
+      _getDefaultVoice();
+    }
+  }
+
+  Future _getDefaultEngine() async {
+    var engine = await flutterTts.getDefaultEngine;
+    if (engine != null) {
+      print(engine);
+    }
+  }
+
+  Future _getDefaultVoice() async {
+    var voice = await flutterTts.getDefaultVoice;
+    if (voice != null) {
+      print(voice);
+    }
+  }
+
+  Future speak(String text) async {
     String selectedLanguage = "fil-PH";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateFood['churros'] = false;
-        iconStateFood['gazpacho'] = false;
-        iconStateFood['jamon'] = false;
-        iconStateFood['paella'] = false;
-        iconStateFood['patatas'] = false;
-        iconStateFood['pisto'] = false;
-        iconStateFood['pulpo'] = false;
-        iconStateFood['sangria'] = false;
-        iconStateFood['tortilla'] = false;
-        iconStateFood['tapas'] = false;
+        iconStateFood['al harees'] = false;
+        iconStateFood['falafel'] = false;
+        iconStateFood['machboos'] = false;
+        iconStateFood['shawarma'] = false;
+        iconStateFood['umm ali'] = false;
       });
     });
 
@@ -89,10 +98,24 @@ class _UAEFoodsState extends State<UAEFoods> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    initTts();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
+    flutterTts.stop();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: darkColor,
       body: CustomScrollView(
+        controller: scrollController,
         slivers: [
           SliverAppBar(
             actions: [
@@ -101,7 +124,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ItemsSearch(map: searchMapFoods)),
+                        builder: (context) => ItemsSearch(map: searchMapFoods)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -130,7 +153,7 @@ class _UAEFoodsState extends State<UAEFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Churros'],
+            key: searchMapFoods['Al Harees'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -148,7 +171,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Foods/CHURROS.jpg',
+                            'assets/Foods/ALHAREES.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -161,7 +184,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Churros',
+                              'Al Harees',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -169,25 +192,25 @@ class _UAEFoodsState extends State<UAEFoods> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateFood['churros'] = true;
+                                  iconStateFood['al harees'] = true;
                                 });
-                                speak('Churros');
+                                await speak('Al Harees');
                               },
-                              icon: !iconStateFood['churros']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                              icon: !iconStateFood['al harees']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -195,7 +218,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "A churro (Spanish pronunciation: [ˈtʃuro], Portuguese pronunciation: [ˈʃuʁu]) is a type of fried dough from Spanish and Portuguese cuisine, made with choux pastry dough piped into hot oil with a piping bag and large closed star tip or similar shape. They are also found in Latin American cuisine, Philippine cuisine, and in other areas that have received immigration from Spanish and Portuguese-speaking countries, especially in the Southwestern United States and France.",
+                          "Harees, jareesh (Arabic: هريس), boko boko, or harisa (Armenian: հարիսա, romanized: harisa) is a dish of boiled, cracked, or coarsely-ground cracked wheat or bulgur, mixed with meat and seasoned.[1] Its consistency varies between a porridge and a gruel. Harees is a popular dish known throughout the Arab world, and is commonly eaten in Arab states of the Persian Gulf in the month of Ramadan, and in Iraq, Lebanon and Bahrain during Ashura by Shia Muslims.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -211,11 +234,11 @@ class _UAEFoodsState extends State<UAEFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Gazpacho'],
+            key: searchMapFoods['Falafel'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 520.h,
+                height: 500.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -227,7 +250,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.w),
                         child: Image.asset(
-                          'assets/Foods/GAZPACHO.jpg',
+                          'assets/Foods/FALAFEL.jpg',
                           fit: BoxFit.cover,
                           width: 400.w,
                           height: 220.h,
@@ -239,7 +262,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Gazpacho',
+                              'Falafel',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -247,25 +270,25 @@ class _UAEFoodsState extends State<UAEFoods> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateFood['gazpacho'] = true;
+                                  iconStateFood['falafel'] = true;
                                 });
-                                speak('Gazpacho');
+                                await speak('Falafel');
                               },
-                              icon: !iconStateFood['gazpacho']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                              icon: !iconStateFood['falafel']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -273,7 +296,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Gazpacho (Spanish: [ɡaθˈpatʃo]) or Gaspacho (Portuguese: [ɡɐʃˈpaʃu]), also called Andalusian gazpacho, is a cold soup and drink made of raw, blended vegetables.[1] It originated in the southern regions of the Iberian peninsula and spread into other areas. Gazpacho is widely eaten in Spain and Portugal, particularly during hot summers, since it is refreshing and cool.",
+                          'Falafel (/fəˈlɑːfəl/; Arabic: فلافل, [fæˈlæːfɪl] (listen)) is a deep-fried ball or patty-shaped fritter of Arab origin, featuring in Middle Eastern cuisine (especially in Egyptian and Levantine cuisines) made from broad beans, ground chickpeas, or both. Falafel is often served in a pita, samoon, or wrapped in a flatbread known as taboon; "falafel" also frequently refers to a wrapped sandwich that is prepared in this way.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -289,7 +312,163 @@ class _UAEFoodsState extends State<UAEFoods> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapFoods['Jamon'],
+            key: searchMapFoods['Machboos'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 515.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20.0.w),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.w),
+                        child: Image.asset(
+                          'assets/Foods/MACHBOOS.jpg',
+                          fit: BoxFit.cover,
+                          width: 400.w,
+                          height: 220.h,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Machboos',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                setState(() {
+                                  iconStateFood['machboos'] = true;
+                                });
+                                await speak('Machboos');
+                              },
+                              icon: !iconStateFood['machboos']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Text(
+                          "Chicken Machboos, also known as Kabsa, is a popular rice dish from the Arabian Gulf made with either lamb or chicken. The term 'Machboos' or 'kabsa' actually means pressed in Arabic. It has slight variations from region to region. One thing remains common though: use of whole spices, and cooking the meat in the broth/sauce for the rice in order to get even more flavour.",
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            key: searchMapFoods['Shawarma'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 515.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20.0.w),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.w),
+                        child: Image.asset(
+                          'assets/Foods/SHAWARMA.jpg',
+                          fit: BoxFit.cover,
+                          width: 400.w,
+                          height: 220.h,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Shawarma',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                setState(() {
+                                  iconStateFood['shawarma'] = true;
+                                });
+                                await speak('Shawarma');
+                              },
+                              icon: !iconStateFood['shawarma']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Text(
+                          "Shawarma (/ʃəˈwɑːrmə/; Arabic: شاورما) is a popular Middle Eastern dish that originated in the Ottoman Empire, consisting of meat cut into thin slices, stacked in an inverted cone, and roasted on a slowly turning vertical rotisserie or spit. Traditionally made with lamb or mutton, it may also be made with chicken, turkey, beef, or veal. Thin slices are shaved off the cooked surface as it continuously rotates. Shawarma is a popular street food in the greater Middle East, including Egypt, Kuwait, Iraq, and the Levant, also served widely in Saudi Arabia",
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            key: searchMapFoods['Umm Ali'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -305,7 +484,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10.w),
                         child: Image.asset(
-                          'assets/Foods/JAMON.jpg',
+                          'assets/Foods/UMM.jpg',
                           fit: BoxFit.cover,
                           width: 400.w,
                           height: 220.h,
@@ -317,7 +496,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Jamón Ibérico',
+                              'Umm Ali',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -325,25 +504,25 @@ class _UAEFoodsState extends State<UAEFoods> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateFood['jamon'] = true;
+                                  iconStateFood['umm ali'] = true;
                                 });
-                                speak('Jamón Ibérico');
+                                await speak('Umm Ali');
                               },
-                              icon: !iconStateFood['jamon']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                              icon: !iconStateFood['umm ali']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -351,553 +530,7 @@ class _UAEFoodsState extends State<UAEFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "According to Spain's denominación de origen rules and current regulations on jamón, the dry-cured jamón ibérico must be made from either pure breed Black Iberian pigs or cross-bred pigs at least 50% Black Iberian mixed only with Duroc pigs, the same restriction as required to keep official ibérico denomination on any Spanish pork meat product. Jamón ibérico, especially the one labeled de bellota, has a smooth texture, rich, savory taste, and regular marbling. The fat content is relatively high compared to jamón serrano.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Paella'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 520.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/PAELLA.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Paella',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['paella'] = true;
-                                });
-                                speak('Paella');
-                              },
-                              icon: !iconStateFood['paella']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Paella (/paɪˈɛlə/, /pɑːˈeɪjə/, py-EL-ə, pah-AY-yə, Valencian: [paˈeʎa], Spanish: [paˈeʝa]) is a rice dish originally from the Valencian Community. Paella is regarded as one of the community's identifying symbols. It is one of the best-known dishes in Spanish cuisine. The dish takes its name from the wide, shallow traditional pan used to cook the dish on an open fire, paella being the word for a frying pan in Valencian/Catalan language. As a dish, it may have ancient roots, but in its modern form, it is traced back to the mid-19th century, in the rural area around the Albufera lagoon adjacent to the city of Valencia, on the Mediterranean coast of Spain.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Patatas'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 520.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/PATATAS.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 200.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Patatas Bravas',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['patatas'] = true;
-                                });
-                                speak('Patatas Bravas');
-                              },
-                              icon: !iconStateFood['patatas']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Patatas bravas, spicy Spanish potatoes, are no exception. Chunks of potato are fried in extra virgin olive oil until perfectly crisp on the outside, and tender on the inside. The potatoes are then drizzled or drenched (your call) in a vibrant, perfectly smoky bravas sauce. It’s the perfect sharing snack to enjoy with friends and family, perhaps with a jug of sangria or a lemony cocktail. ",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Pisto'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 500.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/DONBURI.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Pisto a la Gallega',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['pisto'] = true;
-                                });
-                                speak('Pisto a la Gallega');
-                              },
-                              icon: !iconStateFood['pisto']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Pisto (also known as pisto manchego) is a Spanish dish originally from the Region of Murcia, Castilla La Mancha and Extremadura. It is made of tomatoes, onions, eggplant or courgettes, green and red peppers, and olive oil.[1] It is usually served warm as a starter or to accompany another dish. It is often served with white rice, bread, a fried egg on top or with pieces of cured ham. It is also used as the filling for pasties and tartlets (empanadillas).",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Pulpo'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 515.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/PULPO.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Pulpo',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['pulpo'] = true;
-                                });
-                                speak('Pulpo');
-                              },
-                              icon: !iconStateFood['pulpo']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Pulpo a la Gallega or Pulpo a Feira (Galician name meaning ‘fair style octopus) is a traditional dish from the region of Galicia. It is the main dish during the patron saint festivities of the city of Lugo. Cooking fresh octopus is not such a daunting process, the key to it, is to get the right timing on the cooking of the octopus, so you don’t end up with the octopus being too tough or too soft. Fresh octopus needs to be tenderised before cooking by pounding it heavily to avoid the dish becoming rubbery.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Sangria'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 515.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/SANGRIA.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Sangria',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['sangria'] = true;
-                                });
-                                speak('Sangria');
-                              },
-                              icon: !iconStateFood['sangria']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Sangria (English: /sænˈɡriːə/, Spanish: sangría [saŋˈɡɾi.a], Portuguese: sangria [sɐ̃ˈɡɾi.ɐ]) is an alcoholic beverage originating in Spain and Portugal. Under EU regulations only those two Iberian nations can label their product as Sangria; similar products from different regions are differentiated in name. A punch, sangria traditionally consists of red wine and chopped fruit, often with other ingredients or spirits. Sangria is very popular among foreign tourists in Spain even if locals do not consume the beverage that much. It is commonly served in bars, restaurants, and chiringuitos and at festivities throughout Portugal and Spain.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Tortilla'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 530.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/TORTILLA.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Tortilla Española',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['tortilla'] = true;
-                                });
-                                speak('Tortilla Española');
-                              },
-                              icon: !iconStateFood['tortilla']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Spanish omelette[1] or Spanish tortilla is a traditional dish from Spain. Celebrated as a national dish by Spaniards, it is an essential part of the Spanish cuisine. It is an omelette made with eggs and potatoes, optionally including onion. It is often served at room temperature as a tapa. It is commonly known in Spanish-speaking countries as tortilla de patatas, tortilla de papas, or tortilla española.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapFoods['Tapas'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 500.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Image.asset(
-                          'assets/Foods/TAPAS.jpg',
-                          fit: BoxFit.cover,
-                          width: 400.w,
-                          height: 220.h,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Tapas',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateFood['tapas'] = true;
-                                });
-                                speak('Tapas');
-                              },
-                              icon: !iconStateFood['tapas']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "A tapa (Spanish pronunciation: [ˈtapa]) is an appetizer or snack in Spanish cuisine. Tapas can be combined to make a full meal, and can be cold (such as mixed olives and cheese) or hot (such as chopitos, which are battered, fried baby squid, or patatas bravas). In some bars and restaurants in Spain and across the globe, tapas have evolved into a very sophisticated cuisine. In some Central American countries, such snacks are known as bocas. In parts of Mexico, similar dishes are called botanas.",
+                          "Om Ali, Omali, Umm Ali, or Oumm Ali (Egyptian Arabic: أم على), meaning 'Mother of Ali', is a traditional Egyptian dessert, and is a national dessert of Egypt. There are numerous variations with different composition. The dish, which is traced back to as far as Medieval Egypt, it is named after the wife of the Sultan of Egypt, who, according to folklore, asked all Egypt's cooks and women to compete and come up with the most delicious dessert that they could create as a form of celebration.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

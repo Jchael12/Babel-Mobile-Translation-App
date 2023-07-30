@@ -23,6 +23,11 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Cultural
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Festivals/ES-Festivals.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Foods/ES-Foods.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Spain/Landscapes/ES-Landscapes.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Beaches/UAE-Beaches.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Cultural/UAE-Cultures.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Festival/UAE-Festivals.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Food/UAE-Foods.dart';
+import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Landscape/UAE-Landscapes.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Beach/F-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Cultural/F-Cultures.dart';
@@ -172,11 +177,11 @@ class MyApp extends StatelessWidget {
               '/es-festivals': (context) => const ESFestivals(),
               '/es-cultures': (context) => const ESCultures(),
               '/uae': (context) => const UAE(),
-              '/uae-beaches': (context) => const ESBeaches(),
-              '/uae-foods': (context) => const ESFoods(),
-              '/uae-landscapes': (context) => const ESLandscapes(),
-              '/uae-festivals': (context) => const ESFestivals(),
-              '/uae-cultures': (context) => const ESCultures(),
+              '/uae-beaches': (context) => const UABeaches(),
+              '/uae-foods': (context) => const UAFoods(),
+              '/uae-landscapes': (context) => const UAELandscapes(),
+              '/uae-festivals': (context) => const UAFestivals(),
+              '/uae-cultures': (context) => const UACultures(),
               '/us': (context) => const Us(),
               '/us-beaches': (context) => const USBeaches(),
               '/us-foods': (context) => const USFoods(),

@@ -1,4 +1,7 @@
 // ignore_for_file: file_names
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -10,68 +13,73 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconStateCulture = {
-  'alhambra': false,
-  'gaudi': false,
-  'prado': false,
-  'sagrada': false,
-  'retiro': false,
-  'alcazar': false,
-  'compostela': false,
-  'seville': false,
-  'thyssen': false,
-  'guggenheim': false,
+  'burj khalifa': false,
+  'louvre abu dhabi': false,
+  "sheikh zayed": false,
+  "sharjah museum": false,
+  'dubai museum': false,
 };
-
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMapCultures = {
-  'Alhambra': key1,
-  'Gaudi': key2,
-  'Prado': key3,
-  'Sagrada': key4,
-  'Retiro': key5,
-  'Alcazar': key6,
-  'Compostela': key7,
-  'Seville': key8,
-  'Thyssen': key9,
-  'Guggenheim': key10,
+  'Burj Khalifa': key1,
+  'Louvre Abu Dhabi': key2,
+  'Sheikh Zayed': key3,
+  'Sharjah Museum': key4,
+  'Dubai Museum': key5
 };
 
-class UAECultures extends StatefulWidget {
-  const UAECultures({super.key});
+class UACultures extends StatefulWidget {
+  const UACultures({super.key});
 
   @override
-  State<UAECultures> createState() => _UAECulturesState();
+  State<UACultures> createState() => _UACulturesState();
 }
 
-class _UAECulturesState extends State<UAECultures> {
-  speak(String text) async {
-    final FlutterTts flutterTts = FlutterTts();
+class _UACulturesState extends State<UACultures> {
+  final ScrollController scrollController = ScrollController();
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  late FlutterTts flutterTts;
+
+  void initTts() {
+    flutterTts = FlutterTts();
+
+    if (isAndroid) {
+      _getDefaultEngine();
+      _getDefaultVoice();
+    }
+  }
+
+  Future _getDefaultEngine() async {
+    var engine = await flutterTts.getDefaultEngine;
+    if (engine != null) {
+      print(engine);
+    }
+  }
+
+  Future _getDefaultVoice() async {
+    var voice = await flutterTts.getDefaultVoice;
+    if (voice != null) {
+      print(voice);
+    }
+  }
+
+  Future speak(String text) async {
     String selectedLanguage = "fil-PH";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {
       setState(() {
         isSpeakingCompleted = true;
-        iconStateCulture['alhambra'] = false;
-        iconStateCulture['gaudi'] = false;
-        iconStateCulture['prado'] = false;
-        iconStateCulture['sagrada'] = false;
-        iconStateCulture['retiro'] = false;
-        iconStateCulture['alcazar'] = false;
-        iconStateCulture['compostela'] = false;
-        iconStateCulture['seville'] = false;
-        iconStateCulture['thyssen'] = false;
-        iconStateCulture['guggenheim'] = false;
+        iconStateCulture['burj khalifa'] = false;
+        iconStateCulture['louvre abu dhabi'] = false;
+        iconStateCulture['sheikh zayed'] = false;
+        iconStateCulture['sharjah museum'] = false;
+        iconStateCulture['dubai museum'] = false;
       });
     });
 
@@ -90,10 +98,24 @@ class _UAECulturesState extends State<UAECultures> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    initTts();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
+    flutterTts.stop();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: darkColor,
       body: CustomScrollView(
+        controller: scrollController,
         slivers: [
           SliverAppBar(
             actions: [
@@ -102,7 +124,8 @@ class _UAECulturesState extends State<UAECultures> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => ItemsSearch(map: searchMapCultures)),
+                        builder: (context) =>
+                            ItemsSearch(map: searchMapCultures)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -131,88 +154,7 @@ class _UAECulturesState extends State<UAECultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Alhambra'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/ALHAMBRA.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Alhambra',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['alhambra'] = true;
-                                });
-                                speak('Alhambra');
-                              },
-                              icon: !iconStateCulture['alhambra']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Alhambra (/ælˈhæmbrə/, Spanish: [aˈlambɾa ]; Arabic: الْحَمْرَاء, romanized: al-ḥamrāʼ ) is a palace and fortress complex located in Granada, Andalusia, Spain. It is one of the most famous monuments of Islamic architecture and one of the best-preserved palaces of the historic Islamic world, in addition to containing notable examples of Spanish Renaissance architecture.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Gaudi'],
+            key: searchMapCultures['Burj Khalifa'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -230,10 +172,10 @@ class _UAECulturesState extends State<UAECultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/GAUDI.jpg',
+                            'assets/Cultural/BURJ.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
-                            height: 250.h,
+                            height: 200.h,
                           ),
                         ),
                       ),
@@ -243,7 +185,7 @@ class _UAECulturesState extends State<UAECultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Antoni Gaudí's Park Güell",
+                              'Burk Khalifa',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -251,13 +193,13 @@ class _UAECulturesState extends State<UAECultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateCulture['gaudi'] = true;
+                                  iconStateCulture['burj khalifa'] = true;
                                 });
-                                speak("Antoni Gaudí's Park Güell");
+                                await speak('Burj Khalifa');
                               },
-                              icon: !iconStateCulture['gaudi']!
+                              icon: !iconStateCulture['burj khalifa']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -277,7 +219,7 @@ class _UAECulturesState extends State<UAECultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Park Güell (Catalan: Parc Güell [ˈpaɾɡ ˈɡweʎ]; Spanish: Parque Güell) is a privatized park system composed of gardens and architectural elements located on Carmel Hill, in Barcelona, Catalonia, Spain. Carmel Hill belongs to the mountain range of Collserola – the Parc del Carmel is located on the northern face. Park Güell is located in La Salut, a neighborhood in the Gràcia district of Barcelona. With urbanization in mind, Eusebi Güell assigned the design of the park to Antoni Gaudí, a renowned architect and the face of Catalan modernism.",
+                          "The Burj Khalifa[a] (known as the Burj Dubai prior to its inauguration in 2010) is a skyscraper in Dubai, United Arab Emirates. It is the world's tallest building. With a total height of 829.8 m (2,722 ft, or just over half a mile) and a roof height (excluding antenna, but including a 242.6 m spire) of 828 m (2,717 ft), the Burj Khalifa has been the tallest structure and building in the world since its topping out in 2009, supplanting Taipei 101, the previous holder of that status.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -293,7 +235,88 @@ class _UAECulturesState extends State<UAECultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Prado'],
+            key: searchMapCultures['Louvre Abu Dhabi'],
+            child: Padding(
+              padding: EdgeInsets.all(20.0.w),
+              child: Container(
+                height: 550.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xff393E46),
+                  borderRadius: BorderRadius.circular(20.w),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(20.0.w),
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.w),
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Image.asset(
+                            'assets/Cultural/LOUVRE.jpg',
+                            fit: BoxFit.cover,
+                            width: 400.w,
+                            height: 250.h,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Louvre Abu Dhabi',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                setState(() {
+                                  iconStateCulture['louvre abu dhabi'] = true;
+                                });
+                                await speak('Louvre Abu Dhabi');
+                              },
+                              icon: !iconStateCulture['louvre abu dhabi']!
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.h),
+                        child: Text(
+                          "The Louvre Abu Dhabi (Arabic: اللوفر أبوظبي, romanized: al-lūfr ʔabū ẓaby; French: Louvre Abou Dabi) is an art museum located on Saadiyat Island in Abu Dhabi, United Arab Emirates. It runs under an agreement between the UAE and France, signed in March 2007, that allows it to use the Louvre's name until 2037, and has been described by the Louvre as 'France’s largest cultural project abroad.",
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            key: searchMapCultures['Sheikh Zayed'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -311,7 +334,7 @@ class _UAECulturesState extends State<UAECultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/PRADO.jpg',
+                            'assets/Cultural/SHEIKH.jpg',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -322,7 +345,7 @@ class _UAECulturesState extends State<UAECultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'El Prado Museum',
+                              'Sheikh Zayed Grand Mosque',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -330,13 +353,13 @@ class _UAECulturesState extends State<UAECultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateCulture['prado'] = true;
+                                  iconStateCulture['sheikh zayed'] = true;
                                 });
-                                speak('El Prado Museum');
+                                await speak('Sheikh Zayed Grand Mosque');
                               },
-                              icon: !iconStateCulture['prado']!
+                              icon: !iconStateCulture['sheikh zayed']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -356,7 +379,7 @@ class _UAECulturesState extends State<UAECultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Prado Museum (/ˈprɑːdoʊ/ PRAH-doh; Spanish: Museo del Prado [muˈseo ðel ˈpɾaðo]), officially known as Museo Nacional del Prado, is the main Spanish national art museum, located in central Madrid. It is widely considered to house one of the world's finest collections of European art, dating from the 12th century to the early 20th century, based on the former Spanish royal collection, and the single best collection of Spanish art. Founded as a museum of paintings and sculpture in 1819, it also contains important collections of other types of works.",
+                          "The Sheikh Zayed Grand Mosque (Arabic: جَامِع ٱلشَّيْخ زَايِد ٱلْكَبِيْر, romanized: Jāmiʿ Ash-Shaykh Zāyid Al-Kabīr) is located in Abu Dhabi, the capital city of the United Arab Emirates. The largest mosque in the country, it is the key place of worship for daily prayers. A smaller replica of the grand mosque exists in the Indonesian city of Surakarta.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -372,7 +395,7 @@ class _UAECulturesState extends State<UAECultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Sagrada'],
+            key: searchMapCultures['Sharjah'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -390,10 +413,10 @@ class _UAECulturesState extends State<UAECultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/SAGRADA.jpg',
+                            'assets/Cultural/SHARJAH.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
-                            height: 200.h,
+                            height: 250.h,
                           ),
                         ),
                       ),
@@ -403,7 +426,7 @@ class _UAECulturesState extends State<UAECultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'La Sagrada Familia',
+                              'Sharjah Zayed Grand Mosque',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -411,13 +434,13 @@ class _UAECulturesState extends State<UAECultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateCulture['sagrada'] = true;
+                                  iconStateCulture['sharjah museum'] = true;
                                 });
-                                speak('La Sagrada Familia');
+                                await speak('Sharjah Zayed Grand Mosque');
                               },
-                              icon: !iconStateCulture['sagrada']!
+                              icon: !iconStateCulture['sharjah museum']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -437,7 +460,7 @@ class _UAECulturesState extends State<UAECultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "The Basílica i Temple Expiatori de la Sagrada Família,[a] shortened as the Sagrada Família, is an unfinished church in the Eixample district of Barcelona, Catalonia, Spain. It is the largest unfinished Catholic church in the world. Designed by architect Antoni Gaudí (1852–1926), his work on Sagrada Família is part of a UNESCO World Heritage Site. On 7 November 2010, Pope Benedict XVI consecrated the church and proclaimed it a minor basilica.",
+                          "The Sharjah Museum of Islamic Civilization is a museum in Sharjah, United Arab Emirates (UAE). The museum, opened in 2008, covers Islamic culture, with more than 5,000 artifacts from the Islamic world. Objects include calligraphy, carvings, ceramics, coins, glass, manuscripts, metalwork, and scientific instruments. It was formerly known as the Islamic Museum and opened in 1996 before being moved and re-housed in the current building.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -453,7 +476,7 @@ class _UAECulturesState extends State<UAECultures> {
             ),
           ),
           SliverToBoxAdapter(
-            key: searchMapCultures['Retiro'],
+            key: searchMapCultures['Dubai Museum'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
@@ -471,7 +494,7 @@ class _UAECulturesState extends State<UAECultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/RETIRO.jpg',
+                            'assets/Cultural/DUBAI.jpeg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 200.h,
@@ -484,7 +507,7 @@ class _UAECulturesState extends State<UAECultures> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Park of the Retiro',
+                              'Dubai Museum',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -492,13 +515,13 @@ class _UAECulturesState extends State<UAECultures> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 setState(() {
-                                  iconStateCulture['retiro'] = true;
+                                  iconStateCulture['dubai museum'] = true;
                                 });
-                                speak('Park of the Retiro');
+                                await speak('Dubai Museum');
                               },
-                              icon: !iconStateCulture['retiro']!
+                              icon: !iconStateCulture['dubai museum']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -518,412 +541,7 @@ class _UAECulturesState extends State<UAECultures> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          'The Buen Retiro Park (Spanish: Parque del Buen Retiro, literally "Good Retreat Park"), Retiro Park or simply El Retiro is one of the largest parks of the city of Madrid, Spain. The park belonged to the Spanish Monarchy until the late 19th century, when it became a public park. In 2021, Buen Retiro Park became part of a combined UNESCO World Heritage Site with Paseo del Prado. The Buen Retiro Park is a 1.4 km2 (350 acres) park at the edge of the city centre, very close to the Puerta de Alcalá and not far from the Prado Museum. In its grounds are gardens, statues and other monuments, galleries, an artificial lake, and venues which host a variety of events. The park is entirely surrounded by the present-day city.',
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Alcazar'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/ALCAZAR.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 200.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Royal Alcázar of Seville',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['alcazar'] = true;
-                                });
-                                speak('Royal Alcázar of Seville');
-                              },
-                              icon: !iconStateCulture['alcazar']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Royal Alcázars of Seville (Spanish: Reales Alcázares de Sevilla), historically known as al-Qasr al-Muriq (Arabic: القصر المُورِق, The Verdant Palace)[1][2] and commonly known as the Alcázar of Seville (pronounced [alˈkaθaɾ]), is a royal palace in Seville, Spain, built for the Christian king Peter of Castile. It was built by Castilian Christians on the site of an Abbadid Muslim alcazar, or residential fortress. The fortress was destroyed after the Christian conquest of Seville in 1248.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Compostela'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/COMPOSTELA.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 200.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Santiago de Compostela Cathedral',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['compostela'] = true;
-                                });
-                                speak('Santiago de Compostela Cathedral');
-                              },
-                              icon: !iconStateCulture['compostela']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Santiago de Compostela Archcathedral Basilica (Spanish and Galician: Catedral Basilica de Santiago de Compostela) is part of the Metropolitan Archdiocese of Santiago de Compostela and is an integral component of the Santiago de Compostela World Heritage Site in Galicia, Spain. The cathedral is the reputed burial place of Saint James the Great, one of the apostles of Jesus Christ.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Seville'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/SEVILLE.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 200.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "'Seville's Cathedral",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['seville'] = true;
-                                });
-                                speak("Seville's Cathedral");
-                              },
-                              icon: !iconStateCulture['seville']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Cathedral of Saint Mary of the See (Spanish: Catedral de Santa María de la Sede), better known as Seville Cathedral, is a Roman Catholic cathedral in Seville, Andalusia, Spain.[1] It was registered in 1987 by UNESCO as a World Heritage Site, along with the adjoining Alcázar palace complex and the General Archive of the Indies.[2] It is one of the largest churches in the world as well as the largest Gothic church",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Thyssen'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/THYSSEN.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 200.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Thyssen-Bornemisza Museum',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['thyssen'] = true;
-                                });
-                                speak('Thyssen-Bornemisza Museum');
-                              },
-                              icon: !iconStateCulture['thyssen']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Thyssen-Bornemisza National Museum (in Spanish, the Museo Nacional Thyssen-Bornemisza (pronounced [muˈse.o ˈtisem boɾneˈmisa]), named after its founder), or simply the Thyssen, is an art museum in Madrid, Spain, located near the Prado Museum on one of the city's main boulevards. It is known as part of the 'Golden Triangle of Art', which also includes the Prado and the Reina Sofía national galleries. The Thyssen-Bornemisza fills the historical gaps in its counterparts' collections: in the Prado's case this includes Italian primitives and works from the English, Dutch and German schools, while in the case of the Reina Sofia it concerns Impressionists, Expressionists, and European and American paintings from the 20th century.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            key: searchMapCultures['Guggenheim'],
-            child: Padding(
-              padding: EdgeInsets.all(20.0.w),
-              child: Container(
-                height: 550.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff393E46),
-                  borderRadius: BorderRadius.circular(20.w),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(20.0.w),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10.w),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            'assets/Cultural/GUGGENHEIM.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 200.h,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'The Guggenheim Museum Bilbao',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  iconStateCulture['guggenheim'] = true;
-                                });
-                                speak('The Guggenheim Museum Bilbao');
-                              },
-                              icon: !iconStateCulture['guggenheim']!
-                                  ? const Icon(
-                                      Icons
-                                          .volume_down_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Color(0xff35bbca),
-                                    )
-                                  : const Icon(
-                                      Icons
-                                          .volume_up_rounded, // if clicked change color and icon
-                                      size: 30,
-                                      color: Colors.indigoAccent,
-                                    ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "The Guggenheim Museum Bilbao is a museum of modern and contemporary art designed by Canadian-American architect Frank Gehry, and located in Bilbao, Basque Country, Spain. The museum was inaugurated on 18 October 1997 by King Juan Carlos I of Spain, with an exhibition of 250 contemporary works of art. Built alongside the Nervion River, which runs through the city of Bilbao to the Cantabrian Sea, it is one of several museums belonging to the Solomon R. Guggenheim Foundation and features permanent and visiting exhibits of works by Spanish and international artists. It is one of the largest museums in Spain.",
+                          "Dubai Museum (Arabic: متحف دبي) is the main museum in Dubai, United Arab Emirates. It is located in the Al Fahidi Fort (Arabic: حصن الفهيدي), built in 1787 and is the oldest existing building in Dubai. The museum was opened by the Ruler of Dubai in 1971, with the aim of presenting the traditional way of life in the Emirate of Dubai. When entering, one can see the fort constructed and the various displays that go along with it. From the fort, there is a path to the galleries, which display the general culture of the land, especially in the 1800s.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
