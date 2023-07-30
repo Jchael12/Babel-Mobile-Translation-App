@@ -34,14 +34,14 @@ Map<String, GlobalKey> searchMapLandscapes = {
   'Skyscraper Cityscapes': key5,
 };
 
-class UALandscapes extends StatefulWidget {
-  const UALandscapes({super.key});
+class UAELandscapes extends StatefulWidget {
+  const UAELandscapes({super.key});
 
   @override
-  State<UALandscapes> createState() => _UALandscapesState();
+  State<UAELandscapes> createState() => _UAELandscapesState();
 }
 
-class _UALandscapesState extends State<UALandscapes> {
+class _UAELandscapesState extends State<UAELandscapes> {
   final ScrollController scrollController = ScrollController();
   bool get isAndroid => !kIsWeb && Platform.isAndroid;
   late FlutterTts flutterTts;
