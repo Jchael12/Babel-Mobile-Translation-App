@@ -49,7 +49,6 @@ Map<String, GlobalKey> searchMapFestivals = {
   'Rock En Seine': key10,
 };
 
-//TODO: need to continue france's festival, food, landscape
 class FRFestivals extends StatefulWidget {
   const FRFestivals({super.key});
 
@@ -86,7 +85,7 @@ class _FRFestivalsState extends State<FRFestivals> {
   }
 
   Future speak(String text) async {
-    String selectedLanguage = "fil-PH";
+    String selectedLanguage = "fr-FR";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {

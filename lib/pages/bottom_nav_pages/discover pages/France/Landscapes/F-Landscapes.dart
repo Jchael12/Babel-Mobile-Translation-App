@@ -85,7 +85,7 @@ class _FRLandscapesState extends State<FRLandscapes> {
   }
 
   Future speak(String text) async {
-    String selectedLanguage = "fil-PH";
+    String selectedLanguage = "fr-FR";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {
