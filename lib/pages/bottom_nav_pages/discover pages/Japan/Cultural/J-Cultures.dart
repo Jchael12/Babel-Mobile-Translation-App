@@ -390,7 +390,7 @@ class _JCulturesState extends State<JCultures> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Cultural/Kimono.jpg',
+                            'assets/Cultural/KIMONO.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 200.h,
