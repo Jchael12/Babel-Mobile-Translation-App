@@ -83,6 +83,8 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   final prefs = await SharedPreferences.getInstance();
 
   runApp(MyApp(prefs: prefs));
