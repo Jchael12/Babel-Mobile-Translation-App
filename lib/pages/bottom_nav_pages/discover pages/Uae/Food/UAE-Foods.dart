@@ -218,7 +218,7 @@ class _UAFoodsState extends State<UAFoods> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Harees, jareesh (Arabic: هريس), boko boko, or harisa (Armenian: հարիսա, romanized: harisa) is a dish of boiled, cracked, or coarsely-ground cracked wheat or bulgur, mixed with meat and seasoned.[1] Its consistency varies between a porridge and a gruel. Harees is a popular dish known throughout the Arab world, and is commonly eaten in Arab states of the Persian Gulf in the month of Ramadan, and in Iraq, Lebanon and Bahrain during Ashura by Shia Muslims.",
+                          "Harees, jareesh (Arabic: هريس), boko boko, or harisa (Armenian: հարիսա, romanized: harisa) is a dish of boiled, cracked, or coarsely-ground cracked wheat or bulgur, mixed with meat and seasoned.[1] Its consistency varies between a porridge and a gruel. Harees is a popular dish known throughout the Arab world, and is commonly eaten in Arab states of the Persian Gulf.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

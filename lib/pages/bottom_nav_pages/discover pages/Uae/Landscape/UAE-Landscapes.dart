@@ -18,7 +18,7 @@ Map<String, bool> iconStateLandscape = {
   'hajar mountains': false,
   'mangrove forests': false,
   'palm jumeirah': false,
-  'skyscraper cityscapes': false,
+  'jabel hafeet': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
@@ -31,7 +31,7 @@ Map<String, GlobalKey> searchMapLandscapes = {
   'Hajar Mountains': key2,
   'Mangrove Forests': key3,
   'Palm Jumeirah': key4,
-  'Skyscraper Cityscapes': key5,
+  'Jabel Hafeet': key5,
 };
 
 class UAELandscapes extends StatefulWidget {
@@ -161,7 +161,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 700.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -175,7 +175,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/DUNES.jpg',
+                            'assets/Landscape/DUNES.jpeg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -222,7 +222,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "",
+                          "Moreeb Dune or Tal Moreeb (تل مرعب Mor'ib Hill) is a large sized sand dune located in proximity of Liwa Oasis at the Empty Quarter desert in the United Arab Emirates. With a reported 50 degree slipface, and height of 300 metres, the dune is popular for organised drag races competitions. Moreeb Hill is the tallest dune in the UAE, and one of the largest hill climbs in the world. Moreeb Dune is one of the highest sand hills in the world. The dune is 1600 meters long.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -243,7 +243,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 711.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -304,7 +304,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "",
+                          'The Hajar Mountains (Arabic: جِبَال ٱلْحَجَر, romanized: Jibāl al-Ḥajar, The Rocky Mountains or The Stone Mountains) are the highest mountain range in the eastern part of the Arabian Peninsula, shared between northern Oman and eastern United Arab Emirates. Also known as "Oman Mountains", they separate the low coastal plain of Oman from the high desert plateau, and lie 50–100 km (31–62 mi) inland from the Gulf of Oman.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -325,7 +325,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 700.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -386,7 +386,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "",
+                          "Worlds away from skyscrapers and the bustling city nightlife of Abu Dhabi, there is a serene place which will leave you with a sense of being renewed. This reserve of beauty and biodiversity is called Mangrove National Park. If you are trying to teach your little ones about the environment, a stroll in this humble park is a sure way to tick all those boxes. Protected by the Environment Agency Abu Dhabi (EAD), this stunning park makes up almost 75 per cent of the total mangrove forest area in the UAE.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -407,7 +407,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 743.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -468,7 +468,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "",
+                          "The Palm Jumeirah is an archipelago of artificial islands on the Persian Gulf in Jumeirah, Dubai, United Arab Emirates. It is part of a larger series of developments called the Palm Islands, including Palm Jebel Ali and Palm Deira, which, if completed, will together increase Dubai's shoreline by a total of 520 kilometres (320 mi). It has an estimated population of at least 10,000 as of 2017.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -485,11 +485,11 @@ class _UAELandscapesState extends State<UAELandscapes> {
           ),
 
           SliverToBoxAdapter(
-            key: searchMapLandscapes['Skyscraper Cityscapes'],
+            key: searchMapLandscapes['Jabel Hafeet'],
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 693.h,
+                height: 600.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -503,7 +503,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Image.asset(
-                            'assets/Landscape/SKYSCRAPER.jpg',
+                            'assets/Landscape/JABEL.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -516,7 +516,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Skyscraper Cityscapes',
+                              'Jabel Hafeet',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.sp,
@@ -526,11 +526,11 @@ class _UAELandscapesState extends State<UAELandscapes> {
                             IconButton(
                               onPressed: () async {
                                 setState(() {
-                                  iconStateLandscape['skyscraper cityscapes'] = true;
+                                  iconStateLandscape['jabel hafeet'] = true;
                                 });
-                                await speak('Skyscraper Cityscapes');
+                                await speak('Jabel Hafeet');
                               },
-                              icon: !iconStateLandscape['skyscraper cityscapes']!
+                              icon: !iconStateLandscape['jabel hafeet']!
                                   ? const Icon(
                                       Icons
                                           .volume_down_rounded, // if clicked change color and icon
@@ -550,7 +550,7 @@ class _UAELandscapesState extends State<UAELandscapes> {
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "",
+                          'Jabal Hafeet (Arabic: جَبَل حَفِيْت, romanized: Jabal Ḥafīt, "Mount Hafeet"; variously transcribed Jabel or Jebal and Hafit – literally "empty mountain") is a mountain in the region of Tawam, on the border of the United Arab Emirates and Oman, which may be considered an outlier of the Hajar Mountains in Eastern Arabia. Due to its proximity to the main Hajar range, the mountain may be considered as being part of the Hajar range. To the north is the UAE city of Al Ain, in the Eastern Region of the Emirate of Abu Dhabi, and the adjacent Omani town of Al-Buraimi.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,

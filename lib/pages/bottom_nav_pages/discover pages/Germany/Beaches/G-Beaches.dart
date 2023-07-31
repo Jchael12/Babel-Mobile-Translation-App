@@ -1,4 +1,7 @@
 // ignore_for_file: file_names
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,42 +13,25 @@ bool isSpeakingCompleted = false;
 bool iconChange = false;
 
 Map<String, bool> iconState = {
-  'barceloneta': false,
-  'bolonia': false,
-  'concha': false,
-  'victoria': false,
-  'canteras': false,
-  'muro': false,
-  'papagayo': false,
-  'rodas': false,
-  'illetes': false,
-  'zahara': false,
+  'binz': false,
+  'borkum': false,
+  'sylt': false,
+  'timmendorfer strand': false,
+  'zingst': false,
 };
 final key1 = GlobalKey();
 final key2 = GlobalKey();
 final key3 = GlobalKey();
 final key4 = GlobalKey();
 final key5 = GlobalKey();
-final key6 = GlobalKey();
-final key7 = GlobalKey();
-final key8 = GlobalKey();
-final key9 = GlobalKey();
-final key10 = GlobalKey();
 
 Map<String, GlobalKey> searchMap = {
-  'Barceloneta': key1,
-  'Bolonia': key2,
-  'Concha': key3,
-  'Victoria': key4,
-  'Canteras': key5,
-  'Muro': key6,
-  'Papagayo': key7,
-  'Rodas': key8,
-  'Illetes': key9,
-  'Zahara': key10,
+    'Binz': key1,
+    'Borkum': key2,
+    'Sylt': key3,
+    'Timmendorfer Strand': key4,
+    'Zingst': key5,
 };
-
-final ScrollController scrollController = ScrollController();
 
 class GBeaches extends StatefulWidget {
   const GBeaches({super.key});
@@ -55,23 +41,45 @@ class GBeaches extends StatefulWidget {
 }
 
 class _GBeachesState extends State<GBeaches> {
-  speak(String text) async {
-    final FlutterTts flutterTts = FlutterTts();
+  final ScrollController scrollController = ScrollController();
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  late FlutterTts flutterTts;
+
+  void initTts() {
+    flutterTts = FlutterTts();
+
+    if (isAndroid) {
+      _getDefaultEngine();
+      _getDefaultVoice();
+    }
+  }
+
+  Future _getDefaultEngine() async {
+    var engine = await flutterTts.getDefaultEngine;
+    if (engine != null) {
+      print(engine);
+    }
+  }
+
+  Future _getDefaultVoice() async {
+    var voice = await flutterTts.getDefaultVoice;
+    if (voice != null) {
+      print(voice);
+    }
+  }
+
+  Future speak(String text) async {
     String selectedLanguage = "fil-PH";
     List<dynamic> languages = await flutterTts.getLanguages;
 
     flutterTts.setCompletionHandler(() {
       setState(() {
-        iconState['barceloneta'] = false;
-        iconState['bolonia'] = false;
-        iconState['concha'] = false;
-        iconState['victoria'] = false;
-        iconState['canteras'] = false;
-        iconState['muro'] = false;
-        iconState['papagayo'] = false;
-        iconState['rodas'] = false;
-        iconState['illetes'] = false;
-        iconState['zahara'] = false;
+        isSpeakingCompleted = true;
+        iconState['binz'] = false;
+        iconState['borkum'] = false;
+        iconState['sylt'] = false;
+        iconState['timmendorfer strand'] = false;
+        iconState['zingst'] = false;
       });
     });
 
@@ -87,6 +95,19 @@ class _GBeachesState extends State<GBeaches> {
     setState(() {
       isSpeakingCompleted = false;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initTts();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
+    flutterTts.stop();
   }
 
   @override
@@ -133,13 +154,91 @@ class _GBeachesState extends State<GBeaches> {
               ),
             ),
             //sliver items
+            SliverToBoxAdapter(
+              key: searchMap['Binz'],
+              child: Padding(
+                padding: EdgeInsets.all(20.0.w),
+                child: Container(
+                  height: 618.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff393E46),
+                    borderRadius: BorderRadius.circular(20.w),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0.w),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.w),
+                          child: Image.asset(
+                            'assets/Beaches/BINZ.jpg',
+                            fit: BoxFit.cover,
+                            width: 400.w,
+                            height: 250.h,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Binz Beach',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () async {
+                                  setState(() {
+                                    iconState['binz'] = true;
+                                  });
+                                  await speak('Binz');
+                                },
+                                icon: !iconState['binz']!
+                                    ? const Icon(
+                                        Icons
+                                            .volume_down_rounded, // if clicked change color and icon
+                                        size: 30,
+                                        color: Color(0xff35bbca),
+                                      )
+                                    : const Icon(
+                                        Icons
+                                            .volume_up_rounded, // if clicked change color and icon
+                                        size: 30,
+                                        color: Colors.indigoAccent,
+                                      ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: Text(
+                            'Binz is the largest seaside resort city on the German island of Rügen. It is situated between the bay of Prorer Wiek and the Schmachter See (a lake) in the southeast of the island. To the north of Binz stretches the Schmale Heide (the "narrow heath"), a tongue of land which joins the Muttland region of Rügen to the Jasmund peninsula. The land to the south and east of Binz is hilly, reaching a height of over 100 metres above sea level. Binz is known for its well-kept historical resort architecture and natural scenery, close to the Jasmund National Park and its chalk cliffs.',
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
 
             SliverToBoxAdapter(
-              key: searchMap['Barceloneta'],
+              key: searchMap['Borkum'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
-                  height: 550.h,
+                  height: 565.h,
                   decoration: BoxDecoration(
                     color: const Color(0xff393E46),
                     borderRadius: BorderRadius.circular(20.w),
@@ -150,14 +249,11 @@ class _GBeachesState extends State<GBeaches> {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Image.asset(
-                              'assets/Beaches/BARCELONATA.jpg',
-                              fit: BoxFit.cover,
-                              width: 400.w,
-                              height: 250.h,
-                            ),
+                          child: Image.asset(
+                            'assets/Beaches/BORKUM.jpg',
+                            fit: BoxFit.cover,
+                            width: 400.w,
+                            height: 250.h,
                           ),
                         ),
                         Padding(
@@ -166,7 +262,7 @@ class _GBeachesState extends State<GBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Playa De Barceloneta',
+                                'Borkum Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -174,13 +270,13 @@ class _GBeachesState extends State<GBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
-                                    iconState['barceloneta'] = true;
+                                    iconState['borkum'] = true;
                                   });
-                                  speak('Playa De Barceloneta');
+                                  await speak('Borkum');
                                 },
-                                icon: !iconState['barceloneta']!
+                                icon: !iconState['borkum']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -200,7 +296,7 @@ class _GBeachesState extends State<GBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "La Barceloneta (Catalan pronunciation: [lə βəɾsəluˈnɛtə]) is a neighborhood in the Ciutat Vella district of Barcelona, Catalonia, Spain. The neighborhood was constructed during the 18th century for the residents of the Ribera neighborhood who had been displaced by the construction of the Ciutadella of Barcelona. The neighborhood is roughly triangular, bordered by the Mediterranean Sea, the Moll d'Espanya of Port Vell, and the El Born neighborhood.",
+                            "The gentle sea with the purest water and the magnificent sandy beach of Borkum Island attract more and more tourist yearly. The crystal turquoise color of the seawater sets the leve of you vacation somewhere between stunning and perfect. So if you are looking for the perfect sea, this is your place!",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -215,8 +311,88 @@ class _GBeachesState extends State<GBeaches> {
                 ),
               ),
             ),
+
             SliverToBoxAdapter(
-              key: searchMap['Bolonia'],
+              key: searchMap['Sylt'],
+              child: Padding(
+                padding: EdgeInsets.all(20.0.w),
+                child: Container(
+                  height: 580.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff393E46),
+                    borderRadius: BorderRadius.circular(20.w),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0.w),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.w),
+                          child: Image.asset(
+                            'assets/Beaches/SYLT.jpg',
+                            fit: BoxFit.cover,
+                            width: 400.w,
+                            height: 250.h,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Sylt Beach',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () async {
+                                  setState(() {
+                                    iconState['sylt'] = true;
+                                  });
+                                  await speak('Sylt');
+                                },
+                                icon: !iconState['sylt']!
+                                    ? const Icon(
+                                        Icons
+                                            .volume_down_rounded, // if clicked change color and icon
+                                        size: 30,
+                                        color: Color(0xff35bbca),
+                                      )
+                                    : const Icon(
+                                        Icons
+                                            .volume_up_rounded, // if clicked change color and icon
+                                        size: 30,
+                                        color: Colors.indigoAccent,
+                                      ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 20.h),
+                          child: Text(
+                            "Sylt (German pronunciation: [ˈzʏlt]; Danish: Sild; Söl'ring North Frisian: Söl) is an island in northern Germany, part of Nordfriesland district, Schleswig-Holstein, and well known for the distinctive shape of its shoreline. It belongs to the North Frisian Islands and is the largest island in North Frisia. The northernmost island of Germany, it is known for its tourist resorts, notably Westerland, Kampen and Wenningstedt-Braderup, as well as for its 40-kilometre-long (25-mile) sandy beach. ",
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            SliverToBoxAdapter(
+              key: searchMap['Timmendorfer Strand'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
@@ -234,7 +410,7 @@ class _GBeachesState extends State<GBeaches> {
                           child: Align(
                             alignment: Alignment.topCenter,
                             child: Image.asset(
-                              'assets/Beaches/BOLONIA.jpg',
+                              'assets/Beaches/TIMMENDORFER.jpg',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -245,7 +421,7 @@ class _GBeachesState extends State<GBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Playa De Bolonia',
+                                'Timmendorfer Strand',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -253,13 +429,13 @@ class _GBeachesState extends State<GBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
-                                    iconState['bolonia'] = true;
+                                    iconState['timmendorfer strand'] = true;
                                   });
-                                  speak('Playa De Bolonia');
+                                  await speak('Timmendorfer Strand');
                                 },
-                                icon: !iconState['bolonia']!
+                                icon: !iconState['timmendorfer strand']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -279,7 +455,7 @@ class _GBeachesState extends State<GBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            'Bolonia is a coastal village and beach in the municipality of Tarifa in the Province of Cadiz in southern Spain. It is located on the Atlantic shore, 22.9 kilometres (14.2 mi) by road west of Tarifa, but is much closer in terms of coastal distance. The beach and bay is also known as Playa de Bolonia ("Bolonia Beach"), Ensenada de Bolonia ("Bolonia Cove"), or Bolonia Bay. The ruins of the Roman town of Baelo Claudia are located near the beach, considered to be the most complete Roman town ruins yet uncovered in Spain.[1][2] The beach is about 3.8 kilometres (2.4 mi) in length, with an average width of about 70 metres (230 ft). In 2011 it had a population of 117 people.',
+                            "Timmendorfer Strand (Timmendorf Beach) is a municipality in the district of Ostholstein, in Schleswig-Holstein, Germany. It is situated on the Bay of Lübeck (Baltic Sea), approximately 15 km (9.3 mi) northwest of Lübeck, and 20 km (12 mi) southeast of Eutin.",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -294,253 +470,13 @@ class _GBeachesState extends State<GBeaches> {
                 ),
               ),
             ),
+
             SliverToBoxAdapter(
-              key: searchMap['Concha'],
+              key: searchMap['Zingst'],
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
-                  height: 500.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20.w),
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Image.asset(
-                              'assets/Beaches/CONCHA.jpg',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De La Concha',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['concha'] = true;
-                                  });
-                                  speak('Playa De La Concha');
-                                },
-                                icon: !iconState['concha']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            'The Beach of La Concha (Basque: Kontxa Hondartza [kontʃa ondarts̻a]; Spanish: Playa de La Concha [ˈplaʝa ðe la ˈkontʃa], "cone shell beach") is a crescent shaped urban seaboard of the city of San Sebastián located at the Bay of La Concha in the Basque Country, in northern Spain. Its name “Concha” is given upon its remarkably regular shape. [1] The scenic setting in the Bay of La Concha and the 19th century elegance of fashionable seaside resorts have made the site very popular, as it is frequently cited as one of the most beautiful and the most famous urban beaches in Europe.',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Victoria'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 550.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Image.asset(
-                              'assets/Beaches/VICTORIA.jpg',
-                              fit: BoxFit.cover,
-                              width: 400.w,
-                              height: 200.h,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De La Victoria',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['victoria'] = true;
-                                  });
-                                  speak('Playa De La Victoria');
-                                },
-                                icon: !iconState['victoria']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "La Victoria beach, La Caleta and the small beach of Santa María are a trio of aces when it comes to Cádiz’s urban beaches. But unlike the second two, La Victoria is a holiday destination in its own right. In fact, it has the highest concentration of bars, restaurants, beach bars, hotels and other types of accommodation in the city. It’s visited by hundreds of thousands of people each year who come to enjoy its 3 km of sand, with an average width (at low tide) of almost 200 m.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Canteras'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 550.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Align(
-                            alignment: Alignment.topCenter,
-                            child: Image.asset(
-                              'assets/Beaches/CANTERAS.jpg',
-                              fit: BoxFit.cover,
-                              width: 400.w,
-                              height: 250.h,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De Las Canteras',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['canteras'] = true;
-                                  });
-                                  speak('Playa De Las Canteras');
-                                },
-                                icon: !iconState['canteras']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "The Playa de Las Canteras (Las Canteras beach; 'Beach of the Quarries') is the main urban beach of the city of Las Palmas de Gran Canaria (Gran Canaria, Canary Islands), one of the most important beaches of the Canary Islands. Las Canteras has an Environmental Management System certified according to the UNE-EN ISO 14001 norm and a Universal Accessibility Certificate for bathing services for people with reduced mobility, certified by the same organization.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Muro'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 560.h,
+                  height: 580.h,
                   decoration: BoxDecoration(
                     color: const Color(0xff393E46),
                     borderRadius: BorderRadius.circular(20.w),
@@ -552,7 +488,7 @@ class _GBeachesState extends State<GBeaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/MURO.jpg',
+                            'assets/Beaches/ZINGST.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
@@ -564,7 +500,7 @@ class _GBeachesState extends State<GBeaches> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Playa De Muro',
+                                'Zingst Beach',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.sp,
@@ -572,13 +508,13 @@ class _GBeachesState extends State<GBeaches> {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   setState(() {
-                                    iconState['muro'] = true;
+                                    iconState['zingst'] = true;
                                   });
-                                  speak('Playa De Muro');
+                                  await speak('Zingst');
                                 },
-                                icon: !iconState['muro']!
+                                icon: !iconState['zingst']!
                                     ? const Icon(
                                         Icons
                                             .volume_down_rounded, // if clicked change color and icon
@@ -598,319 +534,7 @@ class _GBeachesState extends State<GBeaches> {
                         Padding(
                           padding: EdgeInsets.only(top: 20.h),
                           child: Text(
-                            "Playa de Muro is relatively new holiday destination in the Alcudia Bay, which is located between the two classic destinations of Port d’Alcudia og Ca’n Picafort. An overview of the beach. Playa de Muro is home to an incredibly beautiful beach that is officially divided into two so-called sectors. Sector 1 is more central and offers a full 3-kilometre stretch of beach. The beach is home to white sand and clear water. The water is shallow but not quite as shallow as Port d’Alcudia. On top of that, the risk of waves is a little higher on the beach in Playa de Muro.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Papagayo'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 565.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Image.asset(
-                            'assets/Beaches/PAPAGAYO.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De Papagayo',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['papagayo'] = true;
-                                  });
-                                  speak('Playa De Papagayo');
-                                },
-                                icon: !iconState['papagayo']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "In the south of Lanzarote is one of the most popular beaches of the island, Papagayo, a cove of white sand, reduced size and great beauty. In the shape of a bay or shell (some locals prefer to call it the latter), Papagayo wins you over with its crystal clear, emerald green water which remains still all day long just like in a swimming pool. It’s perfect for taking up snorkeling and for enjoying the beauty of its depths or for letting the children splash about without having to worry.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Rodas'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 565.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Image.asset(
-                            'assets/Beaches/RODAS.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De Rodas',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['rodas'] = true;
-                                  });
-                                  speak('Playa De Rodas');
-                                },
-                                icon: !iconState['rodas']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "The Beach of Rodas links the two largest islands in Cies: Faro and Monteagudo. Locals refer to this beach as the “tropical beach”, due to the fantastic color of its waters. But this should not mislead you, temperatures in Galicia are not Caribbean-like! But the place is with no doubt the closest to paradise you can get in Europe.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Illetes'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 565.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Image.asset(
-                            'assets/Beaches/ILLETES.jpeg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De Ses Illetes',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['illetes'] = true;
-                                  });
-                                  speak('Playa De Ses Illetes');
-                                },
-                                icon: !iconState['illetes']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "Know as one of the most popular beaches in Formentera, playa de ses Illetes is a little slice of heaven due to having the clearest turquoise sea spanning along both sides of the narrow beach. During peak season its gets pretty crowded at Illetes, so if you want a piece of the coveted white sand it pays to get there early, otherwise head to the less populated Llevant, located on the opposite side of the promontory, a few minutes walk away. Ses Illetes is perfect for swimming as the beach gently shelves into the sea, is shallow to quite far out and has 2 patrol towers manned by life-guards during summer.  This makes it great for kids, and there is usually water sports equipment such as Hoby-cats, and kayaks available to hire during peak season.",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              key: searchMap['Zahara'],
-              child: Padding(
-                padding: EdgeInsets.all(20.0.w),
-                child: Container(
-                  height: 565.h,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff393E46),
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.w),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.w),
-                          child: Image.asset(
-                            'assets/Beaches/ZAHARA.jpg',
-                            fit: BoxFit.cover,
-                            width: 400.w,
-                            height: 250.h,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Playa De Zahara De Los Atunes',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    iconState['zahara'] = true;
-                                  });
-                                  speak('Playa De Zahara De Los Atunes');
-                                },
-                                icon: !iconState['zahara']!
-                                    ? const Icon(
-                                        Icons
-                                            .volume_down_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Color(0xff35bbca),
-                                      )
-                                    : const Icon(
-                                        Icons
-                                            .volume_up_rounded, // if clicked change color and icon
-                                        size: 30,
-                                        color: Colors.indigoAccent,
-                                      ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 20.h),
-                          child: Text(
-                            "One of the most pristine beaches of our country is precisely and unquestionably, the beach of Zahara. These eight kilometers of coastline, enjoy a special mild climate, which makes them ideal for practicing sports with the sea as the protagonist, but also to enjoy one of the best sunsets in the world, walks both on foot and on horseback and many activities that will delight visitors and tourists from anywhere, here especially welcome.",
+                            "Zingst (German pronunciation: [ˈt͡sɪŋst]; Polabian Sgoni) is the easternmost portion of the three-part Fischland-Darß-Zingst Peninsula, located in Mecklenburg-Vorpommern, Germany, between the cities of Rostock and Stralsund on the southern shore of the Baltic Sea. The area is part of the Pomeranian coast. The Zingst Peninsula forms an eastward-running spit, nearly 20 km (12 mi) in length, and has a width of just 2 to 4 km (1.2 to 2.5 mi).",
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 14.sp,

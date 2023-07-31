@@ -165,7 +165,7 @@ class MyApp extends StatelessWidget {
               '/g-foods': (context) => const GFoods(),
               '/g-festivals': (context) => const GFestivals(),
               '/g-cultures': (context) => const GCultures(),
-              '/g-landscape': (context) => const GLandscapes(),
+              '/g-landscapes': (context) => const GLandscapes(),
               '/russia': (context) => const Russia(),
               '/r-beaches': (context) => const RBeaches(),
               '/r-foods': (context) => const RFoods(),
