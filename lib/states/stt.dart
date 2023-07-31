@@ -174,7 +174,6 @@ class LanguagesSpokeStt extends ChangeNotifier {
 
   void addContainer(Widget container) {
     containers.insert(0, container);
-    history.insert(0, container);
     notifyListeners();
   }
 

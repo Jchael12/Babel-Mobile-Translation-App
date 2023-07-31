@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -187,8 +186,6 @@ class HomePageState extends State<HomePage> {
             ),
           ),
           appBar: AppBar(
-            systemOverlayStyle: SystemUiOverlayStyle.dark,
-            toolbarHeight: 100,
             backgroundColor: darkColor,
             elevation: 0,
             title: Text(

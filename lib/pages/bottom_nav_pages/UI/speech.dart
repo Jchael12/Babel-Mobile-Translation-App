@@ -345,6 +345,8 @@ class _ConversationState extends State<Conversation> {
                     final time = formatTime.format(timeNow);
                     debugPrint('$date');
                     debugPrint('$time');
+                    debugPrint('This is the from lang: ${langstt.langCode}');
+                    debugPrint('This is the to lang: ${toLang}');
 
                     Future<String> translate(String text) async {
                       final translator = GoogleTranslator();
@@ -378,7 +380,7 @@ class _ConversationState extends State<Conversation> {
                               val.recognizedWords,
                               translatedText.toString(),
                               toLang);
-                          debugPrint(toLang);
+                          debugPrint('This is the from lang: ${langstt.langCode}');
 
                           textProvider.addContainer(add);
 
