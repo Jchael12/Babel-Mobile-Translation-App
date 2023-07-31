@@ -35,6 +35,7 @@ class _ConversationState extends State<Conversation> {
   String text = 'Press the button to start speak!';
   String id = '';
 
+  // TODO: need to fix Tts func.
   // this list is used to compare if that language is supported or not.
   List<String> langId = [
     'ar_AE',
@@ -51,7 +52,7 @@ class _ConversationState extends State<Conversation> {
 
   Map<String, String> convertLangStt = {
     'ar_AE': 'ar',
-    'cmn_CN': 'zn-cn',
+    'cmn_CN': 'zh-cn',
     'en_US': 'en',
     'fil_PH': 'tl',
     'fr_FR': 'fr',
@@ -326,9 +327,10 @@ class _ConversationState extends State<Conversation> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Consumer5<LanguagesStt, TransLanguageStt, TranslatedText, Swap, CustomId>(
-                  builder:
-                      (context, langstt, transStt, transText, swap, customId, child) {
+                Consumer5<LanguagesStt, TransLanguageStt, TranslatedText, Swap,
+                    CustomId>(
+                  builder: (context, langstt, transStt, transText, swap,
+                      customId, child) {
                     var fromLang = convertStt(swap.touchState % 2 == 0
                         ? transStt.langCode
                         : langstt.langCode);

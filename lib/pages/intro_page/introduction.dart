@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -50,11 +51,11 @@ class _IntroductionState extends State<Introduction> {
   }
 
   Future<void> delay() async {
-     Future.delayed(const Duration(seconds: 7), () {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomePage()),
-        );
-      });
+    Future.delayed(const Duration(seconds: 7), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    });
   }
 
   @override
@@ -98,7 +99,6 @@ class _IntroductionState extends State<Introduction> {
                         // accessing GetStartedBtn's state then trigger the event
                         getStartedBtnKey.currentState?.activateOnPressed();
                         varShow.setShow(false);
-                        
                       },
                       child: Text(
                         "Skip",
@@ -183,7 +183,6 @@ class GetStartedBtn extends StatefulWidget {
 }
 
 class _GetStartedBtnState extends State<GetStartedBtn> {
-  
   // responsible for calling onPressed
   void activateOnPressed() {
     if (widget.onPressed != null) {

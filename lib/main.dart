@@ -79,13 +79,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  
+
+  final prefs = await SharedPreferences.getInstance();
+
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-
-  final prefs = await SharedPreferences.getInstance();
+  //SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
   runApp(MyApp(prefs: prefs));
 }
