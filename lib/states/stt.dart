@@ -70,16 +70,15 @@ class LanguagesSpokeStt extends ChangeNotifier {
     'tl': 'fil-PH',
     'ja': 'ja-JP',
     'ko': 'ko-KR',
-    'zh-cn': 'zn-CN',
+    'zh-cn': 'zh-CN',
     'ar': 'ar',
     'fr': 'fr-FR',
     'de': 'de-DE',
     'ru': 'ru-RU',
     'es': 'es-ES',
-
   };
 
-  String convertTts(String text){
+  String convertTts(String text) {
     for (var entry in convertLangTts.entries) {
       if (entry.key == text) {
         return entry.value;
@@ -121,9 +120,9 @@ class LanguagesSpokeStt extends ChangeNotifier {
             children: [
               IconButton(
                 onPressed: () async {
-                  debugPrint(code);
+                  debugPrint('taena $code');
                   var getCode = convertTts(code);
-                  debugPrint(getCode);
+                  debugPrint('final $getCode');
                   speak(translatedText, getCode);
                 },
                 icon: const Icon(Icons.volume_down_rounded),
@@ -189,7 +188,7 @@ class LanguagesSpokeStt extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeAllItems(){
+  void removeAllItems() {
     containers.clear();
     notifyListeners();
   }

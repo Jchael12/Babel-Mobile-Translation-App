@@ -774,7 +774,7 @@ class _ESBeachesState extends State<ESBeaches> {
               child: Padding(
                 padding: EdgeInsets.all(20.0.w),
                 child: Container(
-                  height: 565.h,
+                  height: 600.h,
                   decoration: BoxDecoration(
                     color: const Color(0xff393E46),
                     borderRadius: BorderRadius.circular(20.w),

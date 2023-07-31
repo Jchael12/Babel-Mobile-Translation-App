@@ -101,7 +101,7 @@ class _ESFoodsState extends State<ESFoods> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ItemsSearch(map: searchMapFoods)),
+                        builder: (context) => ItemsSearch(map: searchMapFoods)),
                   );
                 },
                 icon: const Icon(Icons.search),
@@ -176,18 +176,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Churros');
                               },
                               icon: !iconStateFood['churros']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -254,18 +254,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Gazpacho');
                               },
                               icon: !iconStateFood['gazpacho']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -332,18 +332,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Jamón Ibérico');
                               },
                               icon: !iconStateFood['jamon']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -371,7 +371,7 @@ class _ESFoodsState extends State<ESFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 520.h,
+                height: 550.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -410,18 +410,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Paella');
                               },
                               icon: !iconStateFood['paella']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -488,18 +488,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Patatas Bravas');
                               },
                               icon: !iconStateFood['patatas']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -566,18 +566,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Pisto a la Gallega');
                               },
                               icon: !iconStateFood['pisto']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -644,18 +644,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Pulpo');
                               },
                               icon: !iconStateFood['pulpo']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -683,7 +683,7 @@ class _ESFoodsState extends State<ESFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 515.h,
+                height: 530.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -722,18 +722,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Sangria');
                               },
                               icon: !iconStateFood['sangria']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -800,18 +800,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Tortilla Española');
                               },
                               icon: !iconStateFood['tortilla']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
@@ -878,18 +878,18 @@ class _ESFoodsState extends State<ESFoods> {
                                 speak('Tapas');
                               },
                               icon: !iconStateFood['tapas']!
-                              ? const Icon(
-                                Icons
-                                .volume_down_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Color(0xff35bbca),
-                              )
-                              : const Icon(
-                                Icons
-                                .volume_up_rounded, // if clicked change color and icon
-                                size: 30,
-                                color: Colors.indigoAccent,
-                              ),
+                                  ? const Icon(
+                                      Icons
+                                          .volume_down_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Color(0xff35bbca),
+                                    )
+                                  : const Icon(
+                                      Icons
+                                          .volume_up_rounded, // if clicked change color and icon
+                                      size: 30,
+                                      color: Colors.indigoAccent,
+                                    ),
                             ),
                           ],
                         ),
