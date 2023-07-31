@@ -1010,7 +1010,7 @@ class _BeachesState extends State<Beaches> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10.w),
                           child: Image.asset(
-                            'assets/Beaches/Malapascua.png',
+                            'assets/Beaches/MALAPASCUA.jpg',
                             fit: BoxFit.cover,
                             width: 400.w,
                             height: 250.h,
