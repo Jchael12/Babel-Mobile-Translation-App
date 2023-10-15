@@ -90,6 +90,8 @@ Future<void> main() async {
   runApp(MyApp(prefs: prefs));
 }
 
+
+// TODO: change bottom nav need to clear and easily to understand by new user.
 class MyApp extends StatelessWidget {
   final SharedPreferences prefs;
 
