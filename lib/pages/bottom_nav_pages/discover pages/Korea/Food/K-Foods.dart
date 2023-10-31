@@ -182,6 +182,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -189,7 +201,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Kimchi/Kimchee is a traditional Korean side dish made from fermented cabbage, radish, or cucumber. It is often categorized by the main vegetable ingredient used to make it. Kimchi is a staple food in Korean cuisine",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -260,6 +272,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -267,7 +291,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Bibimbap is probably one of the most well-known and beloved Korean dishes to many people. Even if people don't know anything about Korea, it's not too difficult to find people who had bibimbap sometime in their lives.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -338,6 +362,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -345,7 +381,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Tteokbokki is chewy rice cakes cooked in a red, spicy broth. It's a popular Korean street food. When I was a student coming home from school it was hard to resist the spicy rice cakes sold by vendors on the street! They would have big vats of tteokbokki and just keep stirring and stirring.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -416,6 +452,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -423,7 +471,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Bulgogi means 'fire meat'. It is often made with tender parts of beef, pork or chicken. However, in general terms, unless spicified, bulgogi is made with beef. Undoubtedly it is one of the most well-known Korean tranditional foods and it has been around for thousands of years.  ",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -494,6 +542,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -501,7 +561,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Kimchi-jjigae or kimchi stew is one of the most-loved of all the stews in Korean cuisine. It's a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn't like kimchi-jjigae.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -572,6 +632,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -579,7 +651,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Jjajangmyeon is everybody's favorite food. It's actually a very popular korean chinese dish, created by early Chinese immigrants in Korea, catering to Korea tastes. Tangsuyuk(sweet and souor pork) is another example.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -650,6 +722,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -657,7 +741,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Samgyeopsal or grilled pork belly is a type of gui in Korean cuisine. It is a part of the abdomen under the loinfrom the 5th rib or 6th rib to the hind limb. In Korea the word samgyeopsal, meaning 'pork belly', oftens refers to samgyeopsal gui (grilled pork belly) in the same way that the word galbi, meaning 'ribs', often refers to galbi gui (grilled beef ribs)",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -728,6 +812,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -735,7 +831,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Yangnyeom chicken is double deep fried chicken that is coated with sticky, spicy and sweet sauce. In my opinion, the taste and the sensation is almost magical! It's super delicious and addictive.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -781,7 +877,7 @@ class _FoodsState extends State<KFoods> {
                               'Bibim-naengmyeon',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16.sp,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -806,6 +902,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -813,7 +921,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Spicy korean icy cold noodle dish called bibim-naengmyeon. Unlike mul-naengmyeon it's not very brothy, but its still ice cold and made with a slightly sweet, vinegary, spicy sauce as well as some cucumber and pear. When you eat it, the first thing you need to do is mix it up in the bowl, which is why it is called bibim, which means 'mixed-up' in korean.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -884,6 +992,18 @@ class _FoodsState extends State<KFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -891,7 +1011,7 @@ class _FoodsState extends State<KFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "Samgyetang or Ginseng chicken soup is a hot, steaming, delicious dish that features a small chicken stuffed with rice, ginseng, garlic, and jujube. You have to commit to eating the whole chiken all by yourself when you sit down for a bowl of samgyetang! But it's totally worth it.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,

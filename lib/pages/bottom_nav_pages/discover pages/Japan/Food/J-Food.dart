@@ -189,6 +189,122 @@ class _JFoodsState extends State<JFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 cups vegetable oil for frying\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 cup all-purpose flour\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 2 tablespoons cornstarch\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 pinch salt\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 cup water\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 large egg yolk\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 large egg whites, lightly beaten\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 pound medium shrimp, peeled and deveined\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -266,6 +382,143 @@ class _JFoodsState extends State<JFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 ⅓ cups water\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' ⅔ cup uncooked short-grain white rice\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 3 tablespoons rice vinegar\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 3 tablespoons white sugar\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 ½ teaspoons salt\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 4 sheets nori seaweed sheets\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' ½ pound imitation crabmeat, flaked\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 avocado - peeled, pitted, and sliced\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' ½ cucumber, peeled, cut into small strips\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 tablespoons pickled ginger\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),
@@ -345,6 +598,106 @@ class _JFoodsState extends State<JFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Ramen noodles (our classic Maruchan package is all we need, sans the seasoning!)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Garlic and ginger\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Broth (chicken or veg)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Dried shiitake mushrooms\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Veggies like carrots or kale\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' All your favorite toppings like some panko, egg, chili oil, etc.\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -422,6 +775,121 @@ class _JFoodsState extends State<JFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' pork\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' salt and pepper\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Flour)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Egg\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Panko - Please get a Japanese brand as non-Japanese brand of panko seem a bit different.\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Neutral flavored oil for deep frying\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Tonkatsu sauce\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Sesame seeds (optional)\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),
@@ -501,6 +969,106 @@ class _JFoodsState extends State<JFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' about 150g per person  sashimi-grade tuna or salmon\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' wasabi\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Japanese soy sauce)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' pickled ginger\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 mooli (white radish), spiralised or shredded\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' for decoration shiso leaves or micro leaves\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -578,6 +1146,185 @@ class _JFoodsState extends State<JFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 ½ cups sushi rice, rinsed and drained\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 3 cups water\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 3 teaspoons canola oil\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 brown onion halved and thinly sliced\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 100g shiitake mushrooms sliced\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 300g chicken thigh fillet, thinly sliced\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 2 tablespoons soy sauce\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 tablespoons rice vinegar\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 teaspoon brown sugar\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 cup (250ml) Dashi or chicken stock (see tips)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	5 eggs, lightly beaten\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	125g snow peas, halved lengthways\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	2-3 green onions, finely shredded diagonally\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	2 teaspoons sesame seeds, toasted\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	Tonkatsu sauce, optional, to serve\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),
@@ -657,6 +1404,116 @@ class _JFoodsState extends State<JFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Broth: Warishita (a mixture of soy sauce, sake, mirin, and sugar, diluted with kombu dashi)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Meat: Well-marbled beef (thicker than shabu shabu beef)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Vegetables: Napa cabbage, chrysanthemum greens, Tokyo negi, carrot, shirataki noodles)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Tofu: Grilled tofu\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Mushrooms: Shiitake, enoki, shimeji, maitake\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Final course (Shime): Udon noodles\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Dipping sauce: Raw eggs\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -734,6 +1591,108 @@ class _JFoodsState extends State<JFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 pound frozen edamame in pods (in the shell)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' ½ tablespoon toasted sesame oil\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 small garlic clove\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' ¾ teaspoon kosher or fine sea salt, plus more for the water\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Spicy variation: add about 1 tablespoon chili garlic sauce, to taste\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Optional garnish: sesame seeds \n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),
@@ -813,6 +1772,96 @@ class _JFoodsState extends State<JFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Pork\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Cabbage\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Chinese Chives\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Aromatics \n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Seasonings - The seasonings are simple, with just sake, soy sauce, sesame oil, and a pinch of salt and pepper. This way you can just enjoy the flavor and freshness of the main ingredients.\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -890,6 +1939,116 @@ class _JFoodsState extends State<JFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Broth: Kombu dashi\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Meat: Well-marbled beef or pork\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Vegetables: Napa cabbage, chrysanthemum greens, Tokyo negi, mizuna, carrot\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Tofu: Medium-firm tofu\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Mushrooms: Shiitake, enoki, shimeji, maitake\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Final course (Shime): Udon noodles, rice\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Dipping Sauce: Ponzu sauce and/or sesame sauce\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),

@@ -68,14 +68,25 @@ class HomePageState extends State<HomePage> {
     final Uri email = Uri(
       scheme: 'mailto',
       path: 'babel.dev8@gmail.com',
-      query: encodeQueryParameters(
-          <String, String>{'subject': "Feedback, suggestions etc.", 'body': ""}),
+      query: encodeQueryParameters(<String, String>{
+        'subject': "Feedback, suggestions etc.",
+        'body': ""
+      }),
     );
 
     try {
       await launchUrl(email);
     } catch (exception) {
       debugPrint(exception.toString());
+    }
+  }
+
+  Future<void> launchInBrowser(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $url');
     }
   }
 
@@ -128,8 +139,8 @@ class HomePageState extends State<HomePage> {
                 color: darkColor,
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 10.0),
                 child: GNav(
                   backgroundColor: darkColor,
                   color: const Color(0xff131316),
@@ -372,8 +383,8 @@ class HomePageState extends State<HomePage> {
                       // ** NOTE: This is temporary
                       showAboutDialog(
                         context: context,
-                        applicationIcon:
-                            Image.asset('assets/icon.png', width: 35, height: 35),
+                        applicationIcon: Image.asset('assets/icon.png',
+                            width: 35, height: 35),
                         applicationName: 'Babel',
                         applicationVersion: 'version: 1.0',
                         applicationLegalese: '©2023 BSCS 3 - Group 1',
@@ -401,8 +412,14 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                     selectedTileColor: Colors.grey[300],
-                    onTap: () {
-                      launchEmail();
+                    onTap: () async {
+                      // launchEmail();
+                      final Uri toLaunch = Uri(
+                          scheme: 'https',
+                          host: 'forms.gle',
+                          path: 'BnHvipmAUQQ3ACiq9');
+                      //final url = "https://forms.gle/BnHvipmAUQQ3ACiq9";
+                      await launchInBrowser(toLaunch);
                     },
                   ),
                   ListTile(

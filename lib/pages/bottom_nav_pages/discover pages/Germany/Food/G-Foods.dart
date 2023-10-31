@@ -157,7 +157,7 @@ class _GFoodsState extends State<GFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 556.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -212,14 +212,26 @@ class _GFoodsState extends State<GFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Bratwurst (German: [ˈbʁaːtvʊʁst] (listen)) is a type of German sausage made from pork or, less commonly, beef or veal. The name is derived from the Old High German Brätwurst, from brät-, finely chopped meat, and Wurst, sausage, although in modern German it is often associated with the verb braten, to pan fry or roast.[1] Beef and veal are usually incorporated amongst a blend often including pork.",
-                          textAlign: TextAlign.justify,
+                          "Bratwurst (German: ['bʁa:tvʊʁst] (listen)) is a type of German sausage made from pork or, less commonly, beef or veal. The name is derived from the Old High German Brätwurst, from brät-, finely chopped meat, and Wurst, sausage, although in modern German it is often associated with the verb braten, to pan fry or roast.[1] Beef and veal are usually incorporated amongst a blend often including pork.",
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -238,7 +250,7 @@ class _GFoodsState extends State<GFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 525.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -290,13 +302,25 @@ class _GFoodsState extends State<GFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          'Currywurst (German: [ˈkœʁiˌvʊɐ̯st] (listen)[1]) is a fast food dish of German origin consisting of steamed, fried sausage, usually pork (German: Bratwurst), typically cut into bite-sized chunks and seasoned with curry ketchup, a sauce based on spiced ketchup or tomato paste topped with curry powder, or a ready-made ketchup seasoned with curry and other spices. The dish is often served with chips.',
+                          "Currywurst (German: ['kœʁiˌvʊɐ̯st] (listen)[1]) is a fast food dish of German origin consisting of steamed, fried sausage, usually pork (German: Bratwurst), typically cut into bite-sized chunks and seasoned with curry ketchup, a sauce based on spiced ketchup or tomato paste topped with curry powder, or a ready-made ketchup seasoned with curry and other spices. The dish is often served with chips.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -316,7 +340,7 @@ class _GFoodsState extends State<GFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 515.h,
+                height: 543.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -368,6 +392,18 @@ class _GFoodsState extends State<GFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -375,7 +411,7 @@ class _GFoodsState extends State<GFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "A pretzel (listen (help·info)), from German pronunciation, standard German: Breze(l) (listen (help·info) is a type of baked pastry made from dough that is commonly shaped into a knot. The traditional pretzel shape is a distinctive symmetrical form, with the ends of a long strip of dough intertwined and then twisted back onto itself in a particular way (a pretzel loop or pretzel bow). Today, pretzels come in a wide range of shapes.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,
@@ -394,7 +430,7 @@ class _GFoodsState extends State<GFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 515.h,
+                height: 597.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -446,13 +482,25 @@ class _GFoodsState extends State<GFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
-                          "Sauerkraut (/ˈsaʊ.ərˌkraʊt/; German: [ˈzaʊ.ɐˌkʁaʊt] (listen), lit. 'sour cabbage')[1] is finely cut raw cabbage that has been fermented by various lactic acid bacteria.[2][3] It has a long shelf life and a distinctive sour flavor, both of which result from the lactic acid formed when the bacteria ferment the sugars in the cabbage leaves.[4] Although it is considered a national dish in Germany and is known under its German name in English-speaking countries, it did not originate in Germany and is also a traditional and ubiquitous dish in Central and Eastern Europe.",
+                          "Sauerkraut (/'saʊ.ərˌkraʊt/; German: ['zaʊ.ɐˌkʁaʊt] (listen), lit. 'sour cabbage')[1] is finely cut raw cabbage that has been fermented by various lactic acid bacteria.[2][3] It has a long shelf life and a distinctive sour flavor, both of which result from the lactic acid formed when the bacteria ferment the sugars in the cabbage leaves.[4] Although it is considered a national dish in Germany and is known under its German name in English-speaking countries, it did not originate in Germany and is also a traditional and ubiquitous dish in Central and Eastern Europe.",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                             fontSize: 14.sp,
@@ -472,7 +520,7 @@ class _GFoodsState extends State<GFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 550.h,
+                height: 578.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -524,6 +572,18 @@ class _GFoodsState extends State<GFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -531,7 +591,7 @@ class _GFoodsState extends State<GFoods> {
                         padding: EdgeInsets.only(top: 20.h),
                         child: Text(
                           "A schnitzel is a thin slice of meat. The meat is usually thinned by pounding with a meat tenderizer. Most commonly, the meat is breaded before frying. Breaded schnitzel is popular in many countries and is made using veal, pork, chicken, mutton, beef, or turkey. Schnitzel is very similar to the dish escalope in France and Spain, panado in Portugal, tonkatsu in Japan, cotoletta in Italy, kotlet schabowy in Poland, milanesa in Latin America, chuleta valluna in Colombia, and chicken-fried steak and pork tenderloin of the United States.",
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.white,

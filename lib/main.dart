@@ -28,6 +28,7 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Cultural/U
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Festival/UAE-Festivals.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Food/UAE-Foods.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Uae/Landscape/UAE-Landscapes.dart';
+import 'package:translate/states/foods_trans.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Beach/F-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/France/Cultural/F-Cultures.dart';
@@ -90,7 +91,6 @@ Future<void> main() async {
   runApp(MyApp(prefs: prefs));
 }
 
-
 // TODO: change bottom nav need to clear and easily to understand by new user.
 class MyApp extends StatelessWidget {
   final SharedPreferences prefs;
@@ -131,6 +131,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<CustomId>(
           create: (_) => CustomId(),
+        ),
+        ChangeNotifierProvider<TranName>(
+          create: (_) => TranName(),
         ),
       ],
       child: ScreenUtilInit(
