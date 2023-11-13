@@ -213,7 +213,152 @@ class _GFoodsState extends State<GFoods> {
                                     ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 3lbs pork (I use butt as the fat ratio is perfect)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 2eggs\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1cup beer\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 1/2 teaspoons black pepper, ground\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1teaspoon cayenne pepper\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 teaspoon paprika (I use smoked)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1/2 teaspoon nutmeg\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 tablespoon dry mustard (I use Colemans)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	1 tablespoon coriander\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	1 teaspoon sage, ground\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	5 teaspoons salt\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	2 teaspoons sugar, white\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	2 teaspoons onion powder\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                               icon: Icon(Icons.food_bank_outlined),
                               iconSize: 28,
                               color: Color(0xff35bbca),
@@ -303,7 +448,140 @@ class _GFoodsState extends State<GFoods> {
                                     ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: '	Bratwursts\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 cup of Tomato Ketchup\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1/4 teaspoon of Baking Soda (sounds weird but trust me)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 4 - 5 teaspoons of Mild Curry Powder\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 teaspoons of Smoked Paprika\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 teaspoon of Onion Powder\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1/8 - 1/4 teaspoons of Cayenne Pepper\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' Liquids:\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	2 teaspoons of Worcestershire Sauce\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 4 tablespoons of Beef Broth \n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 (or more) tablespoons of Water\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                               icon: Icon(Icons.food_bank_outlined),
                               iconSize: 28,
                               color: Color(0xff35bbca),
@@ -393,7 +671,106 @@ class _GFoodsState extends State<GFoods> {
                                     ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	1 and 1/2 cups (360ml) warm water (lukewarm- no need to take temperature but around 100°F (38°C) is great)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 and 1/4 teaspoons (7g) instant or active dry yeast (1 standard packet)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 teaspoon salt\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 Tablespoon brown sugar or granulated sugar\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 Tablespoon unsalted butter, melted and slightly cool\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 3 and 3/4-4 cups (469-500g) all-purpose flour (spooned & leveled), plus more for hands and work surface\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' coarse salt or coarse sea salt for sprinkling\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                               icon: Icon(Icons.food_bank_outlined),
                               iconSize: 28,
                               color: Color(0xff35bbca),
@@ -483,7 +860,86 @@ class _GFoodsState extends State<GFoods> {
                                     ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                '	1 medium head green cabbage (about 3 pounds)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 1/2 tablespoons \n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' kosher salt\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1 tablespoon \n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' caraway seeds (optional, for flavor)\n',
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                               icon: Icon(Icons.food_bank_outlined),
                               iconSize: 28,
                               color: Color(0xff35bbca),
@@ -573,7 +1029,123 @@ class _GFoodsState extends State<GFoods> {
                                     ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.w),
+                                    ),
+                                    contentTextStyle: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 238, 190, 190),
+                                        fontFamily: "gothic"),
+                                    alignment: Alignment.center,
+                                    scrollable: true,
+                                    elevation: 0,
+                                    backgroundColor: const Color(0xff393E46),
+                                    title: Text(
+                                      "Ingredients",
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 238, 190, 190)),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"),
+                                      ),
+                                    ],
+                                    content: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 lbs boneless pork chops \n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1/3 cup all-purpose flour\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1 Tbsp garlic salt (or sub with equal parts salt and garlic powder)\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 1/2 tsp paprika\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 1/2 tsp black pepper, freshly ground\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text: ' 3 large eggs\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' 2 cups panko bread crumbs\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ' Olive oil, canola oil or any high heat cooking oil to saute\n',
+                                          ),
+                                          TextSpan(
+                                            text: '•',
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                " Lemon wedges to serve (don't skip the lemons!)\n",
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                               icon: Icon(Icons.food_bank_outlined),
                               iconSize: 28,
                               color: Color(0xff35bbca),

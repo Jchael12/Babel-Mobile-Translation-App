@@ -97,7 +97,7 @@ class CustomSearchContents extends SearchDelegate {
               // debugPrint(updateLang.getLangName);
               // debugPrint(updateLang.getLangCode);
               debugPrint("Beaches");
-              
+
               key.setKey(entry.value);
               close(context, entry);
               // Navigator.pop(context);
@@ -139,7 +139,8 @@ class _ItemsSearchState extends State<ItemsSearch> {
               onPressed: () {
                 showSearch(
                   context: context,
-                  delegate: CustomSearchContents(scaffoldContext: scaffoldContext, map: customMap),
+                  delegate: CustomSearchContents(
+                      scaffoldContext: scaffoldContext, map: customMap),
                 );
               },
               icon: const Icon(Icons.search),
@@ -161,6 +162,7 @@ class _ItemsSearchState extends State<ItemsSearch> {
                 ),
               ),
               onTap: () {
+                debugPrint("$_key");
                 key.setKey(_key);
                 Scrollable.ensureVisible(
                   key.key!.currentContext!,

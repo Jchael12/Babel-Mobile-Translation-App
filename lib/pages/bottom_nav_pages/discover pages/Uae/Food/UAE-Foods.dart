@@ -157,7 +157,7 @@ class _UAFoodsState extends State<UAFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 546.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -212,6 +212,18 @@ class _UAFoodsState extends State<UAFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -238,7 +250,7 @@ class _UAFoodsState extends State<UAFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 500.h,
+                height: 549.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -289,6 +301,18 @@ class _UAFoodsState extends State<UAFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),
@@ -368,6 +392,18 @@ class _UAFoodsState extends State<UAFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -394,7 +430,7 @@ class _UAFoodsState extends State<UAFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 515.h,
+                height: 585.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -446,6 +482,18 @@ class _UAFoodsState extends State<UAFoods> {
                                       color: Colors.indigoAccent,
                                     ),
                             ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
                           ],
                         ),
                       ),
@@ -472,7 +520,7 @@ class _UAFoodsState extends State<UAFoods> {
             child: Padding(
               padding: EdgeInsets.all(20.0.w),
               child: Container(
-                height: 550.h,
+                height: 566.h,
                 decoration: BoxDecoration(
                   color: const Color(0xff393E46),
                   borderRadius: BorderRadius.circular(20.w),
@@ -523,6 +571,18 @@ class _UAFoodsState extends State<UAFoods> {
                                       size: 30,
                                       color: Colors.indigoAccent,
                                     ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.food_bank_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.g_translate_outlined),
+                              iconSize: 28,
+                              color: Color(0xff35bbca),
                             ),
                           ],
                         ),
