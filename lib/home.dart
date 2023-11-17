@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:translate/pages/side_menu/phrasebook.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/utils/colors.dart';
 import 'package:uuid/uuid.dart';
@@ -353,7 +354,15 @@ class HomePageState extends State<HomePage> {
                       ),
                     ),
                     selectedTileColor: Colors.grey[300],
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PhraseBook(),
+                        ),
+                      );
+                    },
                   ),
                   Divider(
                     color: Colors.grey,
