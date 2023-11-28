@@ -27,7 +27,7 @@ Map<String, GlobalKey> searchMap = {
   'Mirsbay': key2,
   'Silver': key3,
   'Xiamen': key4,
-  'Yangshuo': key5,
+  'Yandgshuo': key5,
 };
 
 final ScrollController scrollController = ScrollController();
@@ -72,7 +72,6 @@ class _CBeachesState extends State<CBeaches> {
 
   @override
   Widget build(BuildContext context) {
-
     return Builder(builder: (BuildContext scaffoldContext) {
       return Scaffold(
         backgroundColor: darkColor,
@@ -523,5 +522,3 @@ class _CBeachesState extends State<CBeaches> {
     });
   }
 }
-
-

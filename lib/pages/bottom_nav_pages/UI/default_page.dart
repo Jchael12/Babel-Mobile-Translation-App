@@ -89,12 +89,16 @@ class _DefaultPageState extends State<DefaultPage> {
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   fontFamily: 'gothic',
+                                  color: Colors.black,
                                 ),
                               );
                             }),
                           ),
                           SizedBox(width: 16.0.w),
-                          const Icon(Icons.arrow_drop_down),
+                          const Icon(
+                            Icons.arrow_drop_down,
+                            color: Colors.black,
+                          ),
                         ],
                       ),
                     ),
@@ -144,13 +148,17 @@ class _DefaultPageState extends State<DefaultPage> {
                                     style: TextStyle(
                                       fontSize: 14.sp,
                                       fontFamily: 'gothic',
+                                      color: Colors.black,
                                     ),
                                   );
                                 },
                               ),
                             ),
                             SizedBox(width: 16.0.w),
-                            const Icon(Icons.arrow_drop_down),
+                            const Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.black,
+                            ),
                           ],
                         ),
                       ),
@@ -160,15 +168,16 @@ class _DefaultPageState extends State<DefaultPage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 100.h),
+              padding: EdgeInsets.only(top: 150.h),
               child: Column(
                 //crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   //const SizedBox(height: 32.0),
-                  SizedBox(height: 70.0.h),
+                  //SizedBox(height: 70.0.h),
                   Center(
                     child: SizedBox(
                       width: 340.w,
+                      height: 130.h,
                       child: TextField(
                         // when triggered when user inserted a value or deleted text
                         onChanged: (text) {
@@ -228,7 +237,7 @@ class _DefaultPageState extends State<DefaultPage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 350.h),
+              padding: EdgeInsets.only(top: 320.h),
               child: Column(
                 children: [
                   Center(

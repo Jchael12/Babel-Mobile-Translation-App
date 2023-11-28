@@ -11,14 +11,12 @@ class Discover extends StatefulWidget {
 class _DiscoverState extends State<Discover> {
   List<Country> countries = [
     Country(name: 'China', image: 'assets/flag/china.png', route: '/china'),
-    Country(name: 'France', image: 'assets/flag/france.png', route: '/france'),
-    Country(name: 'Germany', image: 'assets/flag/germany.png', route: '/germany'),
     Country(name: 'Japan', image: 'assets/flag/japan.png', route: '/japan'),
     Country(name: 'Korea', image: 'assets/flag/korea.png', route: '/korea'),
-    Country(name: 'Philippines', image: 'assets/flag/ph.png', route: '/philippines'),
-    Country(name: 'Russia', image: 'assets/flag/russia.png', route: '/russia'),
-    Country(name: 'Spain', image: 'assets/flag/spain.png', route: '/spain'),
-    Country(name: 'United Arab Emirates', image: 'assets/flag/uae.png', route: '/uae'),
+    Country(
+        name: 'Philippines',
+        image: 'assets/flag/ph.png',
+        route: '/philippines'),
     Country(name: 'United States', image: 'assets/flag/usa.png', route: '/us'),
   ];
 
@@ -43,7 +41,7 @@ class _DiscoverState extends State<Discover> {
               String image = countries[index].image;
               String destination = countries[index].route;
               return GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, destination);
                 },
                 child: Container(
