@@ -10,7 +10,6 @@ import 'pages/bottom_nav_pages/UI/speech.dart';
 import 'pages/bottom_nav_pages/UI/default_page.dart';
 import 'pages/bottom_nav_pages/UI/discover.dart';
 import 'pages/bottom_nav_pages/UI/history.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -127,6 +126,7 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
+      canPop: false,
       onPopInvoked: (bool didPop) {
         if (didPop) {
           return;
@@ -139,65 +139,68 @@ class HomePageState extends State<HomePage> {
         extendBodyBehindAppBar: false,
         bottomNavigationBar: SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: Container(
-            decoration: const BoxDecoration(
-              color: darkColor,
-            ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-              child: GNav(
-                backgroundColor: darkColor,
-                color: const Color(0xff131316),
-                activeColor: Colors.white,
-                gap: 20,
-                textStyle: const TextStyle(
-                  fontFamily: 'Space',
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
+          child: NavigationBarTheme(
+            data: NavigationBarThemeData(
+              labelTextStyle: MaterialStatePropertyAll(
+                TextStyle(
+                  color: Colors.white60,
+                  fontFamily: "RobotoFlex",
+                  fontSize: 13.sp,
                 ),
-                padding: const EdgeInsets.all(17),
-                selectedIndex: currentIndex,
-                onTabChange: (index) {
-                  updateIndex(index);
-                  debugPrint('Current Index: $currentIndex');
-                },
-                //padding: const EdgeInsets.all(16),
-                tabs: const [
-                  GButton(
-                    icon: Icons.home_outlined,
-                    text: 'Home',
-                    iconColor: Colors.white,
-                    iconActiveColor: Colors.white,
-                    rippleColor: Color(0xFF006A60),
-                    backgroundColor: Color(0xFFff9190),
-                  ),
-                  GButton(
-                    icon: Icons.mic_external_on_outlined,
-                    text: 'Speech',
-                    iconColor: Colors.white,
-                    iconActiveColor: Colors.white,
-                    rippleColor: Colors.amber,
-                    backgroundColor: Colors.orange,
-                  ),
-                  GButton(
-                    icon: Icons.history,
-                    text: 'Recent',
-                    iconColor: Colors.white,
-                    iconActiveColor: Colors.white,
-                    rippleColor: Colors.indigoAccent,
-                    backgroundColor: Colors.indigoAccent,
-                  ),
-                  GButton(
-                    icon: Icons.travel_explore_rounded,
-                    text: 'Discover',
-                    iconColor: Colors.white,
-                    iconActiveColor: Colors.white,
-                    rippleColor: Color(0xff35bbca),
-                    backgroundColor: Color(0xff35bbca),
-                  )
-                ],
               ),
+              indicatorColor: currentIndex == 0
+                  ? accent
+                  : currentIndex == 1
+                      ? Colors.orange
+                      : currentIndex == 2
+                          ? Colors.indigoAccent
+                          : currentIndex == 3
+                              ? Color(0xff35bbca)
+                              : null,
+            ),
+            child: NavigationBar(
+              backgroundColor: darkColor,
+              destinations: [
+                NavigationDestination(
+                  icon: Icon(
+                    Icons.g_translate,
+                    color: Colors.white30,
+                  ),
+                  selectedIcon: Icon(
+                    Icons.g_translate_outlined,
+                  ),
+                  label: "Translate",
+                ),
+                NavigationDestination(
+                  icon: Icon(
+                    Icons.mic_external_on,
+                    color: Colors.white30,
+                  ),
+                  selectedIcon: Icon(Icons.mic_external_on_outlined),
+                  label: "Speech",
+                ),
+                NavigationDestination(
+                  icon: Icon(
+                    Icons.history,
+                    color: Colors.white30,
+                  ),
+                  selectedIcon: Icon(Icons.history_outlined),
+                  label: "History",
+                ),
+                NavigationDestination(
+                  icon: Icon(
+                    Icons.travel_explore,
+                    color: Colors.white30,
+                  ),
+                  selectedIcon: Icon(Icons.travel_explore_outlined),
+                  label: "Discover",
+                ),
+              ],
+              onDestinationSelected: (index) {
+                updateIndex(index);
+                debugPrint("$index");
+              },
+              selectedIndex: currentIndex,
             ),
           ),
         ),
@@ -479,3 +482,69 @@ class HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+// SizedBox(
+//           width: MediaQuery.of(context).size.width,
+//           child: Container(
+//             decoration: const BoxDecoration(
+//               color: darkColor,
+//             ),
+//             child: Padding(
+//               padding:
+//                   const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+//               child: GNav(
+//                 backgroundColor: darkColor,
+//                 color: const Color(0xff131316),
+//                 activeColor: Colors.white,
+//                 gap: 20,
+//                 textStyle: const TextStyle(
+//                   fontFamily: 'Space',
+//                   color: Colors.white,
+//                   fontWeight: FontWeight.w500,
+//                 ),
+//                 padding: const EdgeInsets.all(17),
+//                 selectedIndex: currentIndex,
+//                 onTabChange: (index) {
+//                   updateIndex(index);
+//                   debugPrint('Current Index: $currentIndex');
+//                 },
+//                 //padding: const EdgeInsets.all(16),
+//                 tabs: const [
+//                   GButton(
+//                     icon: Icons.home_outlined,
+//                     text: 'Home',
+//                     iconColor: Colors.white,
+//                     iconActiveColor: Colors.white,
+//                     rippleColor: Color(0xFF006A60),
+//                     backgroundColor: Color(0xFFff9190),
+//                   ),
+//                   GButton(
+//                     icon: Icons.mic_external_on_outlined,
+//                     text: 'Speech',
+//                     iconColor: Colors.white,
+//                     iconActiveColor: Colors.white,
+//                     rippleColor: Colors.amber,
+//                     backgroundColor: Colors.orange,
+//                   ),
+//                   GButton(
+//                     icon: Icons.history,
+//                     text: 'Recent',
+//                     iconColor: Colors.white,
+//                     iconActiveColor: Colors.white,
+//                     rippleColor: Colors.indigoAccent,
+//                     backgroundColor: Colors.indigoAccent,
+//                   ),
+//                   GButton(
+//                     icon: Icons.travel_explore_rounded,
+//                     text: 'Discover',
+//                     iconColor: Colors.white,
+//                     iconActiveColor: Colors.white,
+//                     rippleColor: Color(0xff35bbca),
+//                     backgroundColor: Color(0xff35bbca),
+//                   )
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
