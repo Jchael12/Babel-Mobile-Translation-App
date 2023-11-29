@@ -38,16 +38,11 @@ class _ConversationState extends State<Conversation> {
   // TODO: need to fix Tts func.
   // this list is used to compare if that language is supported or not.
   List<String> langId = [
-    'ar_AE',
     'cmn_CN',
     'en_US',
     'fil_PH',
-    'fr_FR',
-    'de_DE',
     'ja_JP',
     'ko_KR',
-    'ru_RU',
-    'es_ES',
   ];
 
   Map<String, String> convertLangStt = {
@@ -380,7 +375,8 @@ class _ConversationState extends State<Conversation> {
                               val.recognizedWords,
                               translatedText.toString(),
                               toLang);
-                          debugPrint('This is the from lang: ${langstt.langCode}');
+                          debugPrint(
+                              'This is the from lang: ${langstt.langCode}');
 
                           textProvider.addContainer(add);
 
