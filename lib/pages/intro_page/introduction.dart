@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:translate/home.dart';
 import 'package:lottie/lottie.dart';
+import 'package:translate/pages/intro_page/term.dart';
+import 'package:translate/states/pref.dart';
 import 'package:translate/states/show_hide_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/pages/intro_page/page_three.dart';
@@ -21,7 +24,8 @@ class OneTimeWelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final hasShownWelcomePage = prefs.getBool('hasShownWelcomePage') ?? false;
 
-    if (hasShownWelcomePage) {
+    final check = prefs.getBool('agreed') ?? false;
+    if (hasShownWelcomePage && check) {
       return const HomePage();
     } else {
       prefs.setBool('hasShownWelcomePage', true);
@@ -48,13 +52,58 @@ class _IntroductionState extends State<Introduction> {
     controllerPage.dispose();
     super.dispose();
   }
+  // TODO: need this
+  // void check() async {
+  //   bool check = await getTermStatus();
+
+  //   if (check) {
+  //     Future.delayed(
+  //       const Duration(seconds: 8),
+  //       () {
+  //         Get.to(
+  //           () => const HomePage(),
+  //           transition: Transition.noTransition,
+  //           duration: const Duration(milliseconds: 370),
+  //         );
+  //       },
+  //     );
+  //   } else {
+  //     Future.delayed(
+  //       const Duration(seconds: 8),
+  //       () {
+  //         Get.to(
+  //           () => const TermAccept(),
+  //           transition: Transition.noTransition,
+  //           duration: const Duration(milliseconds: 370),
+  //         );
+  //       },
+  //     );
+  //   }
+  // }
 
   Future<void> delay() async {
-    Future.delayed(const Duration(seconds: 7), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomePage()),
+    bool check = await getTermStatus();
+
+    if (check) {
+      Future.delayed(
+        const Duration(seconds: 8),
+        () {
+          Get.to(
+            () => const HomePage(),
+            transition: Transition.noTransition,
+            duration: const Duration(milliseconds: 370),
+          );
+        },
       );
-    });
+    } else {
+      Future.delayed(const Duration(seconds: 7), () {
+        Get.to(
+          () => const TermAccept(),
+          transition: Transition.noTransition,
+          duration: const Duration(milliseconds: 370),
+        );
+      });
+    }
   }
 
   @override
@@ -193,15 +242,40 @@ class _GetStartedBtnState extends State<GetStartedBtn> {
   Widget build(BuildContext context) {
     var varShow = Provider.of<ShowState>(context, listen: false);
 
-    void sleep() {
-      Future.delayed(const Duration(seconds: 5), () {
-        // code here you want to do after sleep
-        debugPrint('This code execute');
-        debugPrint(varShow.show.toString());
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomePage()),
+    // void sleep() {
+    //   Future.delayed(const Duration(seconds: 5), () {
+    //     // code here you want to do after sleep
+    //     debugPrint('This code execute');
+    //     debugPrint(varShow.show.toString());
+    //     Navigator.of(context).pushReplacement(
+    //       MaterialPageRoute(builder: (context) => const HomePage()),
+    //     );
+    //   });
+    // }
+
+    Future<void> sleep() async {
+      bool check = await getTermStatus();
+
+      if (check) {
+        Future.delayed(
+          const Duration(seconds: 8),
+          () {
+            Get.to(
+              () => const HomePage(),
+              transition: Transition.noTransition,
+              duration: const Duration(milliseconds: 370),
+            );
+          },
         );
-      });
+      } else {
+        Future.delayed(const Duration(seconds: 7), () {
+          Get.to(
+            () => const TermAccept(),
+            transition: Transition.noTransition,
+            duration: const Duration(milliseconds: 370),
+          );
+        });
+      }
     }
 
     return Consumer<ShowState>(builder: (context, data, child) {

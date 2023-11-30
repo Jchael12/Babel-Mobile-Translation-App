@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:translate/pages/side_menu/phrasebook.dart';
+import 'package:translate/states/pref.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/utils/colors.dart';
 import 'package:uuid/uuid.dart';
@@ -97,22 +98,26 @@ class HomePageState extends State<HomePage> {
         data: ThemeData.from(
           colorScheme: const ColorScheme.light(),
         ),
-        child: Builder(builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Confirm Quit'),
-            content: const Text('Do you want to exit the App?'),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(false),
-                child: const Text('No'),
-              ),
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                child: const Text('Yes'),
-              ),
-            ],
-          );
-        }),
+        child: Builder(
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Confirm Quit'),
+              content: const Text('Do you want to exit the App?'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(false),
+                  child: const Text('No'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(false);
+                  },
+                  child: const Text('Yes'),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
@@ -121,6 +126,7 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     getIdFromSharedPreferences();
+    setTermStatus();
   }
 
   @override
@@ -129,7 +135,7 @@ class HomePageState extends State<HomePage> {
       canPop: false,
       onPopInvoked: (bool didPop) {
         if (didPop) {
-          return;
+          debugPrint("POP");
         } else {
           androidBackBtn();
         }

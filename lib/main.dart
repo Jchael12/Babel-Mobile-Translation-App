@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/Beach/C-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/China/Cultural/C-Cultures.dart';
@@ -14,6 +15,7 @@ import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Festivals/U
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Foods/US-Foods.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Us/Landscapes/US-Landscapes.dart';
 import 'package:translate/states/foods_trans.dart';
+import 'package:translate/states/pref.dart';
 import 'package:translate/states/stt.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Japan/Beach/J-Beaches.dart';
 import 'package:translate/pages/bottom_nav_pages/discover%20pages/Japan/Cultural/J-Cultures.dart';
@@ -104,12 +106,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<TranName>(
           create: (_) => TranName(),
         ),
+        ChangeNotifierProvider<Check>(
+          create: (_) => Check(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
         splitScreenMode: true,
         builder: (context, child) {
-          return MaterialApp(
+          return GetMaterialApp(
             theme: ThemeData(
               useMaterial3: false,
               fontFamily: 'gothic',
