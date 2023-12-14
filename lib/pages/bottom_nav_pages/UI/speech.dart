@@ -397,9 +397,9 @@ class _ConversationState extends State<Conversation> {
                     return AvatarGlow(
                       animate: speech.isListening,
                       glowColor: Colors.grey,
-                      endRadius: 75.0,
+                      //endRadius: 75.0,
                       duration: const Duration(milliseconds: 1000),
-                      repeatPauseDuration: const Duration(milliseconds: 100),
+                      //repeatPauseDuration: const Duration(milliseconds: 100),
                       repeat: true,
                       child: Container(
                         width: 65,
