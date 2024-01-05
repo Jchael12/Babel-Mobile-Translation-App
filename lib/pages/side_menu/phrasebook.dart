@@ -95,7 +95,7 @@ class ClickableContainerList extends StatelessWidget {
             margin: EdgeInsets.all(8),
             child: Center(
               child: Text(
-                'Box ${index + 1} : ${containerLabels[index]}',
+                '${containerLabels[index]}',
                 style: TextStyle(color: Colors.white, fontSize: 22),
                 textAlign: TextAlign.center,
               ),
