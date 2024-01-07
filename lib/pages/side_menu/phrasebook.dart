@@ -32,7 +32,7 @@ class ClickableContainerList extends StatelessWidget {
   final List<String> containerLabels = [
     'Numbers',
     'Family Terms',
-    'Greetings and Response',
+    'Greetings and Responses',
     'Direction and Survival Phrases',
     'Words and Phrases used in Classroom',
     'Restaurants, Cafe, Shops',

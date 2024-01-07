@@ -318,7 +318,7 @@ class _ConversationState extends State<Conversation> {
             ),
           ),
           Align(
-            alignment: const Alignment(0, 1.10),
+            alignment: const Alignment(0, 0.90),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
